@@ -6,7 +6,245 @@
     <title>Estrutura Repetitiva: For</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    
+<body id="pagina-aula">
+    <header id="cabecalho">
+        <a href="../index.html">Código em Jogo</a>
+
+        <nav id="menu-principal">
+            <a href="../index.html">Início</a>
+            <a href="./01-algoritmos.html">Trilha C</a>
+            <a href="#exercicios">Praticar</a>
+        </nav>
+    </header>    
+
+    <main>
+        <aside id="barra-lateral">
+            <header class="barra-lateral-cabecalho">
+                <p>Trilha em C</p>
+                <button type="button">Recolher</button>
+                <h2>Conteúdo do Curso</h2>
+            </header>      
+                
+            <ul class="barra-lateral-lista">
+                <li><a href="./01-algoritmos.html">Introdução à Algoritmos</a></li>
+                <li><a href="./02-sequencial.html">Estrutura Sequencial</a></li>
+                <li><a href="./03-condicionais.html">Estruturas Condicionais</a></li>
+                <li><a href="./04-while.html">Estrutura Repetitiva: While</a></li>
+                <li><a href="./05-for.html">Estrutura Repetitiva: For</a></li>
+                <li><a href="./06-vetores.html">Vetores</a></li>
+                <li><a href="./07-matrizes.html">Matrizes</a></li>                
+            </ul>
+
+            <div class="barra-progresso">
+                <label for="progresso-trilha">Progresso</label>
+                <progress id="progresso-trilha" value="5" max="7">71,4%</progress>
+                <p>Trilha em andamento</p>
+            </div>        
+
+            <footer class="barra-lateral-rodape">
+                <a href="./04-while.html">Aula Anterior</a>
+                <a href="./06-vetores.html">Próxima Aula</a>
+            </footer>
+        </aside>
+        
+        <section id="conteudo-principal">
+            <header class="conteudo-principal-cabecalho">
+                <p>Módulo 05 — Estrutura repetitiva: for</p>
+                <h1>Contando com o for</h1>
+                <p>
+                    O for reúne inicialização, condição e atualização em uma estrutura
+                    compacta.
+                </p>
+            </header>
+
+            <section class="secao-conteudo">
+                <h2>Quando usar o for?</h2>
+                <p>
+                    O for é indicado quando sabemos quantas vezes queremos repetir uma tarefa
+                    ou quando a condição de continuidade e o passo do contador estão definidos.
+                </p>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>As três partes do for</h2>
+                <p>
+                    O for é composto por três partes principais: inicialização, condição e
+                    atualização.
+                </p>
+                <p>
+                    Na inicialização, definimos o ponto de partida. A condição determina se
+                    haverá outra repetição. A atualização muda a variável de controle ao final
+                    de cada volta.
+                </p>
+            </section>
+
+            <section class="exemplo">
+                <h2>Exemplo e resultado</h2>
+                <div class="exemplo-codigo">
+                    <h3>Exemplo de uso do for</h3>
+                    <pre><code>
+                    for (int i = 0; i < 5; i++) {
+                    printf("%d", i);
+                    }
+                    </code></pre>
+                </div>
+
+                <div class="exemplo-resultado">
+                    <h3>Resultado:</h3>
+                    <pre><samp>
+                    01234
+                    </samp></pre>
+                </div>           
+            </section>
+
+    <section class="secao-conteudo">
+        <h2>Entendendo cada parte do for</h2>
+
+        <p>
+            No exemplo, o <code>for</code> tem três partes: inicialização,
+            condição e atualização.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Inicialização:</strong> <code>int i = 0</code> cria a variável
+                <code>i</code> e define seu valor inicial. Essa etapa acontece uma vez,
+                antes da primeira repetição.
+            </li>
+            <li>
+                <strong>Condição:</strong> <code>i &lt; 5</code> é verificada antes
+                de cada repetição. Enquanto for verdadeira, o bloco é executado.
+                Quando se torna falsa, o laço termina.
+            </li>
+            <li>
+                <strong>Atualização:</strong> <code>i++</code> aumenta o valor de
+                <code>i</code> em 1 ao final de cada repetição. É uma forma curta de
+                escrever <code>i = i + 1</code>.
+            </li>
+        </ul>
+
+        <p>
+            Assim, <code>i</code> começa em 0 e passa pelos valores 0, 1, 2, 3 e 4.
+            Quando chega a 5, a condição <code>i &lt; 5</code> é falsa e o laço termina.
+        </p>
+    </section>
+
+            <section class="secao-conteudo">
+                <h2>Erros comuns</h2>
+                <ol>
+                    <li>Esquecer de atualizar o contador, resultando em um laço infinito.</li>
+                    <li>Definir uma condição que nunca se torne falsa.</li>
+                    <li>Usar o operador de incremento ou decremento incorretamente.</li>
+                    <li>Omitir a inicialização do contador.</li>
+                    <li>Escolher um limite que repete uma vez a mais ou a menos.</li>
+                </ol>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Resumo</h2>
+                <p>
+                    O for é uma estrutura de repetição poderosa e compacta, ideal para situações
+                    em que sabemos o número de iterações ou quando a condição de continuidade e
+                    o passo do contador estão claramente definidos.
+                </p>
+            </section>
+
+            <section class="exercicios" id="exercicios">
+                <h2>Exercícios de Fixação</h2>
+
+                <article class="questao">
+                    <h3>Exercício 1</h3>
+                    <p>
+                        O que será exibido pelo código?
+                    </p>
+
+                    <pre><code class="codigo">
+                    for (int i = 2; i <= 5; i++) {
+                        printf("%d ", i);
+                    }
+                    </code></pre>
+
+                    <fieldset>
+                        <legend>Respostas</legend>
+                        <div class="resposta">
+                            <label><input type="radio" name="exercicio1" value="a"><span>A) 2 3 4 5 </span></label>
+                            <label><input type="radio" name="exercicio1" value="b"><span>B) 0123  </span></label>
+                            <label><input type="radio" name="exercicio1" value="c"><span>C) 2345  </span></label>
+                            <label><input type="radio" name="exercicio1" value="d"><span>D) 01234  </span></label>
+                        </div>
+                    </fieldset>
+                </article>
+
+                <article class="questao">
+                    <h3>Exercício 2</h3>
+                    <p>
+                        O que será exibido pelo código?
+                    </p>
+
+                    <pre><code class="codigo">
+                    int soma = 0;    
+
+                    for (int i = 1; i <= 5; i++) {
+                        soma = soma + i;
+                    }
+                    printf ("%d", soma);
+
+                    </code></pre>    
+                    <fieldset>
+                        <legend>Respostas</legend>
+                        <div class="resposta">
+                            <label><input type="radio" name="exercicio2" value="a"> <span>A) 5</span></label>
+                            <label><input type="radio" name="exercicio2" value="b"> <span>B) 10</span></label>
+                            <label><input type="radio" name="exercicio2" value="c"> <span>C) 15</span></label>
+                            <label><input type="radio" name="exercicio2" value="d"> <span>D) 20</span></label>
+                        </div>
+                    </fieldset>
+                </article>    
+                <article class="questao">
+                    <h3>Exercício 3</h3>
+                    <p>
+                        Quantas vezes o laço repete?
+                    </p>
+
+                    <pre><code class="codigo">
+                    for (int i = 3; i <= 8; i++) {
+                        printf("%d ", i);
+                    }
+                    </code></pre>    
+                    <fieldset>
+                        <legend>Respostas</legend>
+                        <div class="resposta">
+                            <label><input type="radio" name="exercicio3" value="a"> <span>A) 5 vezes</span></label>
+                            <label><input type="radio" name="exercicio3" value="b"> <span>B) 6 vezes</span></label>
+                            <label><input type="radio" name="exercicio3" value="c"> <span>C) 7 vezes</span></label>
+                            <label><input type="radio" name="exercicio3" value="d"> <span>D) 8 vezes</span></label>
+                        </div>
+                    </fieldset>
+                </article>
+                <article class="questao">
+                    <h3>Exercício 4</h3>
+                    <p>
+                        O objetivo é exibir os números de 1 a 5. Qual alternativa
+                        identifica o erro no código?
+                    </p>
+
+                    <pre><code class="codigo">
+                    for (int i = 1; i < 5; i++) {
+                    printf("%d ", i);
+                    }
+                    </code></pre>    
+                    <fieldset>
+                        <legend>Respostas</legend>
+                        <div class="resposta">
+                            <label><input type="radio" name="exercicio4" value="a"> <span>A) A variável <code>i</code> deveria começar em 0.</span></label>
+                            <label><input type="radio" name="exercicio4" value="b"> <span> B) A condição deveria ser <code>i &lt;= 5</code></span></label>
+                            <label><input type="radio" name="exercicio4" value="c"> <span>C) O comando <code>i++</code> deveria vir antes do<code>printf</code>.</span></label>
+                            <label><input type="radio" name="exercicio4" value="d"> <span> D) O <code>printf</code> deveria exibir <code>i + 1</code>.</span></label>
+                        </div>
+                    </fieldset>
+                </article>    
+            </section>
+        </section>
+    </main>    
 </body>
 </html>
