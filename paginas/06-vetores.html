@@ -1,12 +1,311 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vetores</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+
+<body id="pagina-aula">
+    <header id="cabecalho">
+        <a href="../index.html">Código em Jogo</a>
+
+        <nav id="menu-principal">
+            <a href="../index.html">Início</a>
+            <a href="./01-algoritmos.html">Trilha C</a>
+            <a href="#exercicios">Praticar</a>
+        </nav>
+    </header>
+
+    <aside id="barra-lateral">
+        <header class="barra-lateral-cabecalho">
+            <p>Trilha em C</p>
+            <button type="button">Recolher</button>
+            <h2>Conteúdo do Curso</h2>
+        </header>
+
+        <ul class="barra-lateral-lista">
+            <li><a href="./01-algoritmos.html">Introdução à Algoritmos</a></li>
+            <li><a href="./02-sequencial.html">Estrutura Sequencial</a></li>
+            <li><a href="./03-condicionais.html">Estruturas Condicionais</a></li>
+            <li><a href="./04-while.html">Estrutura Repetitiva: While</a></li>
+            <li><a href="./05-for.html">Estrutura Repetitiva: For</a></li>
+            <li><a href="./06-vetores.html">Vetores</a></li>
+            <li><a href="./07-matrizes.html">Matrizes</a></li>
+        </ul>
+
+        <div class="barra-progresso">
+            <label for="progresso-trilha">Progresso</label>
+            <progress id="progresso-trilha" value="6" max="7">85,7%</progress>
+            <p>Trilha em andamento</p>
+        </div>
+
+        <footer class="barra-lateral-rodape">
+            <a href="./05-for.html">Aula Anterior</a>
+            <a href="./07-matrizes.html">Próxima Aula</a>
+        </footer>
+    </aside>
+
+    <main>
+        <section id="conteudo-principal">
+            <header class="conteudo-principal-cabecalho">
+                <p>Módulo 06 — Coleções: Vetores</p>
+                <h1>O que é um Vetor?</h1>
+                <p>
+                    O vetor é uma estrutura de dados indexada, que pode armazenar uma
+                    determinada quantidade de valores do mesmo tipo sob um único nome.
+                    Dentro de um vetor, cada valor é identificado por um índice,
+                    que indica a posição do valor dentro do vetor, e em C essa contagem começa em zero.
+                </p>
+            </header>
+
+            <section class="secao-conteudo">
+                <h2>Quando usar um Vetor?</h2>
+                <p>
+                    Use um vetor quando precisar armazenar uma coleção de valores semelhantes,
+                    como notas, temperaturas ou resultados de leituras com um limite de tamanho já definido.
+                    Em C, o tamanho do vetor é definido na declaração e não pode ser alterado durante a execução do
+                    programa.
+                </p>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Percorrendo os índices e posições de um vetor</h2>
+                <p>
+                    Vetores e For andam lado a lado, o contador <code>i</code> do for funciona como um índice para o
+                    vetor.
+                    A cada repetição, ele aponta para a posição seguinte,
+                    tornando possivel preencher ou acessar todos os elementos do vetor em sequência</p>
+                <p>
+                    Em um vetor <code>int vet [5]</code>, existem cinco posições:
+                    <code>vet[0], vet[1], vet[2], vet[3] e vet[4]</code>.
+                    Para preencher o vetor, podemos usar um for percorrendo essas posições, atribuindo o valor de
+                    <code>i</code> ao índice correspondente do vetor, como no exemplo abaixo:
+                </p>
+            </section>
+
+            <section class="exemplo">
+                <h2>Exemplo e Resultado</h2>
+                <div class="exemplo-codigo">
+                    <h3>Preenchendo um vetor</h3>
+                    <pre><code>
+                    
+                    #include <stdio.h>
+                    #include <stdlib.h>
+
+                    int main()
+                    {
+                        int vet [5];
+                        
+                        for (int i = 0; i &lt 5; i++){
+                            vet[i] = i * i;
+                        }
+                        //For é usado para preencher o vetor
+                        
+                        for (int i = 0; i &lt 5; i++){
+                            printf("%d", vet[i]);
+                        }
+                        
+                        //Outro for é usado para acessar todo o contéudo do vetor e exibi-lo
+                        
+                        return 0;
+                    }
+                    </code></pre>
+                </div>
+
+                <div class="exemplo-resultado">
+                    <h3>Resultado esperado:</h3>
+                    <pre><samp>
+                    014916
+                    </samp></pre>
+                </div>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Entendendo o exemplo</h2>
+
+                <p>
+                    Primeiro o vetor tem seu tipo e número de posições declaradas, antes de ser usado dentro do for.
+                    Depois é construido um for que tem como condição iniciar de 0 e ir no máximo até 4.
+                    Ao declarar o vetor dentro do for, utiliza-se o <code>i</code> já declarado na construção do for.
+                </p>
+                <p>
+                    Na execução, o valor de <code>i</code> será igual a 0, e o primeiro índice do vetor também será de
+                    0.
+                    Assim, após o valor de <code>i</code> ser incrementado pelo <code>i++</code> o índice do vetor será
+                    incrementado junto,
+                    e graças a isso, o vetor será preenchido sequencialmente
+                </p>
+                <p>
+                    A mesma regra serve para o segundo for, mas dessa vez o for irá servir para acessar o que está
+                    dentro do índice do vetor e exibirá na tela.
+                </p>
+            </section>
+
+            <section class="exemplo">
+                <h2>Exemplo sem o for</h2>
+                <div class="exemplo-codigo">
+                    <h3>Preenchendo um vetor manualmente</h3>
+                    <pre><code>
+                    
+                    #include <stdio.h>
+                    #include <stdlib.h>
+
+                    int main()
+                    {
+                        int vet [5] = {0, 1, 4, 9, 16};
+                                                
+                        printf("%d", vet[0]);
+                        printf("%d", vet[1]);
+                        printf("%d", vet[2]);
+                        printf("%d", vet[3]);
+                        printf("%d", vet[4]);
+                        
+                        return 0;
+                    }
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="exemplo-resultado">
+                <div>
+                    <h3>Resultado esperado:</h3>
+                    <pre><samp>
+                    014916
+                    </samp></pre>
+                </div>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Entendendo o exemplo</h2>
+                <p>
+                    O resultado é o mesmo do exemplo anterior, mas dessa vez o vetor foi preenchido manualmente.
+                    Cada posição do vetor foi preenchida com um valor específico, e depois cada posição foi usada
+                    individualmente para exibir o valor na tela.
+                </p>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Erros comuns</h2>
+                <ul>
+                    <li>Percorrer mais posições que as declaradas dentro do vetor.</li>
+                    <li>Esquecer de declarar o índice de um vetor</li>
+                    <li>Tentar armazenar tipos diferentes dentro de um mesmo vetor</li>
+                    <li>Criar um for com <code>i</code> tendo 1 como valor inicial, deixando de percorrer a posição 0
+                    </li>
+                    <li>Não levar em conta que um vetor sempre começa do índice 0</li>
+                </ul>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Resumo</h2>
+                <p>
+                    Vetores organizam coleções do mesmo tipo em sequência.
+                    Sempre começam em 0 e vão até um tamanho definido pelo programador.
+                    São acessados por índices, que são números inteiros que indicam a posição do elemento dentro do
+                    vetor.
+                    E são percorridos com estruturas de repetição, como o for, que permite acessar cada elemento do
+                    vetor em sequência.
+                </p>
+            </section>
+
+            <section class="exercicios" id="exercicios">
+                <h2>Exercícios de Fixação</h2>
+
+                <article class="questao">
+                    <h3>Exercício 1</h3>
+                    <p>Qual vai ser o valor de vet[2]?</p>
+
+                    <pre><code class="codigo">
     
+                    int vet[5] = {4, 7, 2, 9, 5};
+
+                    for (int i = 0; i &lt 5; i++) {
+                        printf("%d", vet[i]);
+                    }
+                    </code></pre>
+
+                    <fieldset>
+                        <legend>Respostas</legend>
+                        <div class="resposta">
+                            <label><input type="radio" name="exercicio1" value="a"><span>A) 4</span></label>
+                            <label><input type="radio" name="exercicio1" value="b"><span>B) 9</span></label>
+                            <label><input type="radio" name="exercicio1" value="c"><span>C) 7</span></label>
+                            <label><input type="radio" name="exercicio1" value="d"><span>D) 5</span></label>
+                        </div>
+                    </fieldset>
+                </article>
+
+                <article class="questao">
+                    <h3>Exercício 2</h3>
+                    <p>Quais índices percetencem a um vetor declarado como int num[5]?</p>
+
+                    <fieldset>
+                        <legend>Respostas</legend>
+                        <div class="resposta">
+                            <label><input type="radio" name="exercicio2" value="a">1 a 5<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="b">0 a 4<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="c">0 a 5<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="d">1 a 4<span></span></label>
+                        </div>
+                    </fieldset>
+                </article>
+                <article class="questao">
+                    <h3>Exercício 3</h3>
+                    <p>Qual a posição do maior elemento do vetor?</p>
+
+                    <pre><code class="codigo">
+                    int vet[4] = {8, 3, 11, 5};
+                    </code></pre>
+                    <fieldset>
+                        <legend>Respostas</legend>
+                        <div class="resposta">
+                            <label><input type="radio" name="exercicio3" value="a">A) vet[0]<span></span></label>
+                            <label><input type="radio" name="exercicio3" value="b">B) vet[3]<span></span></label>
+                            <label><input type="radio" name="exercicio3" value="c">C) vet[1]<span></span></label>
+                            <label><input type="radio" name="exercicio3" value="d">D) vet[2]<span></span></label>
+                        </div>
+                    </fieldset>
+                </article>
+                <article class="questao">
+                    <h3>Exercício 4</h3>
+                    <p>Quais os erros desse código?</p>
+
+                    <pre><code class="codigo">
+                    int vet[5] = (1, 2, 3.0, 4, 5);
+                    
+                    for (int i = 1; i &lt= 5; i++) {
+                        printf("%d", vet[i]);
+                    }
+                    </code></pre>
+                    <fieldset>
+                        <legend>Respostas</legend>
+                        <div class="resposta">
+                            <label><input type="checkbox" name="exercicio4" value="a">A) O valor 3.0 é incompátivel com o tipo char do vetor<span></span></label>
+                            <label><input type="checkbox" name="exercicio4" value="b">B) O for começa em <code>i = 1</code>, pulando a primeira posição do vetor<span></span></label>
+                            <label><input type="checkbox" name="exercicio4" value="c">C) O for deveria usar <code>i &lt= 4</code>, pois o último índice válido é vet[4]<span></span></label>
+                            <label><input type="checkbox" name="exercicio4" value="d">D) A condição do for deveria ser i &lt 5, pois o último índice válido é vet[4]<span></span></label>
+                        </div>
+                    </fieldset>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Projeto Código em jogo</p>
+        <p>Fatec Marília - Desenvolvimento de Software Multiplataforma</p>
+
+        <p>Integrantes: </p>
+        <ul>
+            <li>Abinad Henrique dos Santos</li>
+            <li>Jaidy Miyuki dos Santos Yamada</li>
+            <li>Juliana de Arruda Meyer Coracini</li>
+            <li>Lucas Gabriel de Souza</li>
+        </ul>
+    </footer>
 </body>
+
 </html>
