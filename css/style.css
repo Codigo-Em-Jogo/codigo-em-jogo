@@ -1,13 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:italwght@0100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-/* =================================
-   1. RESET E CONFIGURAÇÕES GERAIS
+/* =================================================
+   1. VARIÁVEIS DE CORES (TEMA CLARO E ESCURO)
+================================= */
+:root {
+    --bg-color: #F8F9FC;
+    --card-bg: #ffffff;
+    --text-main: #292b40;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --primary: #5B4BC4;
+    --primary-hover: #4f46e5;
+    --card-hover-shadow: rgba(91, 75, 196, 0.1);
+}
+
+body.dark-mode {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --primary: #6653e0;
+    --primary-hover: #4f46e5;
+    --card-hover-shadow: rgba(129, 115, 237, 0.2);
+}
+
+/* =================================================
+   2. RESET E CONFIGURAÇÕES GERAIS
 ================================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -15,8 +40,10 @@ body {
     flex-direction: column;
     line-height: 1.6;
     font-family: "Inter", sans-serif;
-    background-color: #F8F9FC;
-    color: #292b40;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ul {
@@ -29,11 +56,11 @@ a {
 }
 
 /* =================================================================
-   2. NAVBAR (CABEÇALHO)
+   3. NAVBAR (CABEÇALHO)
    ================================================================ */
 .navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -42,16 +69,17 @@ a {
     width: 100%;
     top: 0;
     z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.logo{
-  display: flex;
-  align-items: center;
-  gap: 0.5  rem;
-  color: #5B4BC4;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .logo img {
@@ -70,19 +98,38 @@ a {
 }
 
 .navbar nav a {
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.95rem;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
 }
 
 .navbar nav a:hover,
-.navbar nav a[aria-current="page"]{
-    color: #8372D8;
+.navbar nav a[aria-current="page"] {
+    color: var(--primary);
+}
+
+/* Botão de Tema */
+#botao-tema {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+#botao-tema:hover {
+    background-color: var(--border-color);
 }
 
 /* =================================================================
-   3. CONTEÚDO PRINCIPAL
+   4. CONTEÚDO PRINCIPAL
    ================================================================ */
 #conteudo-principal {
     flex: 1;
@@ -105,20 +152,20 @@ a {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    color:#5B4BC4	;
+    color: var(--primary);
     text-transform: uppercase;
 }
 
 .destaque-topo h1 {
     font-size: 2.25rem;
     font-weight: 800;
-    color: #292b40;
+    color: var(--text-main);
     letter-spacing: -0.02em;
 }
 
 .destaque-topo p {
     font-size: 1.05rem;
-    color:#64748b;
+    color: var(--text-muted);
 }
 
 #trilha {
@@ -130,10 +177,11 @@ a {
 #titulo-trilha {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #292b40;
+    color: var(--text-main);
 }
+
 /* =================================================================
-   GRADE E CARTÕES DE MÓDULOS (TODOS IGUAIS)
+   5. GRADE E CARTÕES DE MÓDULOS
    ================================================================ */
 .lista-modulos {
     display: grid;
@@ -142,8 +190,8 @@ a {
 }
 
 .cartao-modulo {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
     padding: 1.5rem;
     display: flex;
@@ -151,19 +199,19 @@ a {
     justify-content: space-between; 
     min-height: 220px;
     position: relative;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .cartao-modulo:hover {
-    border-color: #cbd5e1;
+    border-color: var(--primary);
     transform: translateY(-3px);
-    box-shadow: 0 4px 20px #5B4BC4;
+    box-shadow: 0 10px 20px var(--card-hover-shadow);
 }
 
 .cartao-modulo p:first-child {
     font-size: 0.8rem;
     font-weight: 700;
-    color:#5B4BC4;
+    color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 0.25rem;
@@ -172,20 +220,20 @@ a {
 .cartao-modulo h3 {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #292b40;
+    color: var(--text-main);
     margin-bottom: 0.5rem;
 }
 
 .cartao-modulo p:not(:first-child) {
     font-size: 0.9rem;
-    color: #64748b; 
+    color: var(--text-muted); 
     margin-bottom: 1rem;
 }
 
 .cartao-modulo a {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #5B4BC4;
+    color: var(--primary);
     transition: all 0.2s ease-in-out;
     width: fit-content;
 }
@@ -202,30 +250,32 @@ a {
 }
 
 .cartao-modulo a:hover {
-    color: #4f46e5;
     text-decoration: underline;
 }
 
-.titulo-pratica{
+.titulo-pratica {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.titulo-pratica p {
-    font-size: 1.05rem;
-    color:#64748b;
+.titulo-pratica h2 {
+    color: var(--text-main);
 }
 
+.titulo-pratica p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
 
 /* =================================================================
-   ESTILO DOS BOTÕES DE AÇÃO PRINCIPAIS
+   6. BOTÕES DE AÇÃO PRINCIPAIS
    ================================================================ */
 .botao-acao {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #5B4BC4;
+    background-color: var(--primary);
     color: #ffffff;
     padding: 0.75rem 1.75rem;
     border-radius: 0.5rem;
@@ -233,29 +283,32 @@ a {
     font-size: 0.95rem;
     width: fit-content;
     text-decoration: none;
-    box-shadow: 0 4px 6px -1px rgba(91, 75, 196, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease-in-out;
+    position: relative;
+    z-index: 2;
 }
 
 .botao-acao:hover {
-    background-color: #4f46e5;
+    background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px -2px rgba(91, 75, 196, 0.3);
     color: #ffffff; 
 }
+
 /* =================================================================
-   5. RODAPÉ
+   7. RODAPÉ
    ================================================================ */
 .rodape {
-    background-color: #ffffff;
-    border-top: 1px solid #e2e8f0;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
     padding: 2rem;
     text-align: center;
-    color:#64748b;
+    color: var(--text-muted);
     font-size: 0.85rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;  
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .rodape ul {
@@ -266,10 +319,13 @@ a {
 }
 
 .rodape li {
-    color: #24263B;
+    color: var(--text-main);
     font-weight: 500;
 }
 
+/* =================================================================
+   8. RESPONSIVIDADE
+   ================================================================ */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -281,8 +337,4 @@ a {
         flex-wrap: wrap;
         justify-content: center;
     }
-
 }
-
-
-
