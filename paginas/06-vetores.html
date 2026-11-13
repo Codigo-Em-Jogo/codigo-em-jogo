@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vetores</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body id="pagina-aula">
+<body id="pagina-aula" data-aula="aula6">
     <header id="cabecalho">
         <a href="../index.html">Código em Jogo</a>
 
@@ -38,7 +38,7 @@
 
         <div class="barra-progresso">
             <label for="progresso-trilha">Progresso</label>
-            <progress id="progresso-trilha" value="6" max="7">85,7%</progress>
+            <progress id="progresso-trilha" value="0" max="28">0%</progress>
             <p>Trilha em andamento</p>
         </div>
 
@@ -229,11 +229,15 @@ for (int i = 0; i &lt 5; i++) {
                         <legend>Respostas</legend>
                         <div class="resposta">
                             <label><input type="radio" name="exercicio1" value="a"><span>A) 4</span></label>
-                            <label><input type="radio" name="exercicio1" value="b"><span>B) 9</span></label>
+                            <label><input type="radio" name="exercicio1" value="b" data-certa="sim"><span>B) 2</span></label>
                             <label><input type="radio" name="exercicio1" value="c"><span>C) 7</span></label>
                             <label><input type="radio" name="exercicio1" value="d"><span>D) 5</span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
 
                 <article class="questao">
@@ -244,11 +248,15 @@ for (int i = 0; i &lt 5; i++) {
                         <legend>Respostas</legend>
                         <div class="resposta">
                             <label><input type="radio" name="exercicio2" value="a">1 a 5<span></span></label>
-                            <label><input type="radio" name="exercicio2" value="b">0 a 4<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="b" data-certa="sim">0 a 4<span></span></label>
                             <label><input type="radio" name="exercicio2" value="c">0 a 5<span></span></label>
                             <label><input type="radio" name="exercicio2" value="d">1 a 4<span></span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
                 <article class="questao">
                     <h3>Exercício 3</h3>
@@ -263,9 +271,13 @@ int vet[4] = {8, 3, 11, 5};
                             <label><input type="radio" name="exercicio3" value="a">A) vet[0]<span></span></label>
                             <label><input type="radio" name="exercicio3" value="b">B) vet[3]<span></span></label>
                             <label><input type="radio" name="exercicio3" value="c">C) vet[1]<span></span></label>
-                            <label><input type="radio" name="exercicio3" value="d">D) vet[2]<span></span></label>
+                            <label><input type="radio" name="exercicio3" value="d" data-certa="sim">D) vet[2]<span></span></label>__
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
                 <article class="questao">
                     <h3>Exercício 4</h3>
@@ -281,12 +293,16 @@ for (int i = 1; i &lt= 5; i++) {
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="checkbox" name="exercicio4" value="a">A) O valor 3.0 é incompátivel com o tipo char do vetor<span></span></label>
-                            <label><input type="checkbox" name="exercicio4" value="b">B) O for começa em <code>i = 1</code>, pulando a primeira posição do vetor<span></span></label>
+                            <label><input type="checkbox" name="exercicio4" value="a" data-certa="sim">A) O valor 3.0 é incompátivel com o tipo char do vetor<span></span></label>
+                            <label><input type="checkbox" name="exercicio4" value="b" data-certa="sim">B) O for começa em <code>i = 1</code>, pulando a primeira posição do vetor<span></span></label>
                             <label><input type="checkbox" name="exercicio4" value="c">C) O for deveria usar <code>i &lt= 4</code>, pois o último índice válido é vet[4]<span></span></label>
-                            <label><input type="checkbox" name="exercicio4" value="d">D) A condição do for deveria ser i &lt 5, pois o último índice válido é vet[4]<span></span></label>
+                            <label><input type="checkbox" name="exercicio4" value="d" data-certa="sim">D) A condição do for deveria ser i &lt 5, pois o último índice válido é vet[4]<span></span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
             </section>
         </section>
@@ -304,6 +320,9 @@ for (int i = 1; i &lt= 5; i++) {
             <li>Lucas Gabriel de Souza</li>
         </ul>
     </footer>
+
+    <script src="../js/main.js"></script>
+
 </body>
 
 </html>

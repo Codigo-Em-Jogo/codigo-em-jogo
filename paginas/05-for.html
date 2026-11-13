@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estrutura Repetitiva: For</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body id="pagina-aula">
+<body id="pagina-aula" data-aula="aula5">
     <header id="cabecalho">
         <a href="../index.html">Código em Jogo</a>
 
@@ -38,7 +38,7 @@
 
         <div class="barra-progresso">
             <label for="progresso-trilha">Progresso</label>
-            <progress id="progresso-trilha" value="5" max="7">71,4%</progress>
+            <progress id="progresso-trilha" value="0" max="28">0%</progress>
             <p>Trilha em andamento</p>
         </div>
 
@@ -234,12 +234,15 @@ for (int i = 2; i &lt;= 5; i++) {
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio1" value="a"><span>A) 2 3 4 5 </span></label>
+                            <label><input type="radio" name="exercicio1" value="a" data-certa="sim"><span>A) 2 3 4 5 </span></label>
                             <label><input type="radio" name="exercicio1" value="b"><span>B) 0123 </span></label>
                             <label><input type="radio" name="exercicio1" value="c"><span>C) 2345 </span></label>
                             <label><input type="radio" name="exercicio1" value="d"><span>D) 01234 </span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
                 </article>
 
                 <article class="questao">
@@ -261,10 +264,13 @@ printf ("%d", soma);
                         <div class="resposta">
                             <label><input type="radio" name="exercicio2" value="a"> <span>A) 5</span></label>
                             <label><input type="radio" name="exercicio2" value="b"> <span>B) 10</span></label>
-                            <label><input type="radio" name="exercicio2" value="c"> <span>C) 15</span></label>
+                            <label><input type="radio" name="exercicio2" value="c" data-certa="sim"> <span>C) 15</span></label>
                             <label><input type="radio" name="exercicio2" value="d"> <span>D) 20</span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
                 </article>
                 <article class="questao">
                     <h3>Exercício 3</h3>
@@ -281,11 +287,15 @@ for (int i = 3; i &lt;= 8; i++) {
                         <legend>Respostas</legend>
                         <div class="resposta">
                             <label><input type="radio" name="exercicio3" value="a"> <span>A) 5 vezes</span></label>
-                            <label><input type="radio" name="exercicio3" value="b"> <span>B) 6 vezes</span></label>
+                            <label><input type="radio" name="exercicio3" value="b" data-certa="sim"=""> <span>B) 6 vezes</span></label>
                             <label><input type="radio" name="exercicio3" value="c"> <span>C) 7 vezes</span></label>
                             <label><input type="radio" name="exercicio3" value="d"> <span>D) 8 vezes</span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
                 <article class="questao">
                     <h3>Exercício 4</h3>
@@ -304,7 +314,7 @@ for (int i = 1; i &lt; 5; i++) {
                         <div class="resposta">
                             <label><input type="radio" name="exercicio4" value="a"> <span>A) A variável <code>i</code>
                                     deveria começar em 0.</span></label>
-                            <label><input type="radio" name="exercicio4" value="b"> <span> B) A condição deveria ser
+                            <label><input type="radio" name="exercicio4" value="b" data-certa="sim"=""> <span> B) A condição deveria ser
                                     <code>i &lt;= 5</code></span></label>
                             <label><input type="radio" name="exercicio4" value="c"> <span>C) O comando <code>i++</code>
                                     deveria vir antes do<code>printf</code>.</span></label>
@@ -312,6 +322,10 @@ for (int i = 1; i &lt; 5; i++) {
                                     deveria exibir <code>i + 1</code>.</span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
             </section>
         </section>
@@ -329,6 +343,7 @@ for (int i = 1; i &lt; 5; i++) {
             <li>Lucas Gabriel de Souza</li>
         </ul>
     </footer>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

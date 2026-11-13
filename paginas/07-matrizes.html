@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrizes</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body id="pagina-aula">
+<body id="pagina-aula" data-aula="aula7">
     <header id="cabecalho">
         <a href="../index.html">Código em Jogo</a>
 
@@ -37,9 +37,9 @@
 
             <div class="barra-progresso">
                 <label for="progresso-trilha">Progresso</label>
-                <progress id="progresso-trilha" value="7" max="7">100%</progress>
+                <progress id="progresso-trilha" value="0" max="28">0%</progress>
                 <p>Trilha em andamento</p>
-            </div>        
+            </div>       
 
             <footer class="barra-lateral-rodape">
                 <a href="./06-vetores.html">Aula Anterior</a>
@@ -203,11 +203,15 @@ int main()
                         <legend>Respostas</legend>
                         <div class="resposta">
                             <label><input type="radio" name="exercicio1" value="a"><span>A) 2 linhas e 3 colunas</span></label>
-                            <label><input type="radio" name="exercicio1" value="b"><span>B) 3 linhas e 2 colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="b" data-certa="sim"><span>B) 3 linhas e 2 colunas</span></label>
                             <label><input type="radio" name="exercicio1" value="c"><span>C) 2 linhas e 2 colunas</span></label>
                             <label><input type="radio" name="exercicio1" value="d"><span>D) 3 linhas e 3 colunas</span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
 
                 <article class="questao">
@@ -228,10 +232,14 @@ int mat[2][3] = {
                         <div class="resposta">
                             <label><input type="radio" name="exercicio2" value="a">A) 4<span></span></label>
                             <label><input type="radio" name="exercicio2" value="b">B) 6<span></span></label>
-                            <label><input type="radio" name="exercicio2" value="c">C) 8<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="c" data-certa="sim">C) 8<span></span></label>
                             <label><input type="radio" name="exercicio2" value="d">D) 9<span></span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
 
                 <article class="questao">
@@ -242,11 +250,15 @@ int mat[2][3] = {
                         <legend>Respostas</legend>
                         <div class="resposta">
                             <label><input type="radio" name="exercicio3" value="a"><span>A) <code>[0][1], [1][2], [2][0]</code></span></label>
-                            <label><input type="radio" name="exercicio3" value="b"> <span>B) <code>[0][0], [1][1], [2][2]</code></span></label>
+                            <label><input type="radio" name="exercicio3" value="b" data-certa="sim"> <span>B) <code>[0][0], [1][1], [2][2]</code></span></label>
                             <label><input type="radio" name="exercicio3" value="c"> <span>C) <code>[0][2], [1][1], [2][0]</code></span></label>
                             <label><input type="radio" name="exercicio3" value="d"> <span>D) <code>[1][0], [1][1], [1][2]</code></span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>
                 <article class="questao">
                     <h3>Exercício 4</h3>
@@ -265,12 +277,16 @@ printf("%d", grade[2][0]);
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio4" value="a">A) 2<span></span></label>
+                            <label><input type="radio" name="exercicio4" value="a" data-certa="sim">A) 2<span></span></label>
                             <label><input type="radio" name="exercicio4" value="b">B) 3<span></span></label>
                             <label><input type="radio" name="exercicio4" value="c">C) 5<span></span></label>
                             <label><input type="radio" name="exercicio4" value="d">D) 6<span></span></label>
                         </div>
                     </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
                 </article>    
             </section>
         </section>
@@ -288,5 +304,7 @@ printf("%d", grade[2][0]);
             <li>Lucas Gabriel de Souza</li>
         </ul>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>
