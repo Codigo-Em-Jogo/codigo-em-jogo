@@ -1,228 +1,191 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estrutura Sequencial</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body id="pagina-aula">
- 
-<header id="cabecalho">
-    <a href="../index.html">Código em Jogo</a>
+<body id="pagina-aula" data-aula="aula2">
 
-    <nav id="menu-principal" aria-label="Menu principal">
-        <a href="../index.html">Início</a>
-        <a href="./01-algoritmos.html">Trilha C</a>
-        <a href="#exercicios">Praticar</a>
-    </nav>
-</header>
+    <header id="cabecalho">
+        <a href="../index.html">Código em Jogo</a>
 
-<aside id="barra-lateral">
-    <header class="barra-lateral-cabecalho">
-        <p>Trilha em C</p>
-        <button type="button">Recolher</button>
-        <h2>Conteúdo do Curso</h2>
+        <nav id="menu-principal" aria-label="Menu principal">
+            <a href="../index.html">Início</a>
+            <a href="./01-algoritmos.html">Trilha C</a>
+            <a href="#exercicios">Praticar</a>
+        </nav>
     </header>
 
-    <ul class="barra-lateral-lista">
-        <li>
-            <a href="./01-algoritmos.html">
-                Introdução a Algoritmos
-            </a>
-        </li>
+<aside id="barra-lateral" data-aula="aula1">
+            <header class="barra-lateral-cabecalho">
+                <p>Trilha em C</p>
+                <button type="button">Recolher</button>
+                <h2>Conteúdo do Curso</h2>
+            </header>      
+                
+            <ul class="barra-lateral-lista">
+                <li><a href="./01-algoritmos.html">Introdução à Algoritmos</a></li>
+                <li><a href="./02-sequenciais.html">Estrutura Sequencial</a></li>
+                <li><a href="./03-condicionais.html">Estruturas Condicionais</a></li>
+                <li><a href="./04-while.html">Estrutura Repetitiva: While</a></li>
+                <li><a href="./05-for.html">Estrutura Repetitiva: For</a></li>
+                <li><a href="./06-vetores.html">Vetores</a></li>
+                <li><a href="./07-matrizes.html">Matrizes</a></li>                
+            </ul>
 
-        <li>
-            <a href="./02-sequenciais.html" aria-current="page">
-                Estrutura Sequencial
-            </a>
-        </li>
+            <div class="barra-progresso">
+                <label for="progresso-trilha">Progresso</label>
+                <progress id="progresso-trilha" value="0" max="28">0%</progress>
+                <p>Trilha em andamento</p>
+            </div>       
 
-        <li>
-            <a href="./03-condicionais.html">
-                Estruturas Condicionais
-            </a>
-        </li>
+            <footer class="barra-lateral-rodape">
+                <a href="./01-algoritmos.html">Aula anterior</a>
+                <a href="./03-condicionais.html">Próxima aula</a>
+            </footer>
+        </aside>
 
-        <li>
-            <a href="./04-while.html">
-                Estrutura Repetitiva: While
-            </a>
-        </li>
+    <main>
+        <section id="conteudo-principal">
 
-        <li>
-            <a href="./05-for.html">
-                Estrutura Repetitiva: For
-            </a>
-        </li>
+            <header class="conteudo-principal-cabecalho">
+                <p>Módulo 02 — Estrutura Sequencial</p>
 
-        <li>
-            <a href="./06-vetores.html">
-                Vetores
-            </a>
-        </li>
+                <h1>Estrutura Sequencial em C</h1>
 
-        <li>
-            <a href="./07-matrizes.html">
-                Matrizes
-            </a>
-        </li>
-    </ul>
+                <p>
+                    A estrutura sequencial é uma das formas mais
+                    básicas de organizar um programa. Nela, as
+                    instruções são executadas uma após a outra,
+                    seguindo a ordem em que foram escritas.
+                </p>
 
-    <div class="barra-progresso">
-        <label for="progresso-trilha">Progresso</label>
+                <p>
+                    Nesta aula, você aprenderá a declarar variáveis,
+                    trabalhar com tipos de dados, receber informações
+                    do usuário, realizar cálculos e apresentar
+                    resultados utilizando a linguagem C.
+                </p>
+            </header>
 
-        <progress id="progresso-trilha" value="2" max="7">
-            28,6%
-        </progress>
+            <section class="secao-conteudo">
+                <h2>O que é uma estrutura sequencial?</h2>
 
-        <p>Trilha em andamento</p>
-    </div>
+                <p>
+                    Na estrutura sequencial, o programa executa
+                    os comandos na ordem em que aparecem,
+                    de cima para baixo, sem utilizar estruturas
+                    de decisão ou repetição.
+                </p>
 
-    <footer class="barra-lateral-rodape">
-        <a href="./01-algoritmos.html">Aula Anterior</a>
-        <a href="./03-condicionais.html">Próxima Aula</a>
-    </footer>
-</aside>
+                <p>
+                    Por exemplo, podemos criar um programa que
+                    solicita dois números, realiza uma soma
+                    e apresenta o resultado na tela.
+                </p>
 
-<main>
-    <section id="conteudo-principal">
+                <p>
+                    Para isso, seguimos três etapas:
+                    entrada de dados, processamento e saída
+                    de informações.
+                </p>
+            </section>
 
-        <header class="conteudo-principal-cabecalho">
-            <p>Módulo 02 — Estrutura Sequencial</p>
+            <section class="secao-conteudo">
+                <h2>Variáveis e tipos de dados</h2>
 
-            <h1>Estrutura Sequencial em C</h1>
+                <p>
+                    Uma variável é um espaço na memória do computador
+                    utilizado para armazenar informações que podem
+                    ser utilizadas ou modificadas durante a execução
+                    de um programa.
+                </p>
 
-            <p>
-                A estrutura sequencial é uma das formas mais
-                básicas de organizar um programa. Nela, as
-                instruções são executadas uma após a outra,
-                seguindo a ordem em que foram escritas.
-            </p>
+                <p>
+                    Na linguagem C, precisamos informar o tipo de dado
+                    que cada variável irá armazenar antes de utilizá-la.
+                    Esse processo é chamado de declaração de variável.
+                </p>
 
-            <p>
-                Nesta aula, você aprenderá a declarar variáveis,
-                trabalhar com tipos de dados, receber informações
-                do usuário, realizar cálculos e apresentar
-                resultados utilizando a linguagem C.
-            </p>
-        </header>
+                <h3>Principais tipos de dados</h3>
 
-        <section class="secao-conteudo">
-            <h2>O que é uma estrutura sequencial?</h2>
+                <ul>
+                    <li>
+                        <strong>int:</strong> armazena números inteiros,
+                        como 10, 25 e -3.
+                    </li>
 
-            <p>
-                Na estrutura sequencial, o programa executa
-                os comandos na ordem em que aparecem,
-                de cima para baixo, sem utilizar estruturas
-                de decisão ou repetição.
-            </p>
+                    <li>
+                        <strong>float:</strong> armazena números reais
+                        com casas decimais, como 7.5 e 3.14.
+                    </li>
 
-            <p>
-                Por exemplo, podemos criar um programa que
-                solicita dois números, realiza uma soma
-                e apresenta o resultado na tela.
-            </p>
+                    <li>
+                        <strong>double:</strong> também armazena números
+                        reais, geralmente com maior precisão que float.
+                    </li>
 
-            <p>
-                Para isso, seguimos três etapas:
-                entrada de dados, processamento e saída
-                de informações.
-            </p>
-        </section>
+                    <li>
+                        <strong>char:</strong> armazena um caractere,
+                        como 'A', 'B' ou '7'.
+                    </li>
+                </ul>
 
-<section class="secao-conteudo">
-    <h2>Variáveis e tipos de dados</h2>
+                <h3>Como declarar uma variável?</h3>
 
-    <p>
-        Uma variável é um espaço na memória do computador
-        utilizado para armazenar informações que podem
-        ser utilizadas ou modificadas durante a execução
-        de um programa.
-    </p>
+                <p>
+                    Para declarar uma variável, escrevemos primeiro
+                    o tipo de dado e depois o nome que desejamos
+                    atribuir a ela.
+                </p>
 
-    <p>
-        Na linguagem C, precisamos informar o tipo de dado
-        que cada variável irá armazenar antes de utilizá-la.
-        Esse processo é chamado de declaração de variável.
-    </p>
-
-    <h3>Principais tipos de dados</h3>
-
-    <ul>
-        <li>
-            <strong>int:</strong> armazena números inteiros,
-            como 10, 25 e -3.
-        </li>
-
-        <li>
-            <strong>float:</strong> armazena números reais
-            com casas decimais, como 7.5 e 3.14.
-        </li>
-
-        <li>
-            <strong>double:</strong> também armazena números
-            reais, geralmente com maior precisão que float.
-        </li>
-
-        <li>
-            <strong>char:</strong> armazena um caractere,
-            como 'A', 'B' ou '7'.
-        </li>
-    </ul>
-
-    <h3>Como declarar uma variável?</h3>
-
-    <p>
-        Para declarar uma variável, escrevemos primeiro
-        o tipo de dado e depois o nome que desejamos
-        atribuir a ela.
-    </p>
-
-    <pre><code class="codigo">int idade = 18;
+                <pre><code class="codigo">int idade = 18;
 float altura = 1.75;
 double preco = 29.90;
 char letra = 'A';</code></pre>
 
-    <p>
-        Nesse exemplo, criamos quatro variáveis.
-        Cada uma possui um tipo de dado e um valor
-        inicial correspondente.
-    </p>
+                <p>
+                    Nesse exemplo, criamos quatro variáveis.
+                    Cada uma possui um tipo de dado e um valor
+                    inicial correspondente.
+                </p>
 
-    <p>
-        Observe que, na linguagem C, utilizamos o ponto
-        para representar valores decimais e o ponto e
-        vírgula para finalizar as instruções.
-    </p>
-</section>
+                <p>
+                    Observe que, na linguagem C, utilizamos o ponto
+                    para representar valores decimais e o ponto e
+                    vírgula para finalizar as instruções.
+                </p>
+            </section>
 
 
-<section class="secao-conteudo">
-    <h2>Entrada e saída de dados</h2>
+            <section class="secao-conteudo">
+                <h2>Entrada e saída de dados</h2>
 
-    <p>
-        Na linguagem C, podemos utilizar comandos
-        para apresentar informações na tela e
-        receber dados digitados pelo usuário.
-    </p>
+                <p>
+                    Na linguagem C, podemos utilizar comandos
+                    para apresentar informações na tela e
+                    receber dados digitados pelo usuário.
+                </p>
 
-    <p>
-        Para isso, utilizamos principalmente
-        as funções <code>printf</code> e
-        <code>scanf</code>, disponíveis na
-        biblioteca <code>stdio.h</code>.
-    </p>
+                <p>
+                    Para isso, utilizamos principalmente
+                    as funções <code>printf</code> e
+                    <code>scanf</code>, disponíveis na
+                    biblioteca <code>stdio.h</code>.
+                </p>
 
-    <h3>Saída de dados com printf</h3>
+                <h3>Saída de dados com printf</h3>
 
-    <p>
-        A função <code>printf</code> permite
-        exibir mensagens e valores na tela.
-    </p>
+                <p>
+                    A função <code>printf</code> permite
+                    exibir mensagens e valores na tela.
+                </p>
 
-    <pre><code class="codigo">#include &lt;stdio.h&gt;
+                <pre><code class="codigo">#include &lt;stdio.h&gt;
 
 int main(void) {
     int idade = 18;
@@ -232,22 +195,22 @@ int main(void) {
     return 0;
 }</code></pre>
 
-    <p>
-        Nesse exemplo, <code>%d</code> indica
-        que será exibido um número inteiro.
-        Já <code>\n</code> representa uma
-        quebra de linha.
-    </p>
+                <p>
+                    Nesse exemplo, <code>%d</code> indica
+                    que será exibido um número inteiro.
+                    Já <code>\n</code> representa uma
+                    quebra de linha.
+                </p>
 
-    <h3>Entrada de dados com scanf</h3>
+                <h3>Entrada de dados com scanf</h3>
 
-    <p>
-        A função <code>scanf</code> permite
-        receber informações digitadas pelo
-        usuário e armazená-las em variáveis.
-    </p>
+                <p>
+                    A função <code>scanf</code> permite
+                    receber informações digitadas pelo
+                    usuário e armazená-las em variáveis.
+                </p>
 
-    <pre><code class="codigo">#include &lt;stdio.h&gt;
+                <pre><code class="codigo">#include &lt;stdio.h&gt;
 
 int main(void) {
     int idade;
@@ -260,105 +223,105 @@ int main(void) {
     return 0;
 }</code></pre>
 
-    <p>
-        Nesse exemplo, o programa solicita
-        a idade do usuário e armazena o valor
-        digitado na variável <code>idade</code>.
-    </p>
+                <p>
+                    Nesse exemplo, o programa solicita
+                    a idade do usuário e armazena o valor
+                    digitado na variável <code>idade</code>.
+                </p>
 
-    <p>
-        O símbolo <code>&amp;</code> utilizado
-        em <code>scanf</code> permite informar
-        o endereço de memória da variável
-        que receberá o valor digitado.
-    </p>
+                <p>
+                    O símbolo <code>&amp;</code> utilizado
+                    em <code>scanf</code> permite informar
+                    o endereço de memória da variável
+                    que receberá o valor digitado.
+                </p>
 
-    <h3>Formatadores mais utilizados</h3>
+                <h3>Formatadores mais utilizados</h3>
 
-    <ul>
-        <li>
-            <strong>%d:</strong> utilizado
-            para números inteiros.
-        </li>
+                <ul>
+                    <li>
+                        <strong>%d:</strong> utilizado
+                        para números inteiros.
+                    </li>
 
-        <li>
-            <strong>%f:</strong> utilizado
-            para números decimais do tipo float
-            em printf e scanf.
-        </li>
+                    <li>
+                        <strong>%f:</strong> utilizado
+                        para números decimais do tipo float
+                        em printf e scanf.
+                    </li>
 
-        <li>
-            <strong>%lf:</strong> utilizado
-            para ler valores double com scanf.
-        </li>
+                    <li>
+                        <strong>%lf:</strong> utilizado
+                        para ler valores double com scanf.
+                    </li>
 
-        <li>
-            <strong>%c:</strong> utilizado
-            para caracteres.
-        </li>
-    </ul>
-</section>
+                    <li>
+                        <strong>%c:</strong> utilizado
+                        para caracteres.
+                    </li>
+                </ul>
+            </section>
 
 
-<section class="secao-conteudo">
-    <h2>Operadores aritméticos</h2>
+            <section class="secao-conteudo">
+                <h2>Operadores aritméticos</h2>
 
-    <p>
-        Os operadores aritméticos permitem realizar
-        cálculos matemáticos utilizando valores
-        e variáveis em um programa.
-    </p>
+                <p>
+                    Os operadores aritméticos permitem realizar
+                    cálculos matemáticos utilizando valores
+                    e variáveis em um programa.
+                </p>
 
-    <p>
-        Na linguagem C, os principais operadores são:
-    </p>
+                <p>
+                    Na linguagem C, os principais operadores são:
+                </p>
 
-    <ul>
-        <li><strong>+ :</strong> adição.</li>
-        <li><strong>- :</strong> subtração.</li>
-        <li><strong>* :</strong> multiplicação.</li>
-        <li><strong>/ :</strong> divisão.</li>
-        <li><strong>% :</strong> resto da divisão inteira.</li>
-    </ul>
+                <ul>
+                    <li><strong>+ :</strong> adição.</li>
+                    <li><strong>- :</strong> subtração.</li>
+                    <li><strong>* :</strong> multiplicação.</li>
+                    <li><strong>/ :</strong> divisão.</li>
+                    <li><strong>% :</strong> resto da divisão inteira.</li>
+                </ul>
 
-    <h3>Exemplo de operação matemática</h3>
+                <h3>Exemplo de operação matemática</h3>
 
-    <pre><code class="codigo">int numero1 = 10;
+                <pre><code class="codigo">int numero1 = 10;
 int numero2 = 5;
 int soma;
 
 soma = numero1 + numero2;</code></pre>
 
-    <p>
-        Nesse exemplo, as variáveis
-        <code>numero1</code> e <code>numero2</code>
-        armazenam os valores 10 e 5.
-        O operador de adição realiza a soma,
-        e o resultado 15 é armazenado
-        na variável <code>soma</code>.
-    </p>
+                <p>
+                    Nesse exemplo, as variáveis
+                    <code>numero1</code> e <code>numero2</code>
+                    armazenam os valores 10 e 5.
+                    O operador de adição realiza a soma,
+                    e o resultado 15 é armazenado
+                    na variável <code>soma</code>.
+                </p>
 
-        <p>
-        É importante lembrar que, quando dividimos
-        dois valores inteiros em C, o resultado
-        também é inteiro, com a parte decimal
-        descartada.
-    </p>
-</section>
+                <p>
+                    É importante lembrar que, quando dividimos
+                    dois valores inteiros em C, o resultado
+                    também é inteiro, com a parte decimal
+                    descartada.
+                </p>
+            </section>
 
-<section class="exemplo">
-    <h2>Exemplo prático: área de um retângulo</h2>
+            <section class="exemplo">
+                <h2>Exemplo prático: área de um retângulo</h2>
 
-    <p>
-        Vamos desenvolver um programa que solicita
-        a base e a altura de um retângulo, calcula
-        sua área e apresenta o resultado na tela.
-    </p>
+                <p>
+                    Vamos desenvolver um programa que solicita
+                    a base e a altura de um retângulo, calcula
+                    sua área e apresenta o resultado na tela.
+                </p>
 
-    <div class="exemplo-codigo">
-        <h3>Código em C</h3>
+                <div class="exemplo-codigo">
+                    <h3>Código em C</h3>
 
-        <pre><code class="codigo">#include &lt;stdio.h&gt;
+                    <pre><code class="codigo">#include &lt;stdio.h&gt;
 
 int main(void) {
     float base, altura, area;
@@ -375,288 +338,303 @@ int main(void) {
 
     return 0;
 }</code></pre>
-    </div>
+                </div>
 
-    <div class="exemplo-resultado">
-        <h3>Exemplo de execução</h3>
+                <div class="exemplo-resultado">
+                    <h3>Exemplo de execução</h3>
 
-        <pre><samp>Digite a base: 5
+                    <pre><samp>Digite a base: 5
 Digite a altura: 3
 Area: 15.00</samp></pre>
-    </div>
+                </div>
 
-    <h3>Entendendo o programa</h3>
+                <h3>Entendendo o programa</h3>
 
-    <p>
-        Primeiro, declaramos três variáveis
-        do tipo <code>float</code>: base,
-        altura e area.
-    </p>
+                <p>
+                    Primeiro, declaramos três variáveis
+                    do tipo <code>float</code>: base,
+                    altura e area.
+                </p>
 
-    <p>
-        Depois, utilizamos <code>scanf</code>
-        para receber os valores informados
-        pelo usuário.
-    </p>
+                <p>
+                    Depois, utilizamos <code>scanf</code>
+                    para receber os valores informados
+                    pelo usuário.
+                </p>
 
-    <p>
-        Em seguida, multiplicamos a base
-        pela altura e armazenamos o resultado
-        na variável <code>area</code>.
-    </p>
+                <p>
+                    Em seguida, multiplicamos a base
+                    pela altura e armazenamos o resultado
+                    na variável <code>area</code>.
+                </p>
 
-    <p>
-        Por fim, utilizamos <code>printf</code>
-        para apresentar o resultado.
-        O formato <code>%.2f</code> exibe
-        o número com duas casas decimais.
-        </p>
-</section>
+                <p>
+                    Por fim, utilizamos <code>printf</code>
+                    para apresentar o resultado.
+                    O formato <code>%.2f</code> exibe
+                    o número com duas casas decimais.
+                </p>
+            </section>
 
 
-<section class="secao-conteudo">
-    <h2>Erros comuns</h2>
+            <section class="secao-conteudo">
+                <h2>Erros comuns</h2>
 
-    <p>
-        Ao desenvolver programas em C, alguns erros
-        são frequentes entre os iniciantes.
-    </p>
+                <p>
+                    Ao desenvolver programas em C, alguns erros
+                    são frequentes entre os iniciantes.
+                </p>
 
-    <ul>
-        <li>Esquecer o ponto e vírgula ao final das instruções.</li>
-        <li>Utilizar uma variável sem declará-la.</li>
-        <li>Utilizar o especificador de formato incorreto em printf ou scanf.</li>
-        <li>Esquecer o símbolo &amp; no scanf ao ler variáveis numéricas comuns.</li>
-        <li>Confundir atribuição (=) com comparação (==).</li>
-        <li>Esperar um resultado decimal ao dividir dois números inteiros.</li>
-    </ul>
-</section>
+                <ul>
+                    <li>Esquecer o ponto e vírgula ao final das instruções.</li>
+                    <li>Utilizar uma variável sem declará-la.</li>
+                    <li>Utilizar o especificador de formato incorreto em printf ou scanf.</li>
+                    <li>Esquecer o símbolo &amp; no scanf ao ler variáveis numéricas comuns.</li>
+                    <li>Confundir atribuição (=) com comparação (==).</li>
+                    <li>Esperar um resultado decimal ao dividir dois números inteiros.</li>
+                </ul>
+            </section>
 
-<section class="secao-conteudo">
-    <h2>Resumo</h2>
+            <section class="secao-conteudo">
+                <h2>Resumo</h2>
 
-    <p>
-        A estrutura sequencial executa as instruções
-        na ordem em que foram escritas.
-    </p>
+                <p>
+                    A estrutura sequencial executa as instruções
+                    na ordem em que foram escritas.
+                </p>
 
-    <p>
-        Nesta aula, aprendemos sobre variáveis,
-        tipos de dados, operadores aritméticos,
-        entrada e saída de informações com
-        printf e scanf.
-    </p>
+                <p>
+                    Nesta aula, aprendemos sobre variáveis,
+                    tipos de dados, operadores aritméticos,
+                    entrada e saída de informações com
+                    printf e scanf.
+                </p>
 
-    <p>
-        Também desenvolvemos um programa para
-        calcular a área de um retângulo,
-        utilizando entrada, processamento e saída.
-    </p>
+                <p>
+                    Também desenvolvemos um programa para
+                    calcular a área de um retângulo,
+                    utilizando entrada, processamento e saída.
+                </p>
 
-    <p>
-        Esses conhecimentos serão importantes
-        para estudar as estruturas condicionais
-        na próxima aula.
-    </p>
-</section>
+                <p>
+                    Esses conhecimentos serão importantes
+                    para estudar as estruturas condicionais
+                    na próxima aula.
+                </p>
+            </section>
 
-<section class="exercicios" id="exercicios">
-    <h2>Exercícios de Fixação</h2>
+            <section class="exercicios" id="exercicios">
+                <h2>Exercícios de Fixação</h2>
 
-    <p>
-        Agora é hora de praticar os conceitos
-        apresentados nesta aula.
-    </p>
+                <p>
+                    Agora é hora de praticar os conceitos
+                    apresentados nesta aula.
+                </p>
 
-    <article class="questao">
-        <h3>Exercício 1</h3>
+                <article class="questao">
+                    <h3>Exercício 1</h3>
 
-        <p>
-            Qual alternativa descreve corretamente
-            uma estrutura sequencial?
-        </p>
+                    <p>
+                        Qual alternativa descreve corretamente
+                        uma estrutura sequencial?
+                    </p>
 
-        <fieldset>
-            <legend>Respostas</legend>
+                    <fieldset>
+                        <legend>Respostas</legend>
 
-            <div class="resposta">
-                <label>
-                    <input type="radio" name="exercicio1" value="a">
-                    <span>
-                        A) Executa comandos somente quando
-                        uma condição é verdadeira.
-                    </span>
-                </label>
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio1" value="a">
+                                <span>
+                                    A) Executa comandos somente quando
+                                    uma condição é verdadeira.
+                                </span>
+                            </label>
 
-                <label>
-                    <input type="radio" name="exercicio1" value="b">
-                    <span>
-                        B) Executa instruções na ordem
-                        em que foram escritas.
-                    </span>
-                </label>
+                            <label>
+                                <input type="radio" name="exercicio1" value="b" data-certa="sim">
+                                <span>
+                                    B) Executa instruções na ordem
+                                    em que foram escritas.
+                                </span>
+                            </label>
 
-                <label>
-                    <input type="radio" name="exercicio1" value="c">
-                    <span>
-                        C) Repete automaticamente um
-                        conjunto de instruções.
-                    </span>
-                </label>
+                            <label>
+                                <input type="radio" name="exercicio1" value="c">
+                                <span>
+                                    C) Repete automaticamente um
+                                    conjunto de instruções.
+                                </span>
+                            </label>
 
-                <label>
-                    <input type="radio" name="exercicio1" value="d">
-                    <span>
-                        D) Executa apenas comandos
-                        de entrada de dados.
-                    </span>
-                </label>
-            </div>
-        </fieldset>
-    </article>
+                            <label>
+                                <input type="radio" name="exercicio1" value="d">
+                                <span>
+                                    D) Executa apenas comandos
+                                    de entrada de dados.
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
 
-<article class="questao">
-    <h3>Exercício 2</h3>
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
 
-    <p>
-        Qual tipo de dado é mais adequado para
-        armazenar a idade de uma pessoa em anos completos?
-    </p>
+                </article>
 
-    <fieldset>
-        <legend>Respostas</legend>
+                <article class="questao">
+                    <h3>Exercício 2</h3>
 
-        <div class="resposta">
-            <label>
-                <input type="radio" name="exercicio2" value="a">
-                <span>A) float</span>
-            </label>
+                    <p>
+                        Qual tipo de dado é mais adequado para
+                        armazenar a idade de uma pessoa em anos completos?
+                    </p>
 
-            <label>
-                <input type="radio" name="exercicio2" value="b">
-                <span>B) char</span>
-            </label>
+                    <fieldset>
+                        <legend>Respostas</legend>
 
-            <label>
-                <input type="radio" name="exercicio2" value="c">
-                <span>C) int</span>
-            </label>
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio2" value="a">
+                                <span>A) float</span>
+                            </label>
 
-            <label>
-                <input type="radio" name="exercicio2" value="d">
-                <span>D) double</span>
-            </label>
-        </div>
-    </fieldset>
-</article>
+                            <label>
+                                <input type="radio" name="exercicio2" value="b">
+                                <span>B) char</span>
+                            </label>
 
-<article class="questao">
-    <h3>Exercício 3</h3>
+                            <label>
+                                <input type="radio" name="exercicio2" value="c" data-certa="sim">
+                                <span>C) int</span>
+                            </label>
 
-    <p>
-        Observe o código abaixo:
-    </p>
+                            <label>
+                                <input type="radio" name="exercicio2" value="d">
+                                <span>D) double</span>
+                            </label>
+                        </div>
+                    </fieldset>
 
-    <pre><code class="codigo">int numero;
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
+                </article>
+
+                <article class="questao">
+                    <h3>Exercício 3</h3>
+
+                    <p>
+                        Observe o código abaixo:
+                    </p>
+
+                    <pre><code class="codigo">int numero;
 scanf("%d", &amp;numero);</code></pre>
 
-    <p>
-        Qual é a função do comando scanf nesse exemplo?
-    </p>
+                    <p>
+                        Qual é a função do comando scanf nesse exemplo?
+                    </p>
 
-    <fieldset>
-        <legend>Respostas</legend>
+                    <fieldset>
+                        <legend>Respostas</legend>
 
-        <div class="resposta">
-            <label>
-                <input type="radio" name="exercicio3" value="a">
-                <span>A) Apresentar uma mensagem na tela.</span>
-            </label>
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio3" value="a">
+                                <span>A) Apresentar uma mensagem na tela.</span>
+                            </label>
 
-            <label>
-                <input type="radio" name="exercicio3" value="b">
-                <span>B) Realizar uma operação matemática.</span>
-            </label>
+                            <label>
+                                <input type="radio" name="exercicio3" value="b">
+                                <span>B) Realizar uma operação matemática.</span>
+                            </label>
 
-            <label>
-                <input type="radio" name="exercicio3" value="c">
-                <span>C) Criar uma nova variável.</span>
-            </label>
+                            <label>
+                                <input type="radio" name="exercicio3" value="c">
+                                <span>C) Criar uma nova variável.</span>
+                            </label>
 
-            <label>
-                <input type="radio" name="exercicio3" value="d">
-                <span>D) Ler um número inteiro digitado pelo usuário.</span>
-            </label>
-        </div>
-    </fieldset>
-</article>
+                            <label>
+                                <input type="radio" name="exercicio3" value="d" data-certa="sim">
+                                <span>D) Ler um número inteiro digitado pelo usuário.</span>
+                            </label>
+                        </div>
+                    </fieldset>
 
-<article class="questao">
-    <h3>Exercício 4</h3>
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
 
-    <p>
-        Analise o seguinte trecho de código:
-    </p>
+                </article>
 
-    <pre><code class="codigo">int a = 8;
+                <article class="questao">
+                    <h3>Exercício 4</h3>
+
+                    <p>
+                        Analise o seguinte trecho de código:
+                    </p>
+
+                    <pre><code class="codigo">int a = 8;
 int b = 4;
 int resultado;
 
 resultado = a * b;</code></pre>
 
-    <p>
-        Qual valor será armazenado na variável resultado?
-    </p>
+                    <p>
+                        Qual valor será armazenado na variável resultado?
+                    </p>
 
-    <fieldset>
-        <legend>Respostas</legend>
+                    <fieldset>
+                        <legend>Respostas</legend>
 
-        <div class="resposta">
-            <label>
-                <input type="radio" name="exercicio4" value="a">
-                <span>A) 12</span>
-            </label>
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio4" value="a">
+                                <span>A) 12</span>
+                            </label>
 
-            <label>
-                <input type="radio" name="exercicio4" value="b">
-                <span>B) 32</span>
-            </label>
+                            <label>
+                                <input type="radio" name="exercicio4" value="b" data-certa="sim">
+                                <span>B) 32</span>
+                            </label>
 
-            <label>
-                <input type="radio" name="exercicio4" value="c">
-                <span>C) 4</span>
-            </label>
+                            <label>
+                                <input type="radio" name="exercicio4" value="c">
+                                <span>C) 4</span>
+                            </label>
 
-            <label>
-                <input type="radio" name="exercicio4" value="d">
-                <span>D) 2</span>
-            </label>
-        </div>
-    </fieldset>
-</article>
+                            <label>
+                                <input type="radio" name="exercicio4" value="d">
+                                <span>D) 2</span>
+                            </label>
+                        </div>
+                    </fieldset>
 
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
 
-</section>
-
-
-</section>
-</main>
-
-<footer class="rodape">
-    <p>Código em Jogo - Projeto Integrador - Fatec</p>
-
-    <p>Feito para quem está começando.</p>
-
-    <p>Integrantes:</p>
-
-    <ul>
-        <li>Abinad Henrique da Silva Santos</li>
-        <li>Jaidy Miyuki dos Santos Yamada</li>
-        <li>Juliana de Arruda Meyer Coracini</li>
-        <li>Lucas Gabriel de Souza</li>
-    </ul>
-</footer>
+                </article>
+            </section>
 
 
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Código em Jogo - Projeto Integrador - Fatec</p>
+
+        <p>Feito para quem está começando.</p>
+
+        <p>Integrantes:</p>
+
+        <ul>
+            <li>Abinad Henrique da Silva Santos</li>
+            <li>Jaidy Miyuki dos Santos Yamada</li>
+            <li>Juliana de Arruda Meyer Coracini</li>
+            <li>Lucas Gabriel de Souza</li>
+        </ul>
+    </footer>
+
+    <script src="../js/main.js"></script>
 </body>
+
 </html>

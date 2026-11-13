@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrizes</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body id="pagina-aula" data-aula="aula7">
     <header id="cabecalho">
         <a href="../index.html">Código em Jogo</a>
@@ -15,69 +17,82 @@
             <a href="./01-algoritmos.html">Trilha C</a>
             <a href="#exercicios">Praticar</a>
         </nav>
-    </header>    
+    </header>
+
+    <aside id="barra-lateral">
+        <header class="barra-lateral-cabecalho">
+            <p>Trilha em C</p>
+            <button type="button">Recolher</button>
+            <h2>Conteúdo do Curso</h2>
+        </header>
+
+        <ul class="barra-lateral-lista">
+            <li><a href="./01-algoritmos.html">Introdução à Algoritmos</a></li>
+            <li><a href="./02-sequenciais.html">Estrutura Sequencial</a></li>
+            <li><a href="./03-condicionais.html">Estruturas Condicionais</a></li>
+            <li><a href="./04-while.html">Estrutura Repetitiva: While</a></li>
+            <li><a href="./05-for.html">Estrutura Repetitiva: For</a></li>
+            <li><a href="./06-vetores.html">Vetores</a></li>
+            <li><a href="./07-matrizes.html">Matrizes</a></li>
+        </ul>
+
+        <div class="barra-progresso">
+            <label for="progresso-trilha">Progresso</label>
+            <progress id="progresso-trilha" value="0" max="28">0%</progress>
+            <p>Trilha em andamento</p>
+        </div>
+
+        <footer class="barra-lateral-rodape">
+            <a href="./06-vetores.html">Aula Anterior</a>
+        </footer>
+    </aside>
+
 
     <main>
-        <aside id="barra-lateral">
-            <header class="barra-lateral-cabecalho">
-                <p>Trilha em C</p>
-                <button type="button">Recolher</button>
-                <h2>Conteúdo do Curso</h2>
-            </header>      
-                
-            <ul class="barra-lateral-lista">
-                <li><a href="./01-algoritmos.html">Introdução à Algoritmos</a></li>
-                <li><a href="./02-sequenciais.html">Estrutura Sequencial</a></li>
-                <li><a href="./03-condicionais.html">Estruturas Condicionais</a></li>
-                <li><a href="./04-while.html">Estrutura Repetitiva: While</a></li>
-                <li><a href="./05-for.html">Estrutura Repetitiva: For</a></li>
-                <li><a href="./06-vetores.html">Vetores</a></li>
-                <li><a href="./07-matrizes.html">Matrizes</a></li>                
-            </ul>
-
-            <div class="barra-progresso">
-                <label for="progresso-trilha">Progresso</label>
-                <progress id="progresso-trilha" value="0" max="28">0%</progress>
-                <p>Trilha em andamento</p>
-            </div>       
-
-            <footer class="barra-lateral-rodape">
-                <a href="./06-vetores.html">Aula Anterior</a>
-            </footer>
-        </aside>
-        
         <section id="conteudo-principal">
             <header class="conteudo-principal-cabecalho">
                 <p>Módulo 06 — Coleções: Vetores</p>
                 <h1>O que é uma matriz?</h1>
                 <p>
-                    Uma matriz é uma estrutura de dados utilizada para armazenar vários valores de um mesmo tipo em uma única variável. 
-                    Ela organiza esses valores em linhas e colunas, permitindo acessar cada elemento através de sua posição (índice). 
-                    É bastante útil quando precisamos trabalhar com grandes quantidades de informações sem precisar criar uma variável para cada valor.
+                    Uma matriz é uma estrutura de dados utilizada para armazenar vários valores de um mesmo tipo em uma
+                    única variável.
+                    Ela organiza esses valores em linhas e colunas, permitindo acessar cada elemento através de sua
+                    posição (índice).
+                    É bastante útil quando precisamos trabalhar com grandes quantidades de informações sem precisar
+                    criar uma variável para cada valor.
                 </p>
             </header>
 
             <section class="secao-conteudo">
                 <h2>Quando usar uma matriz?</h2>
                 <p>
-                    Uma matriz é utilizada quando precisamos armazenar e organizar vários dados relacionados em linhas e colunas. 
-                    Ela é especialmente útil quando trabalhamos com informações que possuem uma estrutura organizada, como tabelas, 
-                    notas de alunos, estoques de produtos ou até mesmo tabuleiros de jogos. Por exemplo, podemos utilizar uma matriz 
-                    para armazenar as notas de vários alunos em diferentes disciplinas, facilitando a consulta e a manipulação desses dados.
+                    Uma matriz é utilizada quando precisamos armazenar e organizar vários dados relacionados em linhas e
+                    colunas.
+                    Ela é especialmente útil quando trabalhamos com informações que possuem uma estrutura organizada,
+                    como tabelas,
+                    notas de alunos, estoques de produtos ou até mesmo tabuleiros de jogos. Por exemplo, podemos
+                    utilizar uma matriz
+                    para armazenar as notas de vários alunos em diferentes disciplinas, facilitando a consulta e a
+                    manipulação desses dados.
                 </p>
             </section>
 
             <section class="secao-conteudo">
                 <h2>Percorrendo os índices e posições de uma matriz</h2>
-                <p> 
-                    Diferente dos vetores, que possuem apenas uma dimensão, as matrizes possuem linhas e colunas. 
-                    Por isso, precisamos de dois índices para acessar cada elemento: um para indicar a linha e outro para indicar a coluna. 
-                    Mas, sssim como nos vetores, podemos utilizar estruturas for para percorrer todas as posições de uma matriz. Nesse caso, 
-                    utilizamos um for dentro de outro: o primeiro percorre as linhas, enquanto o segundo percorre as colunas.
+                <p>
+                    Diferente dos vetores, que possuem apenas uma dimensão, as matrizes possuem linhas e colunas.
+                    Por isso, precisamos de dois índices para acessar cada elemento: um para indicar a linha e outro
+                    para indicar a coluna.
+                    Mas, sssim como nos vetores, podemos utilizar estruturas for para percorrer todas as posições de uma
+                    matriz. Nesse caso,
+                    utilizamos um for dentro de outro: o primeiro percorre as linhas, enquanto o segundo percorre as
+                    colunas.
                 </p>
                 <p>
-                    Em uma matriz <code>notas[2][3]</code>, existem duas linhas e três colunas, totalizando seis posições. Podemos acessar cada elemento utilizando dois índices, 
-                    como <code>notas[0][0], notas[0][1] e notas[1][2]</code>. Dessa forma, conseguimos preencher ou acessar todos os elementos da matriz de maneira organizada, 
+                    Em uma matriz <code>notas[2][3]</code>, existem duas linhas e três colunas, totalizando seis
+                    posições. Podemos acessar cada elemento utilizando dois índices,
+                    como <code>notas[0][0], notas[0][1] e notas[1][2]</code>. Dessa forma, conseguimos preencher ou
+                    acessar todos os elementos da matriz de maneira organizada,
                     sem precisar indicar cada posição manualmente como no exemplo abaixo:
                 </p>
             </section>
@@ -124,26 +139,35 @@ int main()
                 <h2>Entendendo o exemplo</h2>
 
                 <p>
-                    Primeiro a matriz tem seu tipo, número de linhas e colunas declaradas, e recebe seus valores iniciais manualmente antes de ser usada dentro do <code>for</code>.
-                    Depois é construído um primeiro <code>for</code> que tem como condição iniciar de <code>0</code> e ir no máximo até <code>2</code>, 
+                    Primeiro a matriz tem seu tipo, número de linhas e colunas declaradas, e recebe seus valores
+                    iniciais manualmente antes de ser usada dentro do <code>for</code>.
+                    Depois é construído um primeiro <code>for</code> que tem como condição iniciar de <code>0</code> e
+                    ir no máximo até <code>2</code>,
                     utilizando a variável <code>i</code> para percorrer as linhas da matriz.
                 </p>
 
                 <p>
-                    Dentro dele é construído um segundo <code>for</code> que tem como condição iniciar de <code>0</code> e ir no máximo até <code>2</code>, utilizando a variável 
+                    Dentro dele é construído um segundo <code>for</code> que tem como condição iniciar de <code>0</code>
+                    e ir no máximo até <code>2</code>, utilizando a variável
                     <code>j</code> para percorrer as colunas.
-                    Ao acessar a matriz dentro desse segundo <code>for</code>, utilizam-se os índices <code>i</code> e <code>j</code> já declarados na construção de cada <code>for</code>.
+                    Ao acessar a matriz dentro desse segundo <code>for</code>, utilizam-se os índices <code>i</code> e
+                    <code>j</code> já declarados na construção de cada <code>for</code>.
                 </p>
 
                 <p>
-                    Na execução, os valores de <code>i</code> e <code>j</code> começam em <code>0</code>, acessando a primeira linha e a primeira coluna da matriz. 
-                    Conforme <code>j</code> e <code>i</code> são incrementados por <code>j++</code> e <code>i++</code>, o <code>printf</code> exibe cada elemento na tela.
+                    Na execução, os valores de <code>i</code> e <code>j</code> começam em <code>0</code>, acessando a
+                    primeira linha e a primeira coluna da matriz.
+                    Conforme <code>j</code> e <code>i</code> são incrementados por <code>j++</code> e <code>i++</code>,
+                    o <code>printf</code> exibe cada elemento na tela.
                 </p>
 
                 <p>
-                    Quando o segundo <code>for</code> termina de percorrer todas as colunas de uma linha, o comando <code>printf("\n")</code> quebra a linha antes que o 
-                    primeiro <code>for</code> avance. Após isso, o primeiro <code>for</code> tem seu <code>i</code> incrementado em 1 e o programa retorna 
-                    ao segundo <code>for</code>, começando novamente de <code>0</code> até <code>2</code>, e continua nesse ciclo até que o valor de 
+                    Quando o segundo <code>for</code> termina de percorrer todas as colunas de uma linha, o comando
+                    <code>printf("\n")</code> quebra a linha antes que o
+                    primeiro <code>for</code> avance. Após isso, o primeiro <code>for</code> tem seu <code>i</code>
+                    incrementado em 1 e o programa retorna
+                    ao segundo <code>for</code>, começando novamente de <code>0</code> até <code>2</code>, e continua
+                    nesse ciclo até que o valor de
                     <code>i</code> seja maior que <code>2</code> e sua execução se encerre.
                 </p>
             </section>
@@ -152,20 +176,27 @@ int main()
                 <h2>Entendendo as variáveis i e j no for</h2>
 
                 <p>
-                    As letras <code>i</code> e <code>j</code> não são comandos obrigatórios da linguagem C, mas sim uma convenção da programação. 
-                    A letra <code>i</code> vem de <em>index</em> (índice) e, quando há um segundo for dentro do primeiro, usa-se a letra seguinte do alfabeto, o <code>j</code>.
+                    As letras <code>i</code> e <code>j</code> não são comandos obrigatórios da linguagem C, mas sim uma
+                    convenção da programação.
+                    A letra <code>i</code> vem de <em>index</em> (índice) e, quando há um segundo for dentro do
+                    primeiro, usa-se a letra seguinte do alfabeto, o <code>j</code>.
                 </p>
-    
+
                 <p>
-                    Além do costume, usar uma variável diferente evita sobrescrever o valor de <code>i</code>, já que o primeiro for ainda está usando essa variável 
-                    para controlar as repetições do primeiro for. Mas, na prática, algo como <code>linha</code> no lugar de <code>i</code> e <code>coluna</code> 
+                    Além do costume, usar uma variável diferente evita sobrescrever o valor de <code>i</code>, já que o
+                    primeiro for ainda está usando essa variável
+                    para controlar as repetições do primeiro for. Mas, na prática, algo como <code>linha</code> no lugar
+                    de <code>i</code> e <code>coluna</code>
                     no lugar de <code>j</code> funcionaria da mesma forma.
                 </p>
 
                 <p>
-                    Também não é obrigatório declarar <code>int i</code> e <code>int j</code> dentro do <code>for</code>. 
-                    Elas poderiam ser criadas no início do código junto com as outras variáveis (como <code>int i, j;</code>), 
-                    mas declará-las direto no for é uma prática melhor porque limita a existência delas apenas ao momento da repetição, 
+                    Também não é obrigatório declarar <code>int i</code> e <code>int j</code> dentro do
+                    <code>for</code>.
+                    Elas poderiam ser criadas no início do código junto com as outras variáveis (como
+                    <code>int i, j;</code>),
+                    mas declará-las direto no for é uma prática melhor porque limita a existência delas apenas ao
+                    momento da repetição,
                     deixando o código mais organizado e seguro.
                 </p>
             </section>
@@ -176,8 +207,10 @@ int main()
                     <li>Inverter a ordem dos índices e acessar uma posição diferente da desejada.</li>
                     <li>Percorrer uma linha ou coluna além do tamanho declarado.</li>
                     <li>Usar apenas um for quando é necessário percorrer linhas e colunas</li>
-                    <li>Tentar acessar uma posição usando vírgula (<code>mat[i, j]</code>) ou apenas um colchete (<code>mat[i]</code>) em vez de dois colchetes separados (<code>mat[i][j]</code>).</li>
-                    <li>Usar a mesma variável (como <code>i</code>) nos dois <code>for</code>, fazendo o <code>for</code> de dentro sobrescrever o controle das linhas.</li>
+                    <li>Tentar acessar uma posição usando vírgula (<code>mat[i, j]</code>) ou apenas um colchete
+                        (<code>mat[i]</code>) em vez de dois colchetes separados (<code>mat[i][j]</code>).</li>
+                    <li>Usar a mesma variável (como <code>i</code>) nos dois <code>for</code>, fazendo o
+                        <code>for</code> de dentro sobrescrever o controle das linhas.</li>
                 </ul>
             </section>
 
@@ -202,10 +235,14 @@ int main()
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio1" value="a"><span>A) 2 linhas e 3 colunas</span></label>
-                            <label><input type="radio" name="exercicio1" value="b" data-certa="sim"><span>B) 3 linhas e 2 colunas</span></label>
-                            <label><input type="radio" name="exercicio1" value="c"><span>C) 2 linhas e 2 colunas</span></label>
-                            <label><input type="radio" name="exercicio1" value="d"><span>D) 3 linhas e 3 colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="a"><span>A) 2 linhas e 3
+                                    colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="b" data-certa="sim"><span>B) 3 linhas e
+                                    2 colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="c"><span>C) 2 linhas e 2
+                                    colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="d"><span>D) 3 linhas e 3
+                                    colunas</span></label>
                         </div>
                     </fieldset>
 
@@ -226,13 +263,14 @@ int mat[2][3] = {
 {7, 8, 9}
 };
 
-                    </code></pre>    
+                    </code></pre>
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
                             <label><input type="radio" name="exercicio2" value="a">A) 4<span></span></label>
                             <label><input type="radio" name="exercicio2" value="b">B) 6<span></span></label>
-                            <label><input type="radio" name="exercicio2" value="c" data-certa="sim">C) 8<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="c" data-certa="sim">C)
+                                8<span></span></label>
                             <label><input type="radio" name="exercicio2" value="d">D) 9<span></span></label>
                         </div>
                     </fieldset>
@@ -245,14 +283,18 @@ int mat[2][3] = {
                 <article class="questao">
                     <h3>Exercício 3</h3>
                     <p>Quais posições formam a diagonal principal de uma matriz quadrada 3 por 3?</p>
-    
+
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio3" value="a"><span>A) <code>[0][1], [1][2], [2][0]</code></span></label>
-                            <label><input type="radio" name="exercicio3" value="b" data-certa="sim"> <span>B) <code>[0][0], [1][1], [2][2]</code></span></label>
-                            <label><input type="radio" name="exercicio3" value="c"> <span>C) <code>[0][2], [1][1], [2][0]</code></span></label>
-                            <label><input type="radio" name="exercicio3" value="d"> <span>D) <code>[1][0], [1][1], [1][2]</code></span></label>
+                            <label><input type="radio" name="exercicio3" value="a"><span>A)
+                                    <code>[0][1], [1][2], [2][0]</code></span></label>
+                            <label><input type="radio" name="exercicio3" value="b" data-certa="sim"> <span>B)
+                                    <code>[0][0], [1][1], [2][2]</code></span></label>
+                            <label><input type="radio" name="exercicio3" value="c"> <span>C)
+                                    <code>[0][2], [1][1], [2][0]</code></span></label>
+                            <label><input type="radio" name="exercicio3" value="d"> <span>D)
+                                    <code>[1][0], [1][1], [1][2]</code></span></label>
                         </div>
                     </fieldset>
 
@@ -273,11 +315,12 @@ int grade[3][2] = {
     {5, 6}
 };
 printf("%d", grade[2][0]);
-                    </code></pre>    
+                    </code></pre>
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio4" value="a" data-certa="sim">A) 2<span></span></label>
+                            <label><input type="radio" name="exercicio4" value="a" data-certa="sim">A)
+                                2<span></span></label>
                             <label><input type="radio" name="exercicio4" value="b">B) 3<span></span></label>
                             <label><input type="radio" name="exercicio4" value="c">C) 5<span></span></label>
                             <label><input type="radio" name="exercicio4" value="d">D) 6<span></span></label>
@@ -287,11 +330,11 @@ printf("%d", grade[2][0]);
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
-                </article>    
+                </article>
             </section>
         </section>
     </main>
-    
+
     <footer class="rodape">
         <p>Código em Jogo - Projeto Integrador - Fatec</p>
         <p>Feito para quem está começando.</p>
@@ -307,4 +350,5 @@ printf("%d", grade[2][0]);
 
     <script src="../js/main.js"></script>
 </body>
+
 </html>

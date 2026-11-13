@@ -1,257 +1,257 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estruturas Condicionais em C | Código em Jogo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body id="pagina-aula">
+<body id="pagina-aula" data-aula="aula3">
 
-<header id="cabecalho">
-    <a href="../index.html">Código em Jogo</a>
+    <header id="cabecalho">
+        <a href="../index.html">Código em Jogo</a>
 
-    <nav id="menu-principal" aria-label="Menu principal">
-        <a href="../index.html">Início</a>
-        <a href="./01-algoritmos.html">Trilha C</a>
-        <a href="#exercicios">Praticar</a>
-    </nav>
-</header>
-
-
-<aside id="barra-lateral">
-
-    <header class="barra-lateral-cabecalho">
-        <p>Trilha em C</p>
-        <button type="button">Recolher</button>
-        <h2>Conteúdo do Curso</h2>
+        <nav id="menu-principal" aria-label="Menu principal">
+            <a href="../index.html">Início</a>
+            <a href="./01-algoritmos.html">Trilha C</a>
+            <a href="#exercicios">Praticar</a>
+        </nav>
     </header>
 
-    <ul class="barra-lateral-lista">
-        <li>
-            <a href="./01-algoritmos.html">
-                Introdução a Algoritmos
-            </a>
-        </li>
 
-        <li>
-            <a href="./02-sequenciais.html">
-                Estrutura Sequencial
-            </a>
-        </li>
+    <aside id="barra-lateral">
 
-        <li>
-            <a href="./03-condicionais.html" aria-current="page">
-                Estruturas Condicionais
-            </a>
-        </li>
-
-        <li>
-            <a href="./04-while.html">
-                Estrutura Repetitiva: While
-            </a>
-        </li>
-
-        <li>
-            <a href="./05-for.html">
-                Estrutura Repetitiva: For
-            </a>
-        </li>
-
-        <li>
-            <a href="./06-vetores.html">
-                Vetores
-            </a>
-        </li>
-
-        <li>
-            <a href="./07-matrizes.html">
-                Matrizes
-            </a>
-        </li>
-    </ul>
-
-<div class="barra-progresso">
-    <label for="progresso-trilha">Progresso</label>
-
-    <progress id="progresso-trilha" value="3" max="7">
-        42,9%
-    </progress>
-
-    <p>Trilha em andamento</p>
-</div>
-
-<footer class="barra-lateral-rodape">
-    <a href="./02-sequenciais.html">Aula Anterior</a>
-    <a href="./04-while.html">Próxima Aula</a>
-</footer>
-
-
-</aside>
-
-<main>
-    <section id="conteudo-principal">
-
-        <header class="conteudo-principal-cabecalho">
-            <p>Módulo 03 — Estruturas Condicionais</p>
-
-            <h1>Estruturas Condicionais em C</h1>
-
-            <p>
-                Nem sempre um programa deve executar
-                todas as instruções da mesma maneira.
-                Em algumas situações, precisamos tomar
-                decisões de acordo com determinadas
-                condições.
-            </p>
-
-            <p>
-                As estruturas condicionais permitem
-                que um programa escolha diferentes
-                caminhos de execução, dependendo
-                do resultado de uma condição.
-            </p>
-
-            <p>
-                Nesta aula, você aprenderá a utilizar
-                as estruturas if e else, compreender
-                os operadores relacionais e desenvolver
-                programas que tomam decisões na
-                linguagem C.
-            </p>
+        <header class="barra-lateral-cabecalho">
+            <p>Trilha em C</p>
+            <button type="button">Recolher</button>
+            <h2>Conteúdo do Curso</h2>
         </header>
 
-<section class="secao-conteudo">
+        <ul class="barra-lateral-lista">
+            <li>
+                <a href="./01-algoritmos.html">
+                    Introdução a Algoritmos
+                </a>
+            </li>
 
-    <h2>O que são estruturas condicionais?</h2>
+            <li>
+                <a href="./02-sequenciais.html">
+                    Estrutura Sequencial
+                </a>
+            </li>
 
-    <p>
-        As estruturas condicionais são recursos da
-        programação que permitem executar diferentes
-        instruções de acordo com uma condição.
-    </p>
+            <li>
+                <a href="./03-condicionais.html" aria-current="page">
+                    Estruturas Condicionais
+                </a>
+            </li>
 
-    <p>
-        Uma condição é uma expressão que pode ser
-        avaliada como verdadeira ou falsa. Dependendo
-        do resultado, o programa decide quais
-        instruções serão executadas.
-    </p>
+            <li>
+                <a href="./04-while.html">
+                    Estrutura Repetitiva: While
+                </a>
+            </li>
 
-    <p>
-        Imagine um sistema que verifica a idade de
-        uma pessoa para determinar se ela é maior
-        de idade. Se a idade for igual ou superior
-        a 18 anos, o programa poderá apresentar
-        uma mensagem informando que a pessoa é
-        maior de idade.
-    </p>
+            <li>
+                <a href="./05-for.html">
+                    Estrutura Repetitiva: For
+                </a>
+            </li>
 
-    <p>
-        Na linguagem C, utilizamos principalmente
-        as estruturas if, else e else if para
-        controlar essas decisões.
-    </p>
+            <li>
+                <a href="./06-vetores.html">
+                    Vetores
+                </a>
+            </li>
 
-</section>
+            <li>
+                <a href="./07-matrizes.html">
+                    Matrizes
+                </a>
+            </li>
+        </ul>
 
-<section class="secao-conteudo">
+        <div class="barra-progresso">
+            <label for="progresso-trilha">Progresso</label>
+            <progress id="progresso-trilha" value="0" max="28">0%</progress>
+            <p>Trilha em andamento</p>
+        </div>
 
-    <h2>A estrutura if</h2>
+        <p>Trilha em andamento</p>
+        </div>
 
-    <p>
-        A estrutura if é utilizada quando queremos
-        executar uma ou mais instruções somente
-        se uma determinada condição for verdadeira.
-    </p>
+        <footer class="barra-lateral-rodape">
+            <a href="./02-sequenciais.html">Aula Anterior</a>
+            <a href="./04-while.html">Próxima Aula</a>
+        </footer>
 
-    <p>
-        A palavra if significa "se" em inglês.
-        Na programação, ela permite verificar
-        uma condição antes de executar um
-        bloco de comandos.
-    </p>
 
-    <h3>Sintaxe do if</h3>
+    </aside>
 
-    <pre><code class="codigo">if (condicao) {
+    <main>
+        <section id="conteudo-principal">
+
+            <header class="conteudo-principal-cabecalho">
+                <p>Módulo 03 — Estruturas Condicionais</p>
+
+                <h1>Estruturas Condicionais em C</h1>
+
+                <p>
+                    Nem sempre um programa deve executar
+                    todas as instruções da mesma maneira.
+                    Em algumas situações, precisamos tomar
+                    decisões de acordo com determinadas
+                    condições.
+                </p>
+
+                <p>
+                    As estruturas condicionais permitem
+                    que um programa escolha diferentes
+                    caminhos de execução, dependendo
+                    do resultado de uma condição.
+                </p>
+
+                <p>
+                    Nesta aula, você aprenderá a utilizar
+                    as estruturas if e else, compreender
+                    os operadores relacionais e desenvolver
+                    programas que tomam decisões na
+                    linguagem C.
+                </p>
+            </header>
+
+            <section class="secao-conteudo">
+
+                <h2>O que são estruturas condicionais?</h2>
+
+                <p>
+                    As estruturas condicionais são recursos da
+                    programação que permitem executar diferentes
+                    instruções de acordo com uma condição.
+                </p>
+
+                <p>
+                    Uma condição é uma expressão que pode ser
+                    avaliada como verdadeira ou falsa. Dependendo
+                    do resultado, o programa decide quais
+                    instruções serão executadas.
+                </p>
+
+                <p>
+                    Imagine um sistema que verifica a idade de
+                    uma pessoa para determinar se ela é maior
+                    de idade. Se a idade for igual ou superior
+                    a 18 anos, o programa poderá apresentar
+                    uma mensagem informando que a pessoa é
+                    maior de idade.
+                </p>
+
+                <p>
+                    Na linguagem C, utilizamos principalmente
+                    as estruturas if, else e else if para
+                    controlar essas decisões.
+                </p>
+
+            </section>
+
+            <section class="secao-conteudo">
+
+                <h2>A estrutura if</h2>
+
+                <p>
+                    A estrutura if é utilizada quando queremos
+                    executar uma ou mais instruções somente
+                    se uma determinada condição for verdadeira.
+                </p>
+
+                <p>
+                    A palavra if significa "se" em inglês.
+                    Na programação, ela permite verificar
+                    uma condição antes de executar um
+                    bloco de comandos.
+                </p>
+
+                <h3>Sintaxe do if</h3>
+
+                <pre><code class="codigo">if (condicao) {
     // Comandos executados se a condição for verdadeira
 }</code></pre>
 
-    <p>
-        A condição deve ser escrita entre parênteses.
-        Quando seu resultado é verdadeiro, o programa
-        executa os comandos que estão entre as chaves.
-        Caso seja falsa, esse bloco é ignorado.
-    </p>
+                <p>
+                    A condição deve ser escrita entre parênteses.
+                    Quando seu resultado é verdadeiro, o programa
+                    executa os comandos que estão entre as chaves.
+                    Caso seja falsa, esse bloco é ignorado.
+                </p>
 
-</section>
+            </section>
 
-<section class="secao-conteudo">
+            <section class="secao-conteudo">
 
-    <h2>A estrutura if...else</h2>
+                <h2>A estrutura if...else</h2>
 
-    <p>
-        A estrutura if...else é utilizada quando
-        precisamos escolher entre dois caminhos
-        diferentes, de acordo com o resultado
-        de uma condição.
-    </p>
+                <p>
+                    A estrutura if...else é utilizada quando
+                    precisamos escolher entre dois caminhos
+                    diferentes, de acordo com o resultado
+                    de uma condição.
+                </p>
 
-    <p>
-        Se a condição for verdadeira, o programa
-        executa os comandos do bloco if.
-        Caso seja falsa, executa os comandos
-        do bloco else.
-    </p>
+                <p>
+                    Se a condição for verdadeira, o programa
+                    executa os comandos do bloco if.
+                    Caso seja falsa, executa os comandos
+                    do bloco else.
+                </p>
 
-    <h3>Sintaxe do if...else</h3>
+                <h3>Sintaxe do if...else</h3>
 
-    <pre><code class="codigo">if (condicao) {
+                <pre><code class="codigo">if (condicao) {
     // Comandos executados se a condição for verdadeira
 } else {
     // Comandos executados se a condição for falsa
 }</code></pre>
 
-    <p>
-        Diferentemente do if utilizado sozinho,
-        a estrutura if...else permite definir
-        uma ação alternativa para quando
-        a condição não for atendida.
-    </p>
+                <p>
+                    Diferentemente do if utilizado sozinho,
+                    a estrutura if...else permite definir
+                    uma ação alternativa para quando
+                    a condição não for atendida.
+                </p>
 
-    <p>
-        Por exemplo, um programa pode verificar
-        a idade de uma pessoa. Se ela tiver
-        18 anos ou mais, exibirá a mensagem
-        "Maior de idade". Caso contrário,
-        exibirá "Menor de idade".
-    </p>
+                <p>
+                    Por exemplo, um programa pode verificar
+                    a idade de uma pessoa. Se ela tiver
+                    18 anos ou mais, exibirá a mensagem
+                    "Maior de idade". Caso contrário,
+                    exibirá "Menor de idade".
+                </p>
 
-</section>
+            </section>
 
-<section class="secao-conteudo">
+            <section class="secao-conteudo">
 
-    <h2>A estrutura else if</h2>
+                <h2>A estrutura else if</h2>
 
-    <p>
-        A estrutura else if é utilizada quando
-        precisamos verificar várias condições
-        diferentes dentro de uma mesma decisão.
-    </p>
+                <p>
+                    A estrutura else if é utilizada quando
+                    precisamos verificar várias condições
+                    diferentes dentro de uma mesma decisão.
+                </p>
 
-    <p>
-        O programa avalia as condições na ordem
-        em que aparecem. Quando encontra uma
-        condição verdadeira, executa o bloco
-        correspondente e ignora os demais
-        blocos dessa sequência.
-    </p>
+                <p>
+                    O programa avalia as condições na ordem
+                    em que aparecem. Quando encontra uma
+                    condição verdadeira, executa o bloco
+                    correspondente e ignora os demais
+                    blocos dessa sequência.
+                </p>
 
-    <h3>Sintaxe do else if</h3>
+                <h3>Sintaxe do else if</h3>
 
-    <pre><code class="codigo">if (condicao1) {
+                <pre><code class="codigo">if (condicao1) {
     // Comandos da primeira condição
 } else if (condicao2) {
     // Comandos da segunda condição
@@ -259,172 +259,172 @@
     // Comandos quando nenhuma condição anterior é verdadeira
 }</code></pre>
 
-    <p>
-        Podemos utilizar quantos blocos else if
-        forem necessários. O bloco else é opcional
-        e representa a alternativa executada
-        quando nenhuma das condições anteriores
-        é verdadeira.
-    </p>
+                <p>
+                    Podemos utilizar quantos blocos else if
+                    forem necessários. O bloco else é opcional
+                    e representa a alternativa executada
+                    quando nenhuma das condições anteriores
+                    é verdadeira.
+                </p>
 
-    <p>
-        Por exemplo, um programa pode classificar
-        a nota de um estudante. Se a nota for
-        maior ou igual a 7, o estudante estará
-        aprovado. Se for maior ou igual a 5,
-        mas menor que 7, estará em recuperação.
-        Caso contrário, estará reprovado.
-    </p>
+                <p>
+                    Por exemplo, um programa pode classificar
+                    a nota de um estudante. Se a nota for
+                    maior ou igual a 7, o estudante estará
+                    aprovado. Se for maior ou igual a 5,
+                    mas menor que 7, estará em recuperação.
+                    Caso contrário, estará reprovado.
+                </p>
 
-</section>
+            </section>
 
 
-<section class="secao-conteudo">
+            <section class="secao-conteudo">
 
-    <h2>Operadores relacionais</h2>
+                <h2>Operadores relacionais</h2>
 
-    <p>
-        Os operadores relacionais são utilizados
-        para comparar dois valores ou expressões.
-        O resultado de uma comparação indica
-        se a condição é verdadeira ou falsa.
-    </p>
+                <p>
+                    Os operadores relacionais são utilizados
+                    para comparar dois valores ou expressões.
+                    O resultado de uma comparação indica
+                    se a condição é verdadeira ou falsa.
+                </p>
 
-    <p>
-        Na linguagem C, os principais operadores
-        relacionais são:
-    </p>
+                <p>
+                    Na linguagem C, os principais operadores
+                    relacionais são:
+                </p>
 
-    <ul>
-        <li><strong>==</strong> Igual a</li>
-        <li><strong>!=</strong> Diferente de</li>
-        <li><strong>&gt;</strong> Maior que</li>
-        <li><strong>&lt;</strong> Menor que</li>
-        <li><strong>&gt;=</strong> Maior ou igual a</li>
-        <li><strong>&lt;=</strong> Menor ou igual a</li>
-    </ul>
+                <ul>
+                    <li><strong>==</strong> Igual a</li>
+                    <li><strong>!=</strong> Diferente de</li>
+                    <li><strong>&gt;</strong> Maior que</li>
+                    <li><strong>&lt;</strong> Menor que</li>
+                    <li><strong>&gt;=</strong> Maior ou igual a</li>
+                    <li><strong>&lt;=</strong> Menor ou igual a</li>
+                </ul>
 
-    <p>
-        Esses operadores permitem construir
-        condições para que o programa tome
-        decisões com base nos valores
-        armazenados nas variáveis.
-    </p>
+                <p>
+                    Esses operadores permitem construir
+                    condições para que o programa tome
+                    decisões com base nos valores
+                    armazenados nas variáveis.
+                </p>
 
-    <h3>Exemplo de comparação</h3>
+                <h3>Exemplo de comparação</h3>
 
-    <pre><code class="codigo">if (idade &gt;= 18) {
+                <pre><code class="codigo">if (idade &gt;= 18) {
     printf("Maior de idade");
 }</code></pre>
 
-    <p>
-        Nesse exemplo, o operador maior ou igual
-        a verifica se a idade é pelo menos 18.
-        Se a comparação for verdadeira, a
-        mensagem será exibida.
-    </p>
+                <p>
+                    Nesse exemplo, o operador maior ou igual
+                    a verifica se a idade é pelo menos 18.
+                    Se a comparação for verdadeira, a
+                    mensagem será exibida.
+                </p>
 
-</section>
+            </section>
 
 
-<section class="secao-conteudo">
+            <section class="secao-conteudo">
 
-    <h2>Operadores lógicos</h2>
+                <h2>Operadores lógicos</h2>
 
-    <p>
-        Os operadores lógicos são utilizados
-        quando precisamos combinar ou negar
-        condições em uma estrutura condicional.
-    </p>
+                <p>
+                    Os operadores lógicos são utilizados
+                    quando precisamos combinar ou negar
+                    condições em uma estrutura condicional.
+                </p>
 
-    <p>
-        Na linguagem C, os principais operadores
-        lógicos são:
-    </p>
+                <p>
+                    Na linguagem C, os principais operadores
+                    lógicos são:
+                </p>
 
-    <ul>
-        <li>
-            <strong>&amp;&amp; (E):</strong>
-            retorna verdadeiro somente quando
-            as duas condições são verdadeiras.
-        </li>
+                <ul>
+                    <li>
+                        <strong>&amp;&amp; (E):</strong>
+                        retorna verdadeiro somente quando
+                        as duas condições são verdadeiras.
+                    </li>
 
-        <li>
-            <strong>|| (OU):</strong>
-            retorna verdadeiro quando pelo menos
-            uma das condições é verdadeira.
-        </li>
+                    <li>
+                        <strong>|| (OU):</strong>
+                        retorna verdadeiro quando pelo menos
+                        uma das condições é verdadeira.
+                    </li>
 
-        <li>
-            <strong>! (NÃO):</strong>
-            inverte o resultado lógico
-            de uma condição.
-        </li>
-    </ul>
+                    <li>
+                        <strong>! (NÃO):</strong>
+                        inverte o resultado lógico
+                        de uma condição.
+                    </li>
+                </ul>
 
-    <h3>Exemplo com o operador E</h3>
+                <h3>Exemplo com o operador E</h3>
 
-    <pre><code class="codigo">if (idade &gt;= 18 &amp;&amp; possuiDocumento == 1) {
+                <pre><code class="codigo">if (idade &gt;= 18 &amp;&amp; possuiDocumento == 1) {
     printf("Entrada permitida");
 }</code></pre>
 
-    <p>
-        Nesse exemplo, a entrada será permitida
-        somente se a pessoa tiver 18 anos ou mais
-        e possuir documento, representado pelo
-        valor 1 na variável possuiDocumento.
-    </p>
+                <p>
+                    Nesse exemplo, a entrada será permitida
+                    somente se a pessoa tiver 18 anos ou mais
+                    e possuir documento, representado pelo
+                    valor 1 na variável possuiDocumento.
+                </p>
 
-    <h3>Exemplo com o operador OU</h3>
+                <h3>Exemplo com o operador OU</h3>
 
-    <pre><code class="codigo">if (idade &lt; 12 || idade &gt;= 60) {
+                <pre><code class="codigo">if (idade &lt; 12 || idade &gt;= 60) {
     printf("Desconto permitido");
 }</code></pre>
 
-    <p>
-        Nesse caso, o desconto será permitido
-        quando a pessoa tiver menos de 12 anos
-        ou quando tiver 60 anos ou mais.
-    </p>
+                <p>
+                    Nesse caso, o desconto será permitido
+                    quando a pessoa tiver menos de 12 anos
+                    ou quando tiver 60 anos ou mais.
+                </p>
 
-    <h3>Exemplo com o operador NÃO</h3>
+                <h3>Exemplo com o operador NÃO</h3>
 
-    <pre><code class="codigo">if (!(idade &gt;= 18)) {
+                <pre><code class="codigo">if (!(idade &gt;= 18)) {
     printf("Menor de idade");
 }</code></pre>
 
-    <p>
-        O operador ! inverte o resultado
-        da comparação. Assim, a mensagem
-        será exibida quando a idade
-        for menor que 18 anos.
-    </p>
+                <p>
+                    O operador ! inverte o resultado
+                    da comparação. Assim, a mensagem
+                    será exibida quando a idade
+                    for menor que 18 anos.
+                </p>
 
-</section>
+            </section>
 
 
-<section class="exemplo">
+            <section class="exemplo">
 
-    <h2>Exemplo prático: situação do estudante</h2>
+                <h2>Exemplo prático: situação do estudante</h2>
 
-    <p>
-        Vamos desenvolver um programa que solicita
-        a nota de um estudante e utiliza estruturas
-        condicionais para verificar sua situação.
-    </p>
+                <p>
+                    Vamos desenvolver um programa que solicita
+                    a nota de um estudante e utiliza estruturas
+                    condicionais para verificar sua situação.
+                </p>
 
-    <p>
-        Se a nota for maior ou igual a 7, o estudante
-        estará aprovado. Se estiver entre 5 e 7,
-        estará em recuperação. Caso seja menor
-        que 5, estará reprovado.
-    </p>
+                <p>
+                    Se a nota for maior ou igual a 7, o estudante
+                    estará aprovado. Se estiver entre 5 e 7,
+                    estará em recuperação. Caso seja menor
+                    que 5, estará reprovado.
+                </p>
 
-    <div class="exemplo-codigo">
+                <div class="exemplo-codigo">
 
-        <h3>Código em C</h3>
+                    <h3>Código em C</h3>
 
-        <pre><code class="codigo">#include &lt;stdio.h&gt;
+                    <pre><code class="codigo">#include &lt;stdio.h&gt;
 
 int main() {
     float nota;
@@ -443,211 +443,212 @@ int main() {
     return 0;
 }</code></pre>
 
-    </div>
+                </div>
 
-    <div class="exemplo-resultado">
+                <div class="exemplo-resultado">
 
-        <h3>Exemplo de execução</h3>
+                    <h3>Exemplo de execução</h3>
 
-        <pre><samp>Digite a nota: 8
+                    <pre><samp>Digite a nota: 8
 Aprovado</samp></pre>
 
-    </div>
+                </div>
 
-</section>
+            </section>
 
-<section class="secao-conteudo">
+            <section class="secao-conteudo">
 
-    <h2>Erros comuns nas estruturas condicionais</h2>
+                <h2>Erros comuns nas estruturas condicionais</h2>
 
-    <p>
-        Ao utilizar estruturas condicionais,
-        alguns erros podem comprometer o
-        funcionamento do programa.
-        Conhecer esses erros ajuda a escrever
-        códigos mais corretos e organizados.
-    </p>
+                <p>
+                    Ao utilizar estruturas condicionais,
+                    alguns erros podem comprometer o
+                    funcionamento do programa.
+                    Conhecer esses erros ajuda a escrever
+                    códigos mais corretos e organizados.
+                </p>
 
-    <h3>Confundir = com ==</h3>
+                <h3>Confundir = com ==</h3>
 
-    <p>
-        O operador = é utilizado para atribuir
-        valores a uma variável, enquanto ==
-        é utilizado para comparar igualdade.
-    </p>
+                <p>
+                    O operador = é utilizado para atribuir
+                    valores a uma variável, enquanto ==
+                    é utilizado para comparar igualdade.
+                </p>
 
-    <pre><code class="codigo">if (idade == 18) {
+                <pre><code class="codigo">if (idade == 18) {
     printf("Idade igual a 18");
 }</code></pre>
 
-    <p>
-        Utilizar = no lugar de == pode alterar
-        o valor da variável e produzir um
-        resultado diferente do esperado.
-    </p>
+                <p>
+                    Utilizar = no lugar de == pode alterar
+                    o valor da variável e produzir um
+                    resultado diferente do esperado.
+                </p>
 
-    <h3>Colocar ponto e vírgula após o if</h3>
+                <h3>Colocar ponto e vírgula após o if</h3>
 
-    <p>
-        Um ponto e vírgula colocado imediatamente
-        após a condição encerra a instrução if,
-        fazendo com que o bloco seguinte não
-        dependa mais dessa condição.
-    </p>
+                <p>
+                    Um ponto e vírgula colocado imediatamente
+                    após a condição encerra a instrução if,
+                    fazendo com que o bloco seguinte não
+                    dependa mais dessa condição.
+                </p>
 
-    <pre><code class="codigo">if (idade &gt;= 18); {
+                <pre><code class="codigo">if (idade &gt;= 18); {
     printf("Maior de idade");
 }</code></pre>
 
-    <p>
-        No exemplo acima, a mensagem será exibida
-        independentemente da idade, pois o bloco
-        entre chaves não pertence ao if.
-    </p>
+                <p>
+                    No exemplo acima, a mensagem será exibida
+                    independentemente da idade, pois o bloco
+                    entre chaves não pertence ao if.
+                </p>
 
-    <h3>Organizar as condições na ordem incorreta</h3>
+                <h3>Organizar as condições na ordem incorreta</h3>
 
-    <p>
-        Em uma sequência de if e else if,
-        a ordem das condições é importante,
-        pois somente o primeiro bloco cuja
-        condição seja verdadeira será executado.
-    </p>
+                <p>
+                    Em uma sequência de if e else if,
+                    a ordem das condições é importante,
+                    pois somente o primeiro bloco cuja
+                    condição seja verdadeira será executado.
+                </p>
 
-    <p>
-        Por isso, é necessário verificar
-        cuidadosamente a lógica das comparações
-        para evitar resultados incorretos.
-    </p>
+                <p>
+                    Por isso, é necessário verificar
+                    cuidadosamente a lógica das comparações
+                    para evitar resultados incorretos.
+                </p>
 
-</section>
+            </section>
 
-<section class="secao-conteudo">
+            <section class="secao-conteudo">
 
-    <h2>Resumo da aula</h2>
+                <h2>Resumo da aula</h2>
 
-    <p>
-        Nesta aula, aprendemos que as estruturas
-        condicionais permitem que um programa
-        tome decisões de acordo com o resultado
-        de determinadas condições.
-    </p>
+                <p>
+                    Nesta aula, aprendemos que as estruturas
+                    condicionais permitem que um programa
+                    tome decisões de acordo com o resultado
+                    de determinadas condições.
+                </p>
 
-    <p>
-        Os principais conceitos estudados foram:
-    </p>
+                <p>
+                    Os principais conceitos estudados foram:
+                </p>
 
-    <ul>
-        <li>
-            <strong>if:</strong>
-            executa um bloco de comandos quando
-            uma condição é verdadeira.
-        </li>
+                <ul>
+                    <li>
+                        <strong>if:</strong>
+                        executa um bloco de comandos quando
+                        uma condição é verdadeira.
+                    </li>
 
-        <li>
-            <strong>if...else:</strong>
-            permite escolher entre dois caminhos
-            diferentes.
-        </li>
+                    <li>
+                        <strong>if...else:</strong>
+                        permite escolher entre dois caminhos
+                        diferentes.
+                    </li>
 
-        <li>
-            <strong>else if:</strong>
-            permite verificar várias condições
-            em sequência.
-        </li>
+                    <li>
+                        <strong>else if:</strong>
+                        permite verificar várias condições
+                        em sequência.
+                    </li>
 
-        <li>
-            <strong>Operadores relacionais:</strong>
-            são utilizados para comparar valores,
-            como ==, !=, &gt;, &lt;, &gt;= e &lt;=.
-        </li>
+                    <li>
+                        <strong>Operadores relacionais:</strong>
+                        são utilizados para comparar valores,
+                        como ==, !=, &gt;, &lt;, &gt;= e &lt;=.
+                    </li>
 
-        <li>
-            <strong>Operadores lógicos:</strong>
-            permitem combinar ou negar condições,
-            utilizando &amp;&amp;, || e !.
-        </li>
-    </ul>
+                    <li>
+                        <strong>Operadores lógicos:</strong>
+                        permitem combinar ou negar condições,
+                        utilizando &amp;&amp;, || e !.
+                    </li>
+                </ul>
 
-    <p>
-        Também aprendemos que a ordem das condições
-        influencia o resultado do programa e que
-        pequenos erros, como confundir = com ==
-        ou acrescentar um ponto e vírgula após
-        o if, podem comprometer seu funcionamento.
-    </p>
+                <p>
+                    Também aprendemos que a ordem das condições
+                    influencia o resultado do programa e que
+                    pequenos erros, como confundir = com ==
+                    ou acrescentar um ponto e vírgula após
+                    o if, podem comprometer seu funcionamento.
+                </p>
 
-    <p>
-        Com esses conhecimentos, você já consegue
-        desenvolver programas simples que analisam
-        informações e executam diferentes ações
-        de acordo com as condições estabelecidas.
-    </p>
+                <p>
+                    Com esses conhecimentos, você já consegue
+                    desenvolver programas simples que analisam
+                    informações e executam diferentes ações
+                    de acordo com as condições estabelecidas.
+                </p>
 
-</section>
+            </section>
 
-<section class="exercicios" id="exercicios">
+            <section class="exercicios" id="exercicios">
 
-    <h2>Exercícios de fixação</h2>
+                <h2>Exercícios de fixação</h2>
 
-    <p>
-        Agora é hora de colocar em prática
-        os conhecimentos adquiridos sobre
-        estruturas condicionais na linguagem C.
-    </p>
+                <p>
+                    Agora é hora de colocar em prática
+                    os conhecimentos adquiridos sobre
+                    estruturas condicionais na linguagem C.
+                </p>
 
-    <p>
-        Leia atentamente cada questão e
-        selecione a alternativa que considerar
-        correta.
-    </p>
+                <p>
+                    Leia atentamente cada questão e
+                    selecione a alternativa que considerar
+                    correta.
+                </p>
 
-    <div class="questao">
+                <div class="questao">
 
-        <h3>Questão 1</h3>
+                    <h3>Questão 1</h3>
 
-        <p>
-            Qual é a principal finalidade
-            da estrutura if na linguagem C?
-        </p>
+                    <p>
+                        Qual é a principal finalidade
+                        da estrutura if na linguagem C?
+                    </p>
 
-        <div class="alternativas">
+                    <div class="alternativas">
 
-            <label>
-                <input type="radio" name="questao1" value="a">
-                A) Repetir um conjunto de comandos
-                várias vezes.
-            </label>
+                        <label>
+                            <input type="radio" name="questao1" value="a">
+                            A) Repetir um conjunto de comandos
+                            várias vezes.
+                        </label>
 
-            <label>
-                <input type="radio" name="questao1" value="b">
-                B) Executar um bloco de comandos
-                quando uma condição é verdadeira.
-            </label>
+                        <label>
+                            <input type="radio" name="questao1" value="b" data-certa="sim">
+                            B) Executar um bloco de comandos
+                            quando uma condição é verdadeira.
+                        </label>
 
-            <label>
-                <input type="radio" name="questao1" value="c">
-                C) Declarar uma variável
-                dentro do programa.
-            </label>
+                        <label>
+                            <input type="radio" name="questao1" value="c">
+                            C) Declarar uma variável
+                            dentro do programa.
+                        </label>
 
-            <label>
-                <input type="radio" name="questao1" value="d">
-                D) Encerrar automaticamente
-                a execução do programa.
-            </label>
+                        <label>
+                            <input type="radio" name="questao1" value="d">
+                            D) Encerrar automaticamente
+                            a execução do programa.
+                        </label>
+                    </div>
 
-        </div>
+                    <button type="button" class="botao-verificar">Verificar</button>
+                        <p class="texto-resultado"></p>
+                </div>
 
-    </div>
+                <div class="questao">
 
-<div class="questao">
+                    <h3>Questão 2</h3>
 
-    <h3>Questão 2</h3>
+                    <p>Observe o código abaixo:</p>
 
-    <p>Observe o código abaixo:</p>
-
-    <pre><code class="codigo">int idade = 16;
+                    <pre><code class="codigo">int idade = 16;
 
 if (idade &gt;= 18) {
     printf("Maior de idade");
@@ -655,47 +656,51 @@ if (idade &gt;= 18) {
     printf("Menor de idade");
 }</code></pre>
 
-    <p>
-        Qual mensagem será exibida
-        quando esse código for executado?
-    </p>
+                    <p>
+                        Qual mensagem será exibida
+                        quando esse código for executado?
+                    </p>
 
-    <div class="alternativas">
+                    <div class="alternativas">
 
-        <label>
-            <input type="radio" name="questao2" value="a">
-            A) Maior de idade.
-        </label>
+                        <label>
+                            <input type="radio" name="questao2" value="a">
+                            A) Maior de idade.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao2" value="b">
-            B) Menor de idade.
-        </label>
+                        <label>
+                            <input type="radio" name="questao2" value="b" data-certa="sim">
+                            B) Menor de idade.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao2" value="c">
-            C) As duas mensagens serão exibidas.
-        </label>
+                        <label>
+                            <input type="radio" name="questao2" value="c">
+                            C) As duas mensagens serão exibidas.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao2" value="d">
-            D) Nenhuma mensagem será exibida.
-        </label>
+                        <label>
+                            <input type="radio" name="questao2" value="d">
+                            D) Nenhuma mensagem será exibida.
+                        </label>
 
-    </div>
+                    </div>
 
-</div>
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
 
-   
-<div class="questao">
 
-    <h3>Questão 3</h3>
+                </div>
 
-    <p>
-        Observe o código abaixo:
-    </p>
 
-    <pre><code class="codigo">int idade = 20;
+                <div class="questao">
+
+                    <h3>Questão 3</h3>
+
+                    <p>
+                        Observe o código abaixo:
+                    </p>
+
+                    <pre><code class="codigo">int idade = 20;
 int possuiDocumento = 0;
 
 if (idade &gt;= 18 &amp;&amp; possuiDocumento == 1) {
@@ -704,47 +709,49 @@ if (idade &gt;= 18 &amp;&amp; possuiDocumento == 1) {
     printf("Entrada negada");
 }</code></pre>
 
-    <p>
-        Considerando os valores das variáveis,
-        qual será a saída do programa?
-    </p>
+                    <p>
+                        Considerando os valores das variáveis,
+                        qual será a saída do programa?
+                    </p>
 
-    <div class="alternativas">
+                    <div class="alternativas">
 
-        <label>
-            <input type="radio" name="questao3" value="a">
-            A) Entrada permitida.
-        </label>
+                        <label>
+                            <input type="radio" name="questao3" value="a">
+                            A) Entrada permitida.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao3" value="b">
-            B) Entrada negada.
-        </label>
+                        <label>
+                            <input type="radio" name="questao3" value="b" data-certa="sim">
+                            B) Entrada negada.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao3" value="c">
-            C) As duas mensagens serão exibidas.
-        </label>
+                        <label>
+                            <input type="radio" name="questao3" value="c">
+                            C) As duas mensagens serão exibidas.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao3" value="d">
-            D) O programa não exibirá nenhuma mensagem.
-        </label>
+                        <label>
+                            <input type="radio" name="questao3" value="d">
+                            D) O programa não exibirá nenhuma mensagem.
+                        </label>
 
-    </div>
+                    </div>
 
-</div>
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+                </div>
 
 
-<div class="questao">
+                <div class="questao">
 
-    <h3>Questão 4</h3>
+                    <h3>Questão 4</h3>
 
-    <p>
-        Analise o código abaixo:
-    </p>
+                    <p>
+                        Analise o código abaixo:
+                    </p>
 
-    <pre><code class="codigo">int nota = 6;
+                    <pre><code class="codigo">int nota = 6;
 
 if (nota &gt;= 7) {
     printf("Aprovado");
@@ -754,64 +761,65 @@ if (nota &gt;= 7) {
     printf("Reprovado");
 }</code></pre>
 
-    <p>
-        Considerando o valor da variável nota,
-        qual será a mensagem exibida pelo programa?
-    </p>
+                    <p>
+                        Considerando o valor da variável nota,
+                        qual será a mensagem exibida pelo programa?
+                    </p>
 
-    <div class="alternativas">
+                    <div class="alternativas">
 
-        <label>
-            <input type="radio" name="questao4" value="a">
-            A) Aprovado.
-        </label>
+                        <label>
+                            <input type="radio" name="questao4" value="a">
+                            A) Aprovado.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao4" value="b">
-            B) Reprovado.
-        </label>
+                        <label>
+                            <input type="radio" name="questao4" value="b">
+                            B) Reprovado.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao4" value="c">
-            C) Recuperacao.
-        </label>
+                        <label>
+                            <input type="radio" name="questao4" value="c" data-certa="sim">
+                            C) Recuperacao.
+                        </label>
 
-        <label>
-            <input type="radio" name="questao4" value="d">
-            D) O programa exibirá todas as mensagens.
-        </label>
+                        <label>
+                            <input type="radio" name="questao4" value="d">
+                            D) O programa exibirá todas as mensagens.
+                        </label>
 
-    </div>
+                    </div>
 
-</div>
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+                </div>
 
-</section>
-
-
-    </section>
-</main>
-
-
-<footer class="rodape">
-
-    <p>
-        Código em Jogo — Projeto educacional
-        desenvolvido por estudantes do curso
-        de Desenvolvimento de Software Multiplataforma
-        da Fatec Marília.
-    </p>
-
-    <h2>Equipe de desenvolvimento</h2>
-
-    <ul>
-        <li>Abinad Henrique da Silva Santos</li>
-        <li>Jaidy Miyuki dos Santos Yamada</li>
-        <li>Juliana de Arruda Meyer Coracini</li>
-        <li>Lucas Gabriel de Souza</li>
-    </ul>
-
-</footer>
+            </section>
+        </section>
+    </main>
 
 
+    <footer class="rodape">
+
+        <p>
+            Código em Jogo — Projeto educacional
+            desenvolvido por estudantes do curso
+            de Desenvolvimento de Software Multiplataforma
+            da Fatec Marília.
+        </p>
+
+        <h2>Equipe de desenvolvimento</h2>
+
+        <ul>
+            <li>Abinad Henrique da Silva Santos</li>
+            <li>Jaidy Miyuki dos Santos Yamada</li>
+            <li>Juliana de Arruda Meyer Coracini</li>
+            <li>Lucas Gabriel de Souza</li>
+        </ul>
+
+    </footer>
+
+    <script src="../js/main.js"></script>
 </body>
+
 </html>
