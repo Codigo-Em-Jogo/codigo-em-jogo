@@ -20,32 +20,32 @@
     </header>
 
     <aside id="barra-lateral">
-            <header class="barra-lateral-cabecalho">
-                <p>Trilha em C</p>
-                <button type="button">Recolher</button>
-                <h2>Conteúdo do Curso</h2>
-            </header>
+        <header class="barra-lateral-cabecalho">
+            <p>Trilha em C</p>
+            <button type="button">Recolher</button>
+            <h2>Conteúdo do Curso</h2>
+        </header>
 
-            <ul class="barra-lateral-lista">
-                <li><a href="./01-algoritmos.html">Introdução à Algoritmos</a></li>
-                <li><a href="./02-sequenciais.html">Estrutura Sequencial</a></li>
-                <li><a href="./03-condicionais.html">Estruturas Condicionais</a></li>
-                <li><a href="./04-while.html">Estrutura Repetitiva: While</a></li>
-                <li><a href="./05-for.html">Estrutura Repetitiva: For</a></li>
-                <li><a href="./06-vetores.html">Vetores</a></li>
-                <li><a href="./07-matrizes.html">Matrizes</a></li>
-            </ul>
+        <ul class="barra-lateral-lista">
+            <li><a href="./01-algoritmos.html">Introdução à Algoritmos</a></li>
+            <li><a href="./02-sequenciais.html">Estrutura Sequencial</a></li>
+            <li><a href="./03-condicionais.html">Estruturas Condicionais</a></li>
+            <li><a href="./04-while.html">Estrutura Repetitiva: While</a></li>
+            <li><a href="./05-for.html">Estrutura Repetitiva: For</a></li>
+            <li><a href="./06-vetores.html">Vetores</a></li>
+            <li><a href="./07-matrizes.html">Matrizes</a></li>
+        </ul>
 
-            <div class="barra-progresso">
-                <label for="progresso-trilha">Progresso</label>
-                <progress id="progresso-trilha" value="5" max="7">71,4%</progress>
-                <p>Trilha em andamento</p>
-            </div>
+        <div class="barra-progresso">
+            <label for="progresso-trilha">Progresso</label>
+            <progress id="progresso-trilha" value="5" max="7">71,4%</progress>
+            <p>Trilha em andamento</p>
+        </div>
 
-            <footer class="barra-lateral-rodape">
-                <a href="./04-while.html">Aula Anterior</a>
-                <a href="./06-vetores.html">Próxima Aula</a>
-            </footer>
+        <footer class="barra-lateral-rodape">
+            <a href="./04-while.html">Aula Anterior</a>
+            <a href="./06-vetores.html">Próxima Aula</a>
+        </footer>
     </aside>
 
     <main>
@@ -56,7 +56,7 @@
                 <p>
                     O for é uma estrutura de repetição que permite executar um bloco de código
                     várias vezes, com base em uma condição. O corpo de uma estrutura for é executado
-                    zerou ou mais vezes, até que uma condição opcional seja avaliada como falsa.
+                    zero ou mais vezes, até que uma condição opcional seja avaliada como falsa.
                     Ele é especialmente útil quando sabemos o número de iterações que queremos realizar.
                 </p>
             </header>
@@ -66,6 +66,15 @@
                 <p>
                     O for é indicado quando sabemos quantas vezes queremos repetir uma tarefa
                     ou quando a condição de continuidade e o passo do contador estão definidos.
+                </p>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Qual a diferença entre for e while?</h2>
+                <p>
+                    Todo <code>for</code> pode ser escrito como um <code>while</code>. A diferença é que o
+                    <code>for</code> reúne a inicialização, a condição e a atualização em uma única linha,
+                    reduzindo a chance de esquecer de atualizar o contador e cair em um loop infinito.
                 </p>
             </section>
 
@@ -87,16 +96,16 @@
                 <div class="exemplo-codigo">
                     <h3>Exemplo de uso do for</h3>
                     <pre><code>
-                    for (int i = 0; i < 5; i++) {
-                    printf("%d", i);
-                    }
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d", i);
+}
                     </code></pre>
                 </div>
 
                 <div class="exemplo-resultado">
                     <h3>Resultado:</h3>
                     <pre><samp>
-                    01234
+01234
                     </samp></pre>
                 </div>
             </section>
@@ -134,6 +143,59 @@
                 </p>
             </section>
 
+            <section class="exemplo">
+                <h2>Exemplo prático: somando valores</h2>
+                <div class="exemplo-codigo">
+                    <h3>Calculando a soma de 1 a 4</h3>
+                    <pre><code>
+int soma = 0;
+
+for (int i = 1; i &lt;= 4; i++) {
+    soma = soma + i;
+}
+
+printf("Soma total: %d", soma);
+            </code></pre>
+                </div>
+
+                <div class="exemplo-resultado">
+                    <h3>Resultado:</h3>
+                    <pre><samp>Soma total: 10</samp></pre>
+                </div>
+            </section>
+
+            <section class="secao-conteudo">
+                <p>
+                    Nesse exemplo, a variável <code>soma</code> funciona como um <strong>acumulador</strong>:
+                    ela começa em <code>0</code> antes do <code>for</code> e, a cada repetição, guarda o valor
+                    que já tinha somado ao número atual de <code>i</code> (<code>0 + 1 + 2 + 3 + 4 = 10</code>).
+                </p>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Outras formas de contar com o for</h2>
+                <p>
+                    A parte da <strong>atualização</strong> não precisa ser sempre <code>i++</code>.
+                    Você pode diminuir o contador ou pular de dois em dois, por exemplo:
+                </p>
+
+                <p><strong>Contagem regressiva (usando <code>i--</code>):</strong></p>
+
+                <pre><code>
+for (int i = 5; i &gt;= 1; i--) {
+    printf("%d ", i);
+}
+// Saída: 5 4 3 2 1
+</code></pre>
+
+                <p><strong>Pulando de 2 em 2 (usando <code>i += 2</code>):</strong></p>
+                <pre><code>
+for (int i = 0; i &lt;= 10; i += 2) {
+    printf("%d ", i);
+}
+// Saída: 0 2 4 6 8 10</code></pre>
+            </section>
+
             <section class="secao-conteudo">
                 <h2>Erros comuns</h2>
                 <ul>
@@ -164,9 +226,9 @@
                     </p>
 
                     <pre><code class="codigo">
-                    for (int i = 2; i &lt= 5; i++) {
-                        printf("%d ", i);
-                    }
+for (int i = 2; i &lt;= 5; i++) {
+    printf("%d ", i);
+}
                     </code></pre>
 
                     <fieldset>
@@ -187,12 +249,11 @@
                     </p>
 
                     <pre><code class="codigo">
-                    int soma = 0;    
-
-                    for (int i = 1; i &lt= 5; i++) {
-                        soma = soma + i;
-                    }
-                    printf ("%d", soma);
+int soma = 0;    
+for (int i = 1; i &lt;= 5; i++) {
+    soma = soma + i;
+}
+printf ("%d", soma);
 
                     </code></pre>
                     <fieldset>
@@ -208,13 +269,13 @@
                 <article class="questao">
                     <h3>Exercício 3</h3>
                     <p>
-                        Quantas vezes o laço repete?
+                        Quantas vezes o for repete?
                     </p>
 
                     <pre><code class="codigo">
-                    for (int i = 3; i &lt= 8; i++) {
-                        printf("%d ", i);
-                    }
+for (int i = 3; i &lt;= 8; i++) {
+    printf("%d ", i);
+}
                     </code></pre>
                     <fieldset>
                         <legend>Respostas</legend>
@@ -234,9 +295,9 @@
                     </p>
 
                     <pre><code class="codigo">
-                    for (int i = 1; i &lt 5; i++) {
-                    printf("%d ", i);
-                    }
+for (int i = 1; i &lt; 5; i++) {
+    printf("%d ", i);
+}
                     </code></pre>
                     <fieldset>
                         <legend>Respostas</legend>
@@ -269,4 +330,5 @@
         </ul>
     </footer>
 </body>
+
 </html>

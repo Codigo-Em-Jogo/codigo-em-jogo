@@ -92,26 +92,25 @@
                     <h3>Preenchendo um vetor</h3>
                     <pre><code>
                     
-                    #include <stdio.h>
-                    #include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int vet [5];
 
-                    int main()
-                    {
-                        int vet [5];
-                        
-                        for (int i = 0; i &lt 5; i++){
-                            vet[i] = i * i;
-                        }
-                        //For é usado para preencher o vetor
-                        
-                        for (int i = 0; i &lt 5; i++){
-                            printf("%d", vet[i]);
-                        }
-                        
-                        //Outro for é usado para acessar todo o contéudo do vetor e exibi-lo
-                        
-                        return 0;
-                    }
+    for (int i = 0; i &lt 5; i++){
+    vet[i] = i * i;
+    }
+    //For é usado para preencher o vetor
+
+    for (int i = 0; i &lt 5; i++){
+    printf("%d", vet[i]);
+    }
+    
+    //Outro for é usado para acessar todo o contéudo do vetor e exibi-lo
+    
+    return 0;
+}
                     </code></pre>
                 </div>
 
@@ -150,21 +149,20 @@
                     <h3>Preenchendo um vetor manualmente</h3>
                     <pre><code>
                     
-                    #include <stdio.h>
-                    #include <stdlib.h>
-
-                    int main()
-                    {
-                        int vet [5] = {0, 1, 4, 9, 16};
-                                                
-                        printf("%d", vet[0]);
-                        printf("%d", vet[1]);
-                        printf("%d", vet[2]);
-                        printf("%d", vet[3]);
-                        printf("%d", vet[4]);
-                        
-                        return 0;
-                    }
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int vet [5] = {0, 1, 4, 9, 16};
+        
+    printf("%d", vet[0]);
+    printf("%d", vet[1]);
+    printf("%d", vet[2]);
+    printf("%d", vet[3]);
+    printf("%d", vet[4]);
+    
+    return 0;
+}
                     </code></pre>
                 </div>
             </section>
@@ -173,7 +171,7 @@
                 <div>
                     <h3>Resultado esperado:</h3>
                     <pre><samp>
-                    014916
+014916
                     </samp></pre>
                 </div>
             </section>
@@ -220,11 +218,11 @@
 
                     <pre><code class="codigo">
     
-                    int vet[5] = {4, 7, 2, 9, 5};
+int vet[5] = {4, 7, 2, 9, 5};
 
-                    for (int i = 0; i &lt 5; i++) {
-                        printf("%d", vet[i]);
-                    }
+for (int i = 0; i &lt 5; i++) {
+    printf("%d", vet[i]);
+}
                     </code></pre>
 
                     <fieldset>
@@ -257,7 +255,7 @@
                     <p>Qual a posição do maior elemento do vetor?</p>
 
                     <pre><code class="codigo">
-                    int vet[4] = {8, 3, 11, 5};
+int vet[4] = {8, 3, 11, 5};
                     </code></pre>
                     <fieldset>
                         <legend>Respostas</legend>
@@ -274,11 +272,11 @@
                     <p>Quais os erros desse código?</p>
 
                     <pre><code class="codigo">
-                    int vet[5] = (1, 2, 3.0, 4, 5);
+int vet[5] = (1, 2, 3.0, 4, 5);
                     
-                    for (int i = 1; i &lt= 5; i++) {
-                        printf("%d", vet[i]);
-                    }
+for (int i = 1; i &lt= 5; i++) {
+    printf("%d", vet[i]);
+}
                     </code></pre>
                     <fieldset>
                         <legend>Respostas</legend>

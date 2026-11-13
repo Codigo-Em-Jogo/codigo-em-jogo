@@ -48,67 +48,146 @@
         
         <section id="conteudo-principal">
             <header class="conteudo-principal-cabecalho">
-                <p></p>
-                <h1></h1>
+                <p>Módulo 06 — Coleções: Vetores</p>
+                <h1>O que é uma matriz?</h1>
                 <p>
-                    
+                    Uma matriz é uma estrutura de dados utilizada para armazenar vários valores de um mesmo tipo em uma única variável. 
+                    Ela organiza esses valores em linhas e colunas, permitindo acessar cada elemento através de sua posição (índice). 
+                    É bastante útil quando precisamos trabalhar com grandes quantidades de informações sem precisar criar uma variável para cada valor.
                 </p>
             </header>
 
             <section class="secao-conteudo">
-                <h2></h2>
-                <p></p>
+                <h2>Quando usar uma matriz?</h2>
+                <p>
+                    Uma matriz é utilizada quando precisamos armazenar e organizar vários dados relacionados em linhas e colunas. 
+                    Ela é especialmente útil quando trabalhamos com informações que possuem uma estrutura organizada, como tabelas, 
+                    notas de alunos, estoques de produtos ou até mesmo tabuleiros de jogos. Por exemplo, podemos utilizar uma matriz 
+                    para armazenar as notas de vários alunos em diferentes disciplinas, facilitando a consulta e a manipulação desses dados.
+                </p>
             </section>
 
             <section class="secao-conteudo">
-                <h2></h2>
-                <p></p>
-                <p></p>
+                <h2>Percorrendo os índices e posições de uma matriz</h2>
+                <p> 
+                    Diferente dos vetores, que possuem apenas uma dimensão, as matrizes possuem linhas e colunas. 
+                    Por isso, precisamos de dois índices para acessar cada elemento: um para indicar a linha e outro para indicar a coluna. 
+                    Mas, sssim como nos vetores, podemos utilizar estruturas for para percorrer todas as posições de uma matriz. Nesse caso, 
+                    utilizamos um for dentro de outro: o primeiro percorre as linhas, enquanto o segundo percorre as colunas.
+                </p>
+                <p>
+                    Em uma matriz <code>notas[2][3]</code>, existem duas linhas e três colunas, totalizando seis posições. Podemos acessar cada elemento utilizando dois índices, 
+                    como <code>notas[0][0], notas[0][1] e notas[1][2]</code>. Dessa forma, conseguimos preencher ou acessar todos os elementos da matriz de maneira organizada, 
+                    sem precisar indicar cada posição manualmente como no exemplo abaixo:
+                </p>
             </section>
 
             <section class="exemplo">
                 <h2></h2>
                 <div class="exemplo-codigo">
-                    <h3></h3>
+                    <h3>Exemplo e resultado</h3>
                     <pre><code>
+#include <stdio.h>
 
+int main()
+{    
+
+    int notas[3][3] = {
+    {1, 2 , 3},
+    {4, 5, 6},
+    {7, 8, 9}
+    };    
+
+    for (int i = 0; i &lt; 3; i++) {          //i controla as linhas
+    for (int j = 0; j &lt; 3; j++) {      //j controla as colunas
+    printf("%d ", notas[i][j]);
+    }
+    printf("\n");
+    }
+
+    return 0;   
+}
                     </code></pre>
                 </div>
 
                 <div class="exemplo-resultado">
-                    <h3></h3>
+                    <h3>Resultado:</h3>
                     <pre><samp>
-                
+1 2 3 
+4 5 6
+7 8 9
                     </samp></pre>
-                </div>           
+                </div>
             </section>
 
-    <section class="secao-conteudo">
-        <h2></h2>
+            <section class="secao-conteudo">
+                <h2>Entendendo o exemplo</h2>
 
-        <p></p>
+                <p>
+                    Primeiro a matriz tem seu tipo, número de linhas e colunas declaradas, e recebe seus valores iniciais manualmente antes de ser usada dentro do <code>for</code>.
+                    Depois é construído um primeiro <code>for</code> que tem como condição iniciar de <code>0</code> e ir no máximo até <code>2</code>, 
+                    utilizando a variável <code>i</code> para percorrer as linhas da matriz.
+                </p>
 
-        <p></p>
-        <p></p>
-        <p></p>
+                <p>
+                    Dentro dele é construído um segundo <code>for</code> que tem como condição iniciar de <code>0</code> e ir no máximo até <code>2</code>, utilizando a variável 
+                    <code>j</code> para percorrer as colunas.
+                    Ao acessar a matriz dentro desse segundo <code>for</code>, utilizam-se os índices <code>i</code> e <code>j</code> já declarados na construção de cada <code>for</code>.
+                </p>
 
-        <p></p>
-    </section>
+                <p>
+                    Na execução, os valores de <code>i</code> e <code>j</code> começam em <code>0</code>, acessando a primeira linha e a primeira coluna da matriz. 
+                    Conforme <code>j</code> e <code>i</code> são incrementados por <code>j++</code> e <code>i++</code>, o <code>printf</code> exibe cada elemento na tela.
+                </p>
+
+                <p>
+                    Quando o segundo <code>for</code> termina de percorrer todas as colunas de uma linha, o comando <code>printf("\n")</code> quebra a linha antes que o 
+                    primeiro <code>for</code> avance. Após isso, o primeiro <code>for</code> tem seu <code>i</code> incrementado em 1 e o programa retorna 
+                    ao segundo <code>for</code>, começando novamente de <code>0</code> até <code>2</code>, e continua nesse ciclo até que o valor de 
+                    <code>i</code> seja maior que <code>2</code> e sua execução se encerre.
+                </p>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Entendendo as variáveis i e j no for</h2>
+
+                <p>
+                    As letras <code>i</code> e <code>j</code> não são comandos obrigatórios da linguagem C, mas sim uma convenção da programação. 
+                    A letra <code>i</code> vem de <em>index</em> (índice) e, quando há um segundo for dentro do primeiro, usa-se a letra seguinte do alfabeto, o <code>j</code>.
+                </p>
+    
+                <p>
+                    Além do costume, usar uma variável diferente evita sobrescrever o valor de <code>i</code>, já que o primeiro for ainda está usando essa variável 
+                    para controlar as repetições do primeiro for. Mas, na prática, algo como <code>linha</code> no lugar de <code>i</code> e <code>coluna</code> 
+                    no lugar de <code>j</code> funcionaria da mesma forma.
+                </p>
+
+                <p>
+                    Também não é obrigatório declarar <code>int i</code> e <code>int j</code> dentro do <code>for</code>. 
+                    Elas poderiam ser criadas no início do código junto com as outras variáveis (como <code>int i, j;</code>), 
+                    mas declará-las direto no for é uma prática melhor porque limita a existência delas apenas ao momento da repetição, 
+                    deixando o código mais organizado e seguro.
+                </p>
+            </section>
 
             <section class="secao-conteudo">
                 <h2>Erros comuns</h2>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Inverter a ordem dos índices e acessar uma posição diferente da desejada.</li>
+                    <li>Percorrer uma linha ou coluna além do tamanho declarado.</li>
+                    <li>Usar apenas um for quando é necessário percorrer linhas e colunas</li>
+                    <li>Tentar acessar uma posição usando vírgula (<code>mat[i, j]</code>) ou apenas um colchete (<code>mat[i]</code>) em vez de dois colchetes separados (<code>mat[i][j]</code>).</li>
+                    <li>Usar a mesma variável (como <code>i</code>) nos dois <code>for</code>, fazendo o <code>for</code> de dentro sobrescrever o controle das linhas.</li>
                 </ul>
             </section>
 
             <section class="secao-conteudo">
                 <h2>Resumo</h2>
-                <p></p>
+                <p>
+                    A matriz é uma estrutura de dados bidimensional organizada em linhas e colunas,
+                    ideal para armazenar informações em formato de tabela e percorrida de forma
+                    simples utilizando um <code>for</code> dentro do outro.
+                </p>
             </section>
 
             <section class="exercicios" id="exercicios">
@@ -116,71 +195,80 @@
 
                 <article class="questao">
                     <h3>Exercício 1</h3>
-                    <p></p>
-
-                    <pre><code class="codigo">
-
-                    </code></pre>
+                    <p>
+                        Quantas linhas e colunas existem em <code>int matriz[2][3]</code>?
+                    </p>
 
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio1" value="a"><span></span></label>
-                            <label><input type="radio" name="exercicio1" value="b"><span></span></label>
-                            <label><input type="radio" name="exercicio1" value="c"><span></span></label>
-                            <label><input type="radio" name="exercicio1" value="d"><span></span></label>
+                            <label><input type="radio" name="exercicio1" value="a"><span>A) 2 linhas e 3 colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="b"><span>B) 3 linhas e 2 colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="c"><span>C) 2 linhas e 2 colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="d"><span>D) 3 linhas e 3 colunas</span></label>
                         </div>
                     </fieldset>
                 </article>
 
                 <article class="questao">
                     <h3>Exercício 2</h3>
-                    <p></p>
+                    <p>
+                        Qual o valor acessado por <code>mat[1][2]</code>?
+                    </p>
 
                     <pre><code class="codigo">
-                    
+int mat[2][3] = {
+{4, 5, 6},
+{7, 8, 9}
+};
+
                     </code></pre>    
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio2" value="a"> <span></span></label>
-                            <label><input type="radio" name="exercicio2" value="b"> <span></span></label>
-                            <label><input type="radio" name="exercicio2" value="c"> <span></span></label>
-                            <label><input type="radio" name="exercicio2" value="d"> <span></span></label>
+                            <label><input type="radio" name="exercicio2" value="a">A) 4<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="b">B) 6<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="c">C) 8<span></span></label>
+                            <label><input type="radio" name="exercicio2" value="d">D) 9<span></span></label>
                         </div>
                     </fieldset>
-                </article>    
+                </article>
+
                 <article class="questao">
                     <h3>Exercício 3</h3>
-                    <p></p>
-
-                    <pre><code class="codigo">
-
-                    </code></pre>    
+                    <p>Quais posições formam a diagonal principal de uma matriz quadrada 3 por 3?</p>
+    
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio3" value="a"> <span></span></label>
-                            <label><input type="radio" name="exercicio3" value="b"> <span></span></label>
-                            <label><input type="radio" name="exercicio3" value="c"> <span></span></label>
-                            <label><input type="radio" name="exercicio3" value="d"> <span></span></label>
+                            <label><input type="radio" name="exercicio3" value="a"><span>A) <code>[0][1], [1][2], [2][0]</code></span></label>
+                            <label><input type="radio" name="exercicio3" value="b"> <span>B) <code>[0][0], [1][1], [2][2]</code></span></label>
+                            <label><input type="radio" name="exercicio3" value="c"> <span>C) <code>[0][2], [1][1], [2][0]</code></span></label>
+                            <label><input type="radio" name="exercicio3" value="d"> <span>D) <code>[1][0], [1][1], [1][2]</code></span></label>
                         </div>
                     </fieldset>
                 </article>
                 <article class="questao">
                     <h3>Exercício 4</h3>
-                    <p></p>
+                    <p>
+                        Qual valor será exibido na tela pelo código abaixo?
+                    </p>
 
                     <pre><code class="codigo">
-
+int grade[3][2] = {
+    {1, 2},
+    {3, 4},
+    {5, 6}
+};
+printf("%d", grade[2][0]);
                     </code></pre>    
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio4" value="a"> <span></span></label>
-                            <label><input type="radio" name="exercicio4" value="b"> <span></span></label>
-                            <label><input type="radio" name="exercicio4" value="c"> <span></span></label>
-                            <label><input type="radio" name="exercicio4" value="d"> <span></span></label>
+                            <label><input type="radio" name="exercicio4" value="a">A) 2<span></span></label>
+                            <label><input type="radio" name="exercicio4" value="b">B) 3<span></span></label>
+                            <label><input type="radio" name="exercicio4" value="c">C) 5<span></span></label>
+                            <label><input type="radio" name="exercicio4" value="d">D) 6<span></span></label>
                         </div>
                     </fieldset>
                 </article>    
@@ -188,7 +276,7 @@
         </section>
     </main>
     
-   <footer class="rodape">
+    <footer class="rodape">
         <p>Código em Jogo - Projeto Integrador - Fatec</p>
         <p>Feito para quem está começando.</p>
 
