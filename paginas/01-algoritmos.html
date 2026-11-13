@@ -1,12 +1,896 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algoritmos</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <title>Algoritmos e primeiros passos em C</title>
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body id="pagina-aula">
+    <header id="cabecalho">
+        <a href="../index.html" class="logo">
+            <img src="../assets/imagens/logo-codigo-em-jogo.png" 
+            alt=""
+            width="48"
+            height="48"
+            >
+        </a>
+
+        <nav id="menu-principal" aria-label="Menu principal">
+            <a href="../index.html">Início</a>
+            <a href="../index.html#trilha">Trilha C</a>
+            <a href="#exercicios">Praticar</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="conteudo-principal" aria-labelledby="titulo-aula">
+    
+        <header class="conteudo-principal-cabecalho">
+            <p>Módulo 01 - Fundamentos</p>
+
+            <h1 id="titulo-aula">
+                Algoritmos e primeiros passos em C
+            </h1>
+
+            <p> Como transformar um problema em instruções
+                que o computador consegue executar?
+                O primeiro passo é compreender o problema 
+                e organizar uma solução.
+            </p>
+
+            <p>
+                Você vai descobrir o que é um algoritmo, 
+                organizar passos e acompanhar um programa em C
+                que calcula a média de duas notas. 
+                Não é necessário ter programado antes.
+            </p>
+        </header>
+       </section>
+
+        <section class="secao-conteudo" aria-labelledby="titulo-algoritmo">
+            <h2 id="titulo-algoritmo">O que é um algoritmo?</h2>
+
+            <p>
+                Um algoritmo é uma sequência finita e organizada de 
+                instruções para realizar uma tarefa iu resolver um problema.
+                Cada instrução precisa ser clara para quem vai executá-la.
+            </p>
+
+            <p>
+                Usamos essa ideia em situações do cotidiano, mesmo sem
+                um computador. Pense, por exemplo, nos passos para 
+                calcular a média de duas notas.
+            </p>
+
+            <ol>
+                <li>Identificar a primeira nota.</li>
+                <li>Identificar a segunda nota.</li>
+                <li>Somar as duas notas.</li>
+                <li>Dividir a soma por dois.</li>
+                <li>Apresentar a média encontrada.</li>
+            </ol>
+
+            <p>
+                Se as notas forem 6 e 8, a soma será 14.
+                Dividindo 14 por 2, encontramos a média 7.
+            </p>
+
+            <h3>Por que a ordem importa?</h3>
+
+            <p>
+                Para calcular a média, precisamos conhecer as duas notas.
+                Depois, precisamos obter a soma antes de dividi-la por dois.
+                Algumas etapas dependem do resultado de outras.
+            </p>
+
+            <h3>Pense antes de continuar</h3>
+
+            <p>
+                Uma pessoa sugeriu somar as duas notas e apresentar essa
+                soma como a média. Qual etapa está faltando?
+            </p>
+
+            <details>
+                <summary>Conferir a explicação</summary>
+
+                <p>
+                    Falta dividir a soma por dois,pois estamos calculando
+                    a média de duas notas. Para as notas 6 e 8, apresentar 
+                    apenas a soma mostraria 14, em vez da média 7.
+                </p>
+            </details>
+        </section>
+
+        <section class="secao-conteudo" aria-labelledby="titulo-etapas">
+            <h2 id="titulo-etapas">Entrada, processamento e saída</h2>
+
+            <p>
+                Uma forma de planejar uma solução é separar três partes:
+                quais dados serão usados, o que será feito com eles
+                 e qual resultado queremos apresentar.
+            </p>
+
+            <h3>1. Entrada: quais dados precisamos?</h3>
+
+            <p>
+                Para calcular a média de duas notas, precisamos conhecer
+                a primeira e a segunda nota. Neste exemplo,
+                utilizaremos os valores 6 e 8.
+            </p>
+
+            <h3>2. Processamento: o que fazemos com os dados?</h3>
+
+            <p>
+                Somamos as duas notas e dividimos o resultado por dois.
+                Os parênteses indicam que a soma deve ser feita primeiro.
+            </p>
+
+            <p>
+                <strong>Cálculo:</strong> (6 + 8) / 2 = 7
+            </p>
+
+            <h3>3. Saída: qual resultado apresentamos?</h3>
+
+            <p>
+                Apresentamos a média calculada: 7.
+                No programa em C, esse resultado será mostrado na tela.
+            </p>
+
+            <h3>A entrada precisa ser digitada?</h3>
+
+            <p>
+                Não necessariamente. Os dados podem vir de diferentes
+                fontes. No nosso primeiro programa, as notas serão
+                definidas diretamente no código.
+                Na próxima aula, você aprenderá a receber valores
+                digitados pelo usuário.
+            </p>
+
+            <h3>Sua vez de pensar</h3>
+
+            <p>
+                Se as notas mudarem para 5 e 9, quais serão a entrada,
+                o processamento e a saída?
+            </p>
+
+            <details>
+                <summary>Conferir a explicação</summary>
+
+                <ul>
+                    <li><strong>Entrada:</strong> as notas 5 e 9.</li>
+                    <li>
+                        <strong>Processamento:</strong>
+                        somar 5 e 9 e dividir a soma por dois.
+                    </li>
+                    <li><strong>Saída:</strong> a média 7.</li>
+                </ul>
+
+                <p>
+                    Os dados mudaram, mas os passos usados para
+                    calcular a média continuaram os mesmos.
+                </p>
+            </details>
+        </section>
+
+        <section class="secao-conteudo" aria-labelledby="titulo-programa">
+            <h2 id="titulo-programa">Como o algoritmo vira um programa?</h2>
+
+            <p>
+                Até aqui, descrevemos a solução com palavras e cálculos.
+                Para que o computador realize essa tarefa, precisamos
+                escrever as instruções em uma linguagem de programação.
+                Nesta trilha, utilizaremos a linguagem C.
+            </p>
+
+            <h3>Algoritmo: o plano da solução</h3>
+
+            <p>
+                O algoritmo organiza os passos necessários para resolver
+                o problema. Ele pode ser representado em palavras,
+                em um fluxograma ou em pseudocódigo.
+            </p>
+
+            <p>
+                Pseudocódigo é uma maneira de descrever instruções
+                de forma organizada, sem seguir todas as regras
+                de uma linguagem de programação.
+            </p>
+
+            <h3>Linguagem C: a forma de escrever o programa</h3>
+
+            <p>
+                A linguagem C possui regras para escrver as instruções.
+                Ao usar essas regras para implementar nosso algoritmo,
+                produzimos o código-fonte do programa.
+            </p>
+
+            <h3>Editor e IDE: ferramentas para desenvolver</h3>
+
+            <p>
+                Um editor, como o Visual Studio Code, permite escrever 
+                e salvar o código-fonte. Arquivos de código-fonte em C
+                normalmente usam a extensão .c, como media.c.
+            </p>
+
+            <p>
+                Uma IDE é um ambiente que reúne ferramentas de
+                desenvolvimento, como edição, compilação e depuração.
+                O VS Code também pode integrar essas ferramentas
+                por meio de extensões e configurações.
+            </p>
+
+            <h3>Compilador: a tradução do código</h3>
+
+            <p>
+                O compilador analisa o código-fonte e o traduz.
+                Na construção de um programa simples em C,
+                a compilação e a ligação com as bibliotecas
+                permitem gerar um arquivo executável.
+            </p>
+
+            <p>
+                Problemas na escrita do código podem ser apontados
+                durante esse processo. Porém, compilar sem erros 
+                não garante que a solução esteja correta:
+                também precisamos testar os resultados.
+            </p>
+
+            <h3>Resumindo o caminho</h3>
+
+            <ol>
+                <li>Compreender o problema.</li>
+                <li>Planejar os passos do algoritmo.</li>
+                <li>Escrever o código-fonte em C.</li>
+                <li>Compilar e gerar o programa executável.</li>
+                <li>Executar, conferir o resultado e corrigir se necessário.</li>
+            </ol>
+
+            <p>
+                No exemplo da média, não basta o programa funcionar:
+                precisamos conferir se as notas 6 e 8 realmente
+                produzem a média 7.
+            </p>
+        </section>
+
+        <section class="exemplo" aria-labelledby="titulo-exemplo-media">
+            <h2 id="titulo-exemplo-media">
+                Um programa para calcular a média
+            </h2>
+
+            <p>
+                Vamos usar as notas 6 e 8. O programa guardará esses
+                valores, calculará a média e mostrará o resultado na tela.
+            </p>
+
+            <p>
+                Primeiro, observe o programa completo. Não é necessário
+                entender todos os símbolos agora: vamos explicar
+                cada linha na próxima seção.
+            </p>
+
+            <div class="exemplo-codigo">
+                <h3>Código em C</h3>
+
+                <pre><code class="codigo">#include &lt;stdio.h&gt;
+            
+            int main(void) {
+                double nota1 = 6.0;
+                double nota2 = 8.0;
+                double media = (nota1 + nota2) / 2.0;
+
+                printf("Media = %.1f\n", media);
+
+                return 0;
+            }</code></pre>
+            </div>
+
+            <div class="exemplo-resultado">
+                <h3>Resultado esperado</h3>
+
+                <pre><samp>Media = 7.0</samp></pre>
+            </div>
+
+            <p>
+                A soma das notas é 14. Ao dividir essa soma por 2,
+                obtemos 7. O programa apresenta o resultado com 
+                uma casa decimal: 7.0.
+            </p>
+        </section>
+
+    <section class="secao-conteudo" 
+        aria-labelledby="titulo-linha-por-linha">
+
+        <h2 id="titulo-linha-por-linha">
+            Entendendo o código linha por linha
+        </h2>
+
+        <p>
+            Agora vamos acompanhar o programa por partes.
+            Leia cada linha e observe o papel dela na solução.
+            As linhas em branco apenas ajudam a organizar a leitura.
+        </p>
+
+        <h3>1. Disponibilizando recursos de entrada e saída</h3>
+
+        <pre><code class="codigo">#include &lt;stdio.h&gt;</code></pre>
+
+        <p>
+            Essa diretiva inclui o cabeçalho
+            <code>stdio.h</code>, que contém as declarações
+            de funções de entrada e saída, como
+            <code>printf</code>.
+            Neste programa, usaremos essa função para mostrar
+            a média na tela.
+        </p>
+
+        <p>
+            O símbolo <code>#</code> inicia uma diretiva
+            de pré-processamento. Essa linha é tratada antes
+            da compilação do código C e não termina
+            com ponto e vírgula.
+        </p>
+
+        <h3>2. Iniciando a função principal</h3>
+
+        <pre><code class="codigo">int main(void) {</code></pre>
+        
+        <p>
+            A função <code>main</code> é o ponto de início
+            da execução deste programa.
+            As instruções docálculo ficarão dentro dela.
+        </p>
+
+        <ul>
+            <li>
+                <code>int</code> indica que a função
+            devolve um valor inteiro ao terminar.
+            </li>
+
+            <li>
+                <code>main</code> é o nome da função principal.
+            </li>
+
+            <li>
+                <code>(void)</code> indica que essa função
+                não recebe parâmetros.
+            </li>
+
+            <li>
+                A chave <code>{</code> abre o bloco
+                de instruções da função.
+            </li>
+        </ul>
+
+        <p>
+            Mais adiante, encontraremos a chave
+            <code>}</code>, que fecha esse bloco.
+            As chaves ajudam a identificar quaisinstruções
+            pertencem à função.
+        </p>
+
+        <h3>3. Guardando a primeira nota</h3>
+
+        <pre><code class="codigo">double nota1 = 6.0;</code></pre>
+
+        <p>
+            Essa linha cria uma variável chamada <code>nota1</code>
+            e atribui a ela o valor inicial <code>6.0</code>.
+            Uma variável é um espaço identificado por um nome
+            que guarda um valor durante a execução.
+        </p>
+
+        <ul>
+            <li>
+                <code>duble</code>é um tipo usado para representar
+                números que podem ter casas decimais.
+            </li>
+            <li>
+                <code>nota1</code> é o nome escolhido para a variável.
+            </li>
+            <li>
+                <code>=</code> atribui um valor à variável.
+                Aqui, ele não representa uma comparação.
+            </li>
+            <li>
+                <code>6.0</code> é o valor inicial.
+                Em C, usamos ponto para escrever a parte decimal.
+            </li>
+            <li>
+                <code>;</code> encerra essa instrução.
+            </li>
+        </ul>
+
+        <h3>4. Guardando a segunda nota</h3>
+
+        <pre><code class="codigo">double nota2 = 8.0;</code></pre>
+
+        <p>
+            Criamos outra variável do tipo <code>double</code>,
+            agora chamada <code>nota2</code>, com o valor
+            inicial <code>8.0</code>.
+            Neste momento, o programa tem as duas notas
+            necessárias para o cálculo.
+        </p>
+
+        <h3>5. Calculando e guardando a média</h3>
+
+        <pre><code class="codigo">double media = (nota1 + nota2 / 2.0;</code>
+        </pre>
+
+        <p>
+            Essa linha cria a variável <code>media</code>
+            e guarda nela o resultado da expressão
+            <code>(nota1 + nota2 / 2.0</code>.
+        </p>
+
+        <ol>
+            <li>
+                O programa consulta os valores de
+                <code>nota1</code> e <code>nota2</code>: 6.0 e 8.0.
+            </li>
+            <li>
+                Os parênteses agrupam a soma:
+                <code>6.0 + 8.0</code>, que resulta em 14.0.
+            </li>
+            <li>
+                O símbolo <code>/</code> indica divisão:
+                <code>14.0 / 2.0</code> resulta em 7.0.
+            </li>
+            <li>
+                O resultado 7.0 é armazenado em <code>media</code>.
+            </li>
+        </ol>
+
+        <p>
+            Os parêntesessão importantes. Sem eles, a divisão
+            seria realizada antes da soma.
+            A expressão <code>nota 1 + nota 2 / 2.0</code>
+            produziria 10.0, que não é a média dessas notas.
+        </p>
+
+        <h3>6. Mostrando o resultado</h3>
+
+        <pre><code class="codigo">printf("Media = %.1f\n", media);</code></pre>
+
+        <p>
+            A função <code>printf</code> mostra uma saída na tela.
+            Ela recebe um texto de formatação e, neste caso,
+            o valor que será inserido nesse texto.
+        </p>
+
+        <ul>
+            <li>
+                As aspas delimitam o texto de formatação:
+                <code>"Media = %.1fn\n</code>.
+            </li>
+            <li>
+                <code>Media =</code> é a parte que aparece
+                literalmente na tela.
+            </li>
+            <li>
+                <code>%.1f</code> indica que o valor numérico
+                será representado com uma casa decimal.
+            </li>
+            <li>
+                <code>\n</code> indica uma quebra de linha
+                depois do resultado.
+            </li>
+            <li>
+                A vírgula separa o texto de formatação
+                do valor de <code>media</code> que será exibido.
+            </li>
+            <li>
+                Os parênteses delimitam os argumentos
+                da chamada de <code>printf</code>.
+            </li>
+        </ul>
+
+        <p>
+            Como <code>media</code> guarda 7.0,
+            a saída será <samp>Media = 7.0</samp>.
+            Mostrar o valor com uma casa decimal não altera
+            o número armazenado na variável.
+        </p>
+
+        <h3>7. Encerrando a função principal</h3>
+
+        <pre><code class="codigo">return 0;</code></pre>
+
+        <p>
+            O comando <code>return</code> encerra a função.
+            Dentro de <code>main</code>, devolver
+            <code>0</code> indica ao ambiente de execução
+            que o programa termminou com sucesso.
+        </p>
+
+        <p>
+            Esse zero não é a média e não é mostrado
+            na tela por esse comando.
+            Ele informa o estado de encerramento do programa.
+        </p>
+
+        <h3>8. Fechando o bloco</h3>
+
+        <pre><code class="codigo"></code></pre>
+
+        <p>
+            A chave fecha o bloco da função
+            <code>main</code>, aberto no início do programa.
+            Ela não receve ponto e vírgula depois,
+            pois está encerrando a definição da função.
+        </p>
+
+        <h3>Confira o caminho dos dados</h3>
+
+        <p>
+            As variáveis <code>nota1</code> e <code>nota2</code>
+            guardaram os dados usados no cálculo.
+            A expressão calculou a média e guardou o resultado 
+            em <code>media</code>.
+            Por fim, <code>printf</code> apresentou esse resultado.
+        </p>
+
+        <details>
+            <summary>E se a segunda nota fosse 10.0?</summary>
+
+            <p>
+                Mantendo a primeira nota em 6.0,
+                o cálculo seria (6.0 + 10.0) / 2.0.
+                A soma seria 16.0 e a média seria 8.0.
+                A saída seria <samp>Media = 8.0</samp>.
+            </p>
+        </details>
+        
+        </section>
+
+        <section class="secao-conteudo" aria-labelledby="titulo-erros">
+            <h2 id="titulo-erros">Erros comuns e como evitá-los</h2>
+
+            <h3>Começar pelo código sem entender o problema</h3>
+
+            <p>
+                Antes de programar, identifique os dados necessários,
+                os passos do cálculo e o resultado esperado.
+                No exemplo, precisamos de duas notas e queremos
+                apresentar a média delas.
+            </p>
+
+            <h3>Esquecer os parênteses no cálculo</h3>
+
+            <p>
+                A expressão <code>nota1 + nota2 / 2.0</code>
+                divide a segunda nota por dois antes de somar.
+                Para calcular a média, precisaos somar primeiro:
+                <code>(nota1 + nota2) / 2.0</code>.
+            </p>
+
+            <h3>Usar vírgula para escrever um número decimal</h3>
+
+            <p>
+                No código C, escrevemos <code>6.0</code>,
+                usando ponto. A vírgula não funciona como
+                separador decimal na escrita desse valor.
+            </p>
+
+            <h3>Esquecer o ponto e vírgula</h3>
+
+            <p>
+                Declarações como <code>double nota1 = 6.0;</code>
+                e comandos como <code>return 0;</code>
+                precisam terminar com ponto e vírgula.
+                Isso não sugnifica colocar esse símbolo
+                no final de todas as linhas.
+            </p>
+
+            <h3>Usar nomes diferentes para a mesma variável</h3>
+
+            <p>
+                A linguagem C diferencia letras maiúsculas
+                de minúsculas. Se você criou <code>nota1</code>,
+                precisa usar esse mesmo nome.
+                <code>Nota1</code> é um nome diferente.
+            </p>
+
+            <h3>Achar que compilar garante o resultado correto</h3>
+
+            <p>
+                Um programa pode compilar e ainda calcular
+                uma resposta incorreta. Teste com valores
+                cujo resultado você consegue conferir:
+                para as notas 6 e 8, a média deve ser 7.
+            </p>
+        </section>
+
+        <section class="secao-conteudo" aria-labelledby="titulo-resumo">
+            <h2 id="titulo-resumo">O que aprendemos até aqui?</h2>
+
+            <ul>
+                <li>
+                    Um algoritmo organiza uma sequência finita
+                    de instruções para resolver um problema.
+                </li>
+                <li>
+                    Podemos planejar uma solução identificando
+                    entrada, processamento e saída.
+                </li>
+                <li>
+                    Variáveis guardam os valores usados
+                    durante a execução.
+                </li>
+                <li>
+                    A função <code>main</code> é o ponto 
+                    de início da execução do nosso programa.
+                </li>
+                <li>
+                    A função <code>printf</code> permite
+                    apresentar o resultado na tela.
+                </li>
+                <li>
+                    Testar e conferir os resultados faz parte
+                    da construção da solução.
+                </li>
+            </ul>
+
+            <p>
+                Você não precisa decorar todos os símbolos agora.
+                Procure compreender o caminho: identificar os dados,
+                organizar os passos, realizar o cálculo
+                e apresentar a resposta.
+            </p>
+        </section>
+
+        <section class="exercicios" id="exercicios">
+            aria-labelledby="titulo-exercicios">
+
+            <h2 id="titulo-exercicios">Exercícios de fixação</h2>
+
+            <p>
+                Escolha uma alternativa por questão.
+                Antes de abrir a explicação, tente justificar
+                sua escolha com o que aprendeu.
+            </p>
+
+            <article class="questao">
+                <h3>Exercício 1 - O conceito de algoritmo</h3>
+
+                <fieldset>
+                    <legend>
+                        Qual alternativa descreve melhor um algoritmo?
+                    </legend>
+
+                    <div class="resposta">
+                        <label>
+                            <input type="radio" name="exercicio1" value="a">
+                            <span>
+                                A) Uma sequência finita e organizada de
+                                instruções para resolver um problema.
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio1" value="b">
+                            <span>B) Uma peça física do computador.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio1" value="c">
+                            <span>C) Um programa que nunca termina.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio1" value="d">
+                            <span>D) Um nome usado somente na linguagem C.</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <details>
+                    <summary>Conferir resposta e explicação</summary>
+
+                    <p>
+                        <strong>Alternativa A.</strong>
+                        Um algoritmo descreve passos claros, organizados
+                        e finitos para realizar uma tarefa.
+                        Ele pode ser representado antes de escrevermos
+                        qualquer código.
+                    </p>
+                </details>
+            </article>
+
+            <article class="questao">
+                <h3>Exercício 2 - Identificando as etapas</h3>
+
+                <fieldset>
+                    <legend>
+                        No cálculo da média de duas notas,
+                        qual opção representa o processamento?
+                    </legend>
+
+                    <div class="resposta">
+                        <label>
+                            <input type="radio" name="exercicio2" value="a">
+                            <span>A) As duas notas utilizadas.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio2" value="b">
+                            <span>B) Somar as notas e dividir a soma por dois.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio2" value="c">
+                            <span>C) A média apresentada na tela. </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio2" value="d">
+                            <span>D) O nome do arquivo do programa. </span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <details>
+                    <summary>Conferir resposta e explicação</summary>
+
+                    <p>
+                        <strong>Alternativa B.</strong>
+                        O processamento transforma os dados em resultado.
+                        As notas são os dados de entrada; somar e dividir
+                        são as operações; a média apresentada é a saída.
+                    </p>
+                </details>
+            </article>
+
+             <article class="questao">
+                <h3>Exercício 3 — Acompanhando o código</h3>
+
+                    <p>Leia o trecho e calcule o resultado antes de responder.</p>
+
+                    <pre><code class="codigo">double nota1 = 4.0;
+        double nota2 = 8.0;
+        double media = (nota1 + nota2) / 2.0;
+
+        printf("Media = %.1f\n", media);</code></pre>
+
+                <fieldset>
+                    <legend>Qual saída esse trecho apresenta?</legend>
+
+                     <div class="resposta">
+                        <label>
+                            <input type="radio" name="exercicio3" value="a">
+                            <span>A) Media = 12.0</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio3" value="b">
+                            <span>B) Media = 4.0</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio3" value="c">
+                            <span>C) Media = 6.0</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio3" value="d">
+                            <span>D) Media = 8.0</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <details>
+                    <summary>Conferir resposta e explicação</summary>
+
+                    <p>
+                        <strong>Alternativa C.</strong>
+                        Primeiro somamos 4.0 e 8.0, obtendo 12.0.
+                        Depois dividimos por 2.0, obtendo 6.0.
+                        O formato <code>%.1f</code> apresenta
+                        uma casa decimal.
+                    </p>
+                </details>
+            </article>
+
+            <article class="questao">
+                <h3>Exercício 4 — Encontrando um erro no cálculo</h3>
+
+                <pre><code class="codigo">double nota1 = 6.0;
+        double nota2 = 8.0;
+        double media = nota1 + nota2 / 2.0;</code></pre>
+
+                <fieldset>
+                    <legend>
+                        Por que essa expressão não calcula
+                        corretamente a média das duas notas?
+                    </legend>
+
+                    <div class="resposta">
+                        <label>
+                            <input type="radio" name="exercicio4" value="a">
+                            <span>
+                                A) Porque double não pode guardar notas.
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio4" value="b">
+                            <span>
+                                B) Porque as notas deveriam ser iguais.
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio4" value="c">
+                            <span>
+                                C) Porque o nome media não pode ser usado.
+                            </span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="exercicio4" value="d">
+                            <span>
+                                D) Porque a divisão acontece antes da soma.
+                                É necessário agrupar a soma com parênteses.
+                            </span>
+                        </label>
+                    </div>
+                </fieldset>
+
+            <details>
+                <summary>Conferir resposta e explicação</summary>
+
+                <p>
+                    <strong>Alternativa D.</strong>
+                    A expressão calcula primeiro
+                    <code>8.0 / 2.0</code> e depois soma 6.0,
+                    produzindo 10.0.
+                    Para obter a média 7.0, usamos
+                    <code>(nota1 + nota2) / 2.0</code>.
+                </p>
+            </details>
+
+        </article>
+        </section>
+
+        <section class="secao-conteudo" aria aria-labelledby="titulo-proximo-passo">
+            <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
+
+            <p>
+                Você acompanhou uma solução desde o planejamento
+                até o código em C. Mais importante do que decorar
+                as instruções é conseguir explicar o que cada
+                parte faz e como o resultado é obtido.
+            </p>
+
+            <nav aria-label="Navegação entre aulas">
+                <a href="../index.html#trilha">Voltar para a trilha</a>
+
+                <a href="02-sequenciais.html" class="botao-acao">
+                    Próxima aula: estrutura sequencial
+                </a>
+            </nav>
+
+
+        </section>
+    
+    </main>
+
+    <footer class="rodape">
+        <p>Código em Jogo - Projeto Integrador - Fatec</p>
+        <p>Feito para quem está começando.</p>
+
+        <p>Integrantes:</p>
+
+        <ul>
+            <li>Abinad Henrique da Silva Santos</li>
+            <li>Jaidy Miyuki Santos Yamada</li>
+            <li>Juliana de Arruda Meyer Coracini</li>
+            <li>Lucas Gabriel de Souza</li>
+        </ul>
+    </footer>
     
 </body>
 </html>
