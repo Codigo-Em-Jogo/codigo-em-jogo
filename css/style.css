@@ -338,3 +338,33 @@ a {
         justify-content: center;
     }
 }
+
+/* ===================================================================
+    MASCOTE 
+   =================================================================== */
+.mascote {
+    display: block;
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    align-self: center;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Respeita a preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    .mascote {
+        animation: none;
+    }
+    
+}
