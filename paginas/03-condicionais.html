@@ -16,7 +16,7 @@
         <nav id="menu-principal" aria-label="Menu principal">
             <a href="../index.html">Início</a>
             <a href="./01-algoritmos.html">Trilha C</a>
-            <a href="#exercicios">Praticar</a>
+            <a href="../sobre.html">Sobre</a>
         </nav>
     </header>
 
@@ -639,7 +639,16 @@ Aprovado</samp></pre>
                     </div>
 
                     <button type="button" class="botao-verificar">Verificar</button>
-                        <p class="texto-resultado"></p>
+                    <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa B.</strong>
+                            O <code>if</code> testa uma condição: se ela for verdadeira, o código dentro dele é executado. Se for falsa, ele pula esse bloco.
+                        </p>
+                    </details>
                 </div>
 
                 <div class="questao">
@@ -687,6 +696,15 @@ if (idade &gt;= 18) {
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa B.</strong>
+                            A variável <code>idade</code> vale 16. Como 16 não é maior nem igual a 18, o <code>if</code> é ignorado e o código executa o <code>else</code> ("Menor de idade").
+                        </p>
+                    </details>
 
 
                 </div>
@@ -740,6 +758,15 @@ if (idade &gt;= 18 &amp;&amp; possuiDocumento == 1) {
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa B.</strong>
+                            O operador <code>&amp;&amp;</code> (E) exige que as duas condições sejam verdadeiras. Como <code>possuiDocumento</code> vale 0 (falso), o código vai para o <code>else</code> ("Entrada negada").
+                        </p>
+                    </details>
                 </div>
 
 
@@ -792,9 +819,36 @@ if (nota &gt;= 7) {
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
-                </div>
 
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa C.</strong>
+                            A nota vale 6. O primeiro <code>if (nota &gt;= 7)</code> é falso, mas a condição do <code>else if (nota &gt;= 5)</code> é verdadeira, exibindo "Recuperacao".
+                        </p>
+                    </details>
+                </div>
             </section>
+
+            <section class="secao-conteudo" aria aria-labelledby="titulo-proximo-passo">
+            <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
+
+            <p>
+                Você acompanhou uma solução desde o planejamento
+                até o código em C. Mais importante do que decorar
+                as instruções é conseguir explicar o que cada
+                parte faz e como o resultado é obtido.
+            </p>
+
+            <nav aria-label="Navegação entre aulas">
+                <a href="./02-sequenciais.html" class="botao-acao">
+                    Aula anterior: Estruturas Sequenciais</a>
+
+                <a href="./04-while.html" class="botao-acao">
+                    Próxima aula: Estruturas Repetitivas: While
+                </a>
+            </nav>
         </section>
     </main>
 

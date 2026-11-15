@@ -15,7 +15,7 @@
         <nav id="menu-principal">
             <a href="../index.html">Início</a>
             <a href="./01-algoritmos.html">Trilha C</a>
-            <a href="#exercicios">Praticar</a>
+            <a href="../sobre.html">Sobre</a>
         </nav>
     </header>
 
@@ -210,7 +210,8 @@ int main()
                     <li>Tentar acessar uma posição usando vírgula (<code>mat[i, j]</code>) ou apenas um colchete
                         (<code>mat[i]</code>) em vez de dois colchetes separados (<code>mat[i][j]</code>).</li>
                     <li>Usar a mesma variável (como <code>i</code>) nos dois <code>for</code>, fazendo o
-                        <code>for</code> de dentro sobrescrever o controle das linhas.</li>
+                        <code>for</code> de dentro sobrescrever o controle das linhas.
+                    </li>
                 </ul>
             </section>
 
@@ -235,10 +236,10 @@ int main()
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio1" value="a"><span>A) 2 linhas e 3
+                            <label><input type="radio" name="exercicio1" value="a"><span>A) 3 linhas e 2
                                     colunas</span></label>
-                            <label><input type="radio" name="exercicio1" value="b" data-certa="sim"><span>B) 3 linhas e
-                                    2 colunas</span></label>
+                            <label><input type="radio" name="exercicio1" value="b" data-certa="sim"><span>B) 2 linhas e
+                                    3 colunas</span></label>
                             <label><input type="radio" name="exercicio1" value="c"><span>C) 2 linhas e 2
                                     colunas</span></label>
                             <label><input type="radio" name="exercicio1" value="d"><span>D) 3 linhas e 3
@@ -248,6 +249,16 @@ int main()
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
+                    <details hidden class="resposta-explicacao">
+
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa B.</strong>
+                            O primeiro valor indica as linhas e o segundo as colunas: <code>matriz[2][3]</code> tem 2
+                            linhas e 3 colunas.
+                        </p>
+                    </details>
 
                 </article>
 
@@ -278,6 +289,16 @@ int mat[2][3] = {
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa D.</strong>
+                            O acesso segue a ordem <code>mat[linha][coluna]</code> começando do 0. Na linha de índice 1
+                            (valores 7, 8, 9), a coluna de índice 2 é o valor <strong>9</strong>.
+                        </p>
+                    </details>
+
                 </article>
 
                 <article class="questao">
@@ -301,6 +322,16 @@ int mat[2][3] = {
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa B.</strong>
+                            A diagonal principal começa no canto superior esquerdo ([0][0]) e desce até o canto inferior
+                            direito ([2][2]), onde a linha e a coluna são sempre iguais.
+                        </p>
+                    </details>
+
                 </article>
                 <article class="questao">
                     <h3>Exercício 4</h3>
@@ -320,9 +351,9 @@ printf("%d", grade[2][0]);
                         <legend>Respostas</legend>
                         <div class="resposta">
                             <label><input type="radio" name="exercicio4" value="a" data-certa="sim">A)
-                                2<span></span></label>
+                                5<span></span></label>
                             <label><input type="radio" name="exercicio4" value="b">B) 3<span></span></label>
-                            <label><input type="radio" name="exercicio4" value="c">C) 5<span></span></label>
+                            <label><input type="radio" name="exercicio4" value="c">C) 2<span></span></label>
                             <label><input type="radio" name="exercicio4" value="d">D) 6<span></span></label>
                         </div>
                     </fieldset>
@@ -330,8 +361,37 @@ printf("%d", grade[2][0]);
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa A.</strong>
+                            <code>grade[2][0]</code> acessa a linha 2 (<code>{5, 6}</code>) na coluna 0, exibindo o
+                            valor 5.
+                        </p>
+                    </details>
+
                 </article>
             </section>
+
+            <section class="secao-conteudo" aria aria-labelledby="titulo-proximo-passo">
+            <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
+
+            <p>
+                Você acompanhou uma solução desde o planejamento
+                até o código em C. Mais importante do que decorar
+                as instruções é conseguir explicar o que cada
+                parte faz e como o resultado é obtido.
+            </p>
+
+            <nav aria-label="Navegação entre aulas">
+                <a href="./06-vetores.html" class="botao-acao">
+                    Aula anterior: Vetores</a>
+
+                <a href="../index.html#trilha" class="botao-acao">
+                    Voltar para a trilha
+                </a>
+            </nav>
         </section>
     </main>
 

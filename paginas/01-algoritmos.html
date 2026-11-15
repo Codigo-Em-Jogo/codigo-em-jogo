@@ -19,7 +19,7 @@
         <nav id="menu-principal" aria-label="Menu principal">
             <a href="../index.html">Início</a>
             <a href="../index.html#trilha">Trilha C</a>
-            <a href="#exercicios">Praticar</a>
+            <a href="../sobre.html">Sobre</a>
         </nav>
     </header>
 
@@ -51,8 +51,8 @@
         </footer>
     </aside>
 
-    <main>
-        <section id="conteudo-principal" aria-labelledby="titulo-aula">
+    <main id="conteudo-principal">
+        <section aria-labelledby="titulo-aula">
 
             <header class="conteudo-principal-cabecalho">
                 <p>Módulo 01 - Fundamentos</p>
@@ -715,7 +715,7 @@
                 <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
-                <details>
+                <details hidden class="resposta-explicacao">
                     <summary>Conferir resposta e explicação</summary>
 
                     <p>
@@ -763,7 +763,7 @@
                 <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
-                <details>
+                <details hidden class="resposta-explicacao">
                     <summary>Conferir resposta e explicação</summary>
 
                     <p>
@@ -815,7 +815,7 @@
                 <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
-                <details>
+                <details hidden class="resposta-explicacao">
                     <summary>Conferir resposta e explicação</summary>
 
                     <p>
@@ -876,7 +876,7 @@
                 <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
-                <details>
+                <details hidden class="resposta-explicacao">
                     <summary>Conferir resposta e explicação</summary>
 
                     <p>
@@ -903,10 +903,11 @@
             </p>
 
             <nav aria-label="Navegação entre aulas">
-                <a href="../index.html#trilha">Voltar para a trilha</a>
+                <a href="../index.html#trilha" class="botao-acao">
+                    Voltar para a trilha</a>
 
                 <a href="02-sequenciais.html" class="botao-acao">
-                    Próxima aula: estrutura sequencial
+                    Próxima aula: Estruturas Sequenciais
                 </a>
             </nav>
         </section>

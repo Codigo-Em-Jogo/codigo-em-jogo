@@ -12,6 +12,9 @@ for (let i = 0; i < questoes.length; i++){
     let botao = questaoAtual.querySelector(".botao-verificar");
     let resultado = questaoAtual.querySelector(".texto-resultado");
 
+    let detalhes = questaoAtual.querySelector("details");
+    let tituloDetalhes = detalhes.querySelector("summary");
+
     if (localStorage.getItem(chavePostIt) == "feita"){
         let respostasCertas = questaoAtual.querySelectorAll('input[data-certa="sim"]');
         
@@ -20,6 +23,10 @@ for (let i = 0; i < questoes.length; i++){
         }
 
         resultado.textContent = "Acertou!";
+
+        detalhes.hidden = false;
+        detalhes.open = true;
+        tituloDetalhes.textContent = "Explicação da resposta";
     }
 
 botao.addEventListener("click", function () {
@@ -46,8 +53,16 @@ botao.addEventListener("click", function () {
             resultado.textContent = "Acertou!";
             localStorage.setItem(chavePostIt, "feita");
             atualizarBarra();
+
+            detalhes.hidden = false;
+            detalhes.open = true;
+            tituloDetalhes.textContent = "Explicação da resposta";
         } else {
             resultado.textContent = "Errou! Confira todas as opções corretas e tente novamente.";
+
+            detalhes.hidden = false;
+            detalhes.open = false;
+            tituloDetalhes.textContent = "Conferir resposta correta";
         }
     });
 }

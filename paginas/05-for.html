@@ -15,7 +15,7 @@
         <nav id="menu-principal">
             <a href="../index.html">Início</a>
             <a href="./01-algoritmos.html">Trilha C</a>
-            <a href="#exercicios">Praticar</a>
+            <a href="../sobre.html">Sobre</a>
         </nav>
     </header>
 
@@ -234,15 +234,25 @@ for (int i = 2; i &lt;= 5; i++) {
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="radio" name="exercicio1" value="a" data-certa="sim"><span>A) 2 3 4 5 </span></label>
-                            <label><input type="radio" name="exercicio1" value="b"><span>B) 0123 </span></label>
+                            <label><input type="radio" name="exercicio1" value="a" data-certa="sim"><span>A) 2 3 4 5
+                                </span></label>
+                            <label><input type="radio" name="exercicio1" value="b"><span>B) 0 1 2 3 </span></label>
                             <label><input type="radio" name="exercicio1" value="c"><span>C) 2345 </span></label>
-                            <label><input type="radio" name="exercicio1" value="d"><span>D) 01234 </span></label>
+                            <label><input type="radio" name="exercicio1" value="d"><span>D) 0123 </span></label>
                         </div>
                     </fieldset>
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa A.</strong>
+                            A variável <code>i</code> começa em 2 e vai até 5 (<code>i &lt;= 5</code>). Como há um espaço após o <code>%d</code>, os números exibidos são <code>2 3 4 5 </code>.
+                        </p>
+                    </details>
                 </article>
 
                 <article class="questao">
@@ -264,13 +274,24 @@ printf ("%d", soma);
                         <div class="resposta">
                             <label><input type="radio" name="exercicio2" value="a"> <span>A) 5</span></label>
                             <label><input type="radio" name="exercicio2" value="b"> <span>B) 10</span></label>
-                            <label><input type="radio" name="exercicio2" value="c" data-certa="sim"> <span>C) 15</span></label>
+                            <label><input type="radio" name="exercicio2" value="c" data-certa="sim"> <span>C)
+                                    15</span></label>
                             <label><input type="radio" name="exercicio2" value="d"> <span>D) 20</span></label>
                         </div>
                     </fieldset>
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa C.</strong>
+                            A cada volta do laço, <code>soma</code> recebe o valor que já tinha mais o valor de <code>i</code> (1 + 2 + 3 + 4 + 5), resultando em 15.
+                        </p>
+                    </details>
+
                 </article>
                 <article class="questao">
                     <h3>Exercício 3</h3>
@@ -287,14 +308,24 @@ for (int i = 3; i &lt;= 8; i++) {
                         <legend>Respostas</legend>
                         <div class="resposta">
                             <label><input type="radio" name="exercicio3" value="a"> <span>A) 5 vezes</span></label>
-                            <label><input type="radio" name="exercicio3" value="b" data-certa="sim"=""> <span>B) 6 vezes</span></label>
+                            <label><input type="radio" name="exercicio3" value="b" data-certa="sim"> <span>B) 6
+                                    vezes</span></label>
                             <label><input type="radio" name="exercicio3" value="c"> <span>C) 7 vezes</span></label>
-                            <label><input type="radio" name="exercicio3" value="d"> <span>D) 8 vezes</span></label>
+                            <label><input type="radio" name="exercicio3" value="d"> <span>D) 4 vezes</span></label>
                         </div>
                     </fieldset>
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa B.</strong>
+                            Como a condição usa <code>&lt;=</code> (menor ou igual), tanto o 3 quanto o 8 entram na contagem: 3, 4, 5, 6, 7 e 8, repetindo 6 vezes no total.
+                        </p>
+                    </details>
 
                 </article>
                 <article class="questao">
@@ -314,7 +345,8 @@ for (int i = 1; i &lt; 5; i++) {
                         <div class="resposta">
                             <label><input type="radio" name="exercicio4" value="a"> <span>A) A variável <code>i</code>
                                     deveria começar em 0.</span></label>
-                            <label><input type="radio" name="exercicio4" value="b" data-certa="sim"=""> <span> B) A condição deveria ser
+                            <label><input type="radio" name="exercicio4" value="b" data-certa="sim"> <span> B) A
+                                    condição deveria ser
                                     <code>i &lt;= 5</code></span></label>
                             <label><input type="radio" name="exercicio4" value="c"> <span>C) O comando <code>i++</code>
                                     deveria vir antes do<code>printf</code>.</span></label>
@@ -326,8 +358,35 @@ for (int i = 1; i &lt; 5; i++) {
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
 
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa B.</strong>
+                            Usando <code>i &lt; 5</code>, o laço para antes do 5 (vai só até 4). Para incluir o 5 e exibir de 1 a 5, a condição correta deve ser <code>i &lt;= 5</code>.
+                        </p>
+                    </details>
                 </article>
             </section>
+
+            <section class="secao-conteudo" aria aria-labelledby="titulo-proximo-passo">
+            <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
+
+            <p>
+                Você acompanhou uma solução desde o planejamento
+                até o código em C. Mais importante do que decorar
+                as instruções é conseguir explicar o que cada
+                parte faz e como o resultado é obtido.
+            </p>
+
+            <nav aria-label="Navegação entre aulas">
+                <a href="./04-while.html" class="botao-acao">
+                    Aula anterior: Estrutura Repetitiva: While</a>
+
+                <a href="./06-vetores.html" class="botao-acao">
+                    Próxima aula: Vetores
+                </a>
+            </nav>
         </section>
     </main>
 
