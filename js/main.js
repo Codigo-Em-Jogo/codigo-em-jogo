@@ -97,7 +97,10 @@ let botaoRecolher = document.querySelector("#botao-recolher");
 let botaoAbrir = document.querySelector("#botao-abrir-barra");
 
 if (paginaAula && botaoRecolher && botaoAbrir) {
-    if (localStorage.getItem("barraRecolhida") == "sim") {
+    let ehCelular = window.innerWidth <= 960;
+    let estadoSalvo = localStorage.getItem("barraRecolhida");
+
+    if (estadoSalvo == "sim" || (ehCelular && estadoSalvo == null)) {
         paginaAula.classList.add("barra-recolhida");
         botaoAbrir.hidden = false;
     }
