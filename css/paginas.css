@@ -607,43 +607,58 @@ body.dark-mode section[aria-labelledby="titulo-proposta"] {
 }
 
 /* =================================================================
-   RESPONSIVIDADE DA PÁGINA DE AULA
+   ESTADO RECOLHIDO DA BARRA LATERAL
    ================================================================= */
-@media (max-width: 960px) {
-    body#pagina-aula {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #barra-lateral {
-        position: static;
-        margin: 1.5rem 1.5rem 0 1.5rem;
-    }
-
-    #pagina-aula #conteudo-principal {
-        padding: 1.5rem;
-    }
+body#pagina-aula.barra-recolhida {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
 }
 
-@media (max-width: 768px) {
-    #pagina-aula #cabecalho {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
+body#pagina-aula.barra-recolhida #barra-lateral {
+    display: none;
+}
 
-    #pagina-aula #menu-principal {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+body#pagina-aula.barra-recolhida #conteudo-principal {
+    padding-left: 5rem;
+}
 
-    #titulo-aula {
-        font-size: 1.75rem;
-    }
+#botao-abrir-barra {
+    position: fixed;
+    top: 5.5rem; 
+    left: 1.25rem;
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg);
+    color: var(--primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.65rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 95;
+    transition: all 0.2s ease;
+}
 
-    .secao-conteudo,
-    .exercicios {
-        padding: 1.25rem;
+#botao-abrir-barra:hover {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+#botao-abrir-barra[hidden] {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    body#pagina-aula.barra-recolhida #conteudo-principal {
+        padding-left: 1.5rem;
+        padding-top: 4.5rem;
     }
 }

@@ -37,7 +37,7 @@
     <aside id="barra-lateral" data-aula="aula1">
         <header class="barra-lateral-cabecalho">
             <p>Trilha em C</p>
-            <button type="button">Recolher</button>
+            <button type="button" id="botao-recolher">Recolher</button>
             <h2>Conteúdo do Curso</h2>
         </header>
 
@@ -64,6 +64,9 @@
     </aside>
 
     <main id="conteudo-principal">
+
+        <button type="button" id="botao-abrir-barra" title="Exibir conteúdo do curso" aria-label="Exibir conteúdo do curso" hidden>☰</button>
+
         <section aria-labelledby="titulo-aula">
 
             <header class="conteudo-principal-cabecalho">

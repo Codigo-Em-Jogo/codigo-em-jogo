@@ -88,3 +88,29 @@ function atualizarBarra(){
     let porcentagem = Math.round((totalAcertos/totalQuestoesCurso) * 100);
     textoProgresso.textContent =  totalAcertos + " de " + totalQuestoesCurso + " exercicios (" + porcentagem + "%)";
 }
+
+
+// Ocultar/mostrar barra lateral
+
+let paginaAula = document.querySelector("#pagina-aula");
+let botaoRecolher = document.querySelector("#botao-recolher");
+let botaoAbrir = document.querySelector("#botao-abrir-barra");
+
+if (paginaAula && botaoRecolher && botaoAbrir) {
+    if (localStorage.getItem("barraRecolhida") == "sim") {
+        paginaAula.classList.add("barra-recolhida");
+        botaoAbrir.hidden = false;
+    }
+
+    botaoRecolher.addEventListener("click", function () {
+        paginaAula.classList.add("barra-recolhida");
+        botaoAbrir.hidden = false;
+        localStorage.setItem("barraRecolhida", "sim");
+    });
+
+    botaoAbrir.addEventListener("click", function () {
+        paginaAula.classList.remove("barra-recolhida");
+        botaoAbrir.hidden = true;
+        localStorage.setItem("barraRecolhida", "nao");
+    });
+}
