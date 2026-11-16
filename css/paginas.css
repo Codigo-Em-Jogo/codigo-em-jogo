@@ -1,0 +1,649 @@
+/* =================================================================
+   ESTILOS DA PÁGINA
+   ================================================================= */
+
+#pagina-aula #cabecalho {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#pagina-aula #menu-principal {
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+}
+
+#pagina-aula #menu-principal a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+#pagina-aula #menu-principal a:hover {
+    color: var(--primary);
+}
+
+/* =================================================================
+   LAYOUT EM DUAS COLUNAS (SIDEBAR + CONTEÚDO)
+   ================================================================= */
+#pagina-aula {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    column-gap: 2.5rem;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+body#pagina-aula {
+    grid-template-columns: 310px 1fr;
+    max-width: 100%;
+    padding: 0;
+    column-gap: 0;
+}
+
+#pagina-aula #cabecalho {
+    grid-area: header;
+}
+
+#pagina-aula .rodape {
+    grid-area: footer;
+}
+
+/* =================================================================
+   BARRA LATERAL (#barra-lateral)
+   ================================================================= */
+#barra-lateral {
+    grid-area: sidebar;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 2.5rem 0 2.5rem 2rem;
+    height: fit-content;
+    position: sticky;
+    top: 5.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.barra-lateral-cabecalho {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.barra-lateral-cabecalho p {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.barra-lateral-cabecalho button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.barra-lateral-cabecalho button:hover {
+    color: var(--primary);
+}
+
+.barra-lateral-cabecalho h2 {
+    grid-column: 1 / -1;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 0.25rem;
+}
+
+.barra-lateral-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.barra-lateral-lista a {
+    display: block;
+    padding: 0.65rem 0.9rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.barra-lateral-lista a:hover {
+    background-color: rgba(91, 75, 196, 0.08);
+    color: var(--primary);
+}
+
+body[data-aula="aula1"] .barra-lateral-lista li:nth-child(1) a,
+body[data-aula="aula2"] .barra-lateral-lista li:nth-child(2) a,
+body[data-aula="aula3"] .barra-lateral-lista li:nth-child(3) a,
+body[data-aula="aula4"] .barra-lateral-lista li:nth-child(4) a,
+body[data-aula="aula5"] .barra-lateral-lista li:nth-child(5) a,
+body[data-aula="aula6"] .barra-lateral-lista li:nth-child(6) a,
+body[data-aula="aula7"] .barra-lateral-lista li:nth-child(7) a {
+    background-color: rgba(91, 75, 196, 0.12);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.barra-progresso {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.barra-progresso label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+#progresso-trilha {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    appearance: none;
+    border: none;
+    background-color: var(--border-color);
+}
+
+#progresso-trilha::-webkit-progress-bar {
+    background-color: var(--border-color);
+    border-radius: 999px;
+}
+
+#progresso-trilha::-webkit-progress-value {
+    background-color: var(--primary);
+    border-radius: 999px;
+}
+
+#progresso-trilha::-moz-progress-bar {
+    background-color: var(--primary);
+    border-radius: 999px;
+}
+
+.barra-progresso p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+
+.barra-lateral-rodape {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra-lateral-rodape a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    transition: color 0.2s ease;
+}
+
+.barra-lateral-rodape a:hover {
+    text-decoration: underline;
+}
+
+/* =================================================================
+   CONTEÚDO PRINCIPAL DA AULA (#conteudo-principal)
+   ================================================================= */
+#pagina-aula #conteudo-principal {
+    grid-area: main;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto 0 0;
+    padding: 2.5rem 2.5rem 4rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.conteudo-principal-cabecalho {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 0.5rem;
+}
+
+.conteudo-principal-cabecalho p:first-child {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+#titulo-aula {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.conteudo-principal-cabecalho p:not(:first-child) {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* =================================================================
+   CARTÕES DE SEÇÃO (.secao-conteudo e .exercicios)
+   ================================================================= */
+.secao-conteudo,
+.exercicios {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.secao-conteudo h2,
+.exercicios h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.secao-conteudo h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 0.75rem;
+}
+
+.secao-conteudo p,
+.exercicios > p {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+}
+
+.secao-conteudo strong {
+    color: var(--text-main);
+}
+
+.secao-conteudo ol,
+.secao-conteudo ul {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.98rem;
+}
+
+.secao-conteudo ol {
+    list-style: decimal;
+}
+
+.secao-conteudo ul {
+    list-style: disc;
+}
+
+.secao-conteudo li::marker {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.secao-conteudo code:not(.codigo),
+.questao code:not(.codigo) {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85em;
+    background-color: rgba(91, 75, 196, 0.1);
+    color: var(--primary);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.35rem;
+    font-weight: 500;
+}
+
+/* =================================================================
+   BLOCOS DE CÓDIGO ESCUROS (.exemplo e pre)
+   ================================================================= */
+.exemplo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.exemplo h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.exemplo > p {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+}
+
+.exemplo-codigo,
+.exemplo-resultado {
+    background-color: #131626;
+    border: 1px solid #262b45;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: #f8fafc;
+}
+
+.exemplo-codigo h3,
+.exemplo-resultado h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #9382ff;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.exemplo-codigo pre,
+.exemplo-resultado pre,
+.secao-conteudo pre,
+.questao pre {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    color: #e2e8f0;
+}
+
+.secao-conteudo pre,
+.questao pre {
+    background-color: #131626;
+    border: 1px solid #262b45;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin: 0.25rem 0;
+}
+
+samp {
+    font-family: "JetBrains Mono", monospace;
+    color: #38bdf8;
+    font-weight: 500;
+}
+
+/* =================================================================
+   CAIXAS INTERATIVAS (<details> e <summary>)
+   ================================================================= */
+details {
+    background-color: rgba(91, 75, 196, 0.08);
+    border: 1px solid rgba(91, 75, 196, 0.2);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+body.dark-mode details {
+    background-color: rgba(102, 83, 224, 0.14);
+    border-color: rgba(102, 83, 224, 0.3);
+}
+
+details summary {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--primary);
+    cursor: pointer;
+    user-select: none;
+}
+
+details[open] summary {
+    margin-bottom: 0.75rem;
+}
+
+details p,
+details ul {
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+/* =================================================================
+   EXERCÍCIOS DE FIXAÇÃO (.questao)
+   ================================================================= */
+.questao {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.questao h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.questao fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.questao legend {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.alternativas,
+.resposta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.alternativas,
+.resposta label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.6rem;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    font-size: 0.92rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.alternativas:hover,
+.resposta label:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px var(--card-hover-shadow);
+}
+
+.alternativas input[type="radio"],
+.alternativas input[type="checkbox"],
+.resposta input[type="checkbox"],
+.resposta input[type="radio"] {
+    accent-color: var(--primary);
+    margin-top: 0.25rem;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.botao-verificar {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.65rem 1.4rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: fit-content;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botao-verificar:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.texto-resultado {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.secao-conteudo nav[aria-label="Navegação entre aulas"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.secao-conteudo nav[aria-label="Navegação entre aulas"] a:first-child {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    box-shadow: none;
+}
+
+.secao-conteudo nav[aria-label="Navegação entre aulas"] a:first-child:hover {
+    background-color: rgba(91, 75, 196, 0.1);
+}
+
+/* =================================================================
+   ESTILOS COMPLEMENTARES PARA A PÁGINA SOBRE
+   ================================================================= */
+
+section[aria-labelledby="titulo-proposta"] {
+    background-color: rgba(91, 75, 196, 0.1);
+    border-color: rgba(91, 75, 196, 0.25);
+    padding: 2.5rem;
+}
+
+body.dark-mode section[aria-labelledby="titulo-proposta"] {
+    background-color: rgba(102, 83, 224, 0.16);
+    border-color: rgba(102, 83, 224, 0.35);
+}
+
+.secao-conteudo figure {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 0.75rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.secao-conteudo figure img {
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.secao-conteudo figcaption {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.secao-conteudo a:not(.botao-acao) {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.secao-conteudo a:not(.botao-acao):hover {
+    color: var(--primary-hover);
+}
+
+.secao-conteudo .botao-acao {
+    margin-top: 0.5rem;
+}
+
+/* =================================================================
+   RESPONSIVIDADE DA PÁGINA DE AULA
+   ================================================================= */
+@media (max-width: 960px) {
+    body#pagina-aula {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #barra-lateral {
+        position: static;
+        margin: 1.5rem 1.5rem 0 1.5rem;
+    }
+
+    #pagina-aula #conteudo-principal {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #pagina-aula #cabecalho {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    #pagina-aula #menu-principal {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #titulo-aula {
+        font-size: 1.75rem;
+    }
+
+    .secao-conteudo,
+    .exercicios {
+        padding: 1.25rem;
+    }
+}

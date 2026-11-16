@@ -5,18 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estrutura Repetitiva: While</title>
+
+    <script>
+        if (localStorage.getItem('tema') === 'escuro') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/paginas.css">
 </head>
 <body id="pagina-aula" data-aula="aula4">
 
     <header id="cabecalho">
-        <a href="../index.html">Código em Jogo</a>
+        <a href="../index.html" class="logo">
+            <img src="../assets/imagens/logo-codigo-em-jogo.png" alt="" width="48" height="48">
+            <span>Código em Jogo</span>
+        </a>
 
         <nav id="menu-principal">
             <a href="../index.html">Início</a>
             <a href="./01-algoritmos.html">Trilha C</a>
             <a href="../sobre.html">Sobre</a>
         </nav>
+
+        <button id="botao-tema" aria-label="Alternar tema claro e escuro">🌙</button>
+
     </header>
 
     <aside id="barra-lateral">
@@ -48,6 +62,495 @@
         </footer>
     </aside>
 
+    <main id="conteudo-principal">
+        <section aria-labelledby="titulo-aula">
+
+            <header class="conteudo-principal-cabecalho">
+                <p>Módulo 04 - Estrutura Repetitiva: While</p>
+
+                <h1 id="titulo-aula">Estrutura Repetitiva: While</h1>
+
+                <p>Em muitos problemas, precisamos executar um mesmo conjunto de
+                    instruções várias vezes seguidas — por exemplo, ler vários valores
+                    digitados pelo usuário ou contar até um determinado limite.
+                </p>
+
+                <p>
+                    Nesta aula, você vai aprender como funciona a estrutura repetitiva
+                    <code>while</code>, como controlar o início e o fim de um laço de
+                    repetição e como evitar o famoso loop infinito na linguagem C.
+                </p>
+            </header>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>O que é uma estrutura de repetição?</h2>
+
+                <p>
+                    Uma estrutura de repetição (também chamada de <strong>laço</strong> ou
+                    <strong>loop</strong>) permite que um bloco de código seja executado
+                    várias vezes enquanto uma condição permanecer verdadeira.
+                </p>
+
+                <p>
+                    Sem uma estrutura de repetição, se quiséssemos exibir os números
+                    de 1 a 5 na tela, teríamos que escrever cinco comandos
+                    <code>printf</code> diferentes. Com o <code>while</code>, escrevemos
+                    a instrução uma única vez e definimos até quando ela deve se repetir.
+                </p>
+        </section>
+
+        <section class="secao-conteudo">
+                <h2>Como funciona o while?</h2>
+
+                <p>
+                    A palavra <code>while</code> significa <strong>"enquanto"</strong> em inglês.
+                    Antes de cada repetição, o programa avalia uma condição entre parênteses.
+                </p>
+
+                <ul>
+                    <li>
+                        Se a condição for <strong>verdadeira</strong>, o programa executa
+                        os comandos dentro das chaves e, ao chegar no final do bloco,
+                        volta para testar a condição novamente.
+                    </li>
+                    <li>
+                        Se a condição for <strong>falsa</strong>, o bloco é ignorado e
+                        o programa segue para as próximas instruções fora do <code>while</code>.
+                    </li>
+                </ul>
+
+                <h3>Sintaxe do while</h3>
+
+                <pre><code class="codigo">while (condicao) {
+                    // Comandos executados enquanto a condição for verdadeira
+                }</code></pre>
+
+                <p>
+                    Como o teste acontece no início, se a condição já começar falsa na
+                    primeira verificação, os comandos dentro do <code>while</code> não
+                    serão executados nenhuma vez.
+                </p>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Os três elementos de um laço com contador</h2>
+
+                <p>
+                    Quando usamos o <code>while</code> para contar ou repetir uma tarefa
+                    um número determinado de vezes, organizamos o código em três etapas:
+                </p>
+
+                <ol>
+                    <li>
+                        <strong>Inicialização:</strong> criamos uma variável de controle
+                        (contador) antes do <code>while</code> com seu valor inicial,
+                        como <code>int contador = 1;</code>.
+                    </li>
+                    <li>
+                        <strong>Condição de parada:</strong> verificamos no <code>while</code>
+                        até onde essa variável pode ir, como <code>while (contador &lt;= 5)</code>.
+                    </li>
+                    <li>
+                        <strong>Atualização:</strong> alteramos o valor do contador dentro
+                        do bloco (por exemplo, <code>contador++</code>) para que a condição
+                        em algum momento se torne falsa.
+                    </li>
+                </ol>
+
+                <details>
+                    <summary>Pense antes de continuar: e se esquecermos a atualização?</summary>
+
+                    <p>
+                        Se o valor de <code>contador</code> nunca mudar dentro do bloco,
+                        a condição <code>contador &lt;= 5</code> será sempre verdadeira.
+                        O programa ficará preso repetindo o código sem parar — situação
+                        conhecida como <strong>loop infinito</strong>.
+                    </p>
+                </details>
+            </section>
+
+            <section class="exemplo">
+                <h2>Exemplo prático: contando de 1 a 5</h2>
+
+                <p>
+                    Observe abaixo um programa em C que utiliza uma variável
+                    <code>contador</code> para exibir os números de 1 até 5 na tela.
+                </p>
+
+                <div class="exemplo-codigo">
+                    <h3>Código em C</h3>
+
+                    <pre><code class="codigo">#include &lt;stdio.h&gt;
+
+int main(void) {
+    int contador = 1;
+
+    while (contador &lt;= 5) {
+        printf("%d ", contador);
+        contador++;
+    }
+
+    return 0;
+}</code></pre>
+                </div>
+
+                <div class="exemplo-resultado">
+                    <h3>Resultado esperado</h3>
+
+                    <pre><samp>1 2 3 4 5 </samp></pre>
+                </div>
+
+                <h3>Entendendo o programa passo a passo</h3>
+
+                <ul>
+                    <li>
+                        A variável <code>contador</code> começa valendo <code>1</code>.
+                    </li>
+                    <li>
+                        O programa testa <code>contador &lt;= 5</code>. Como 1 é menor ou igual
+                        a 5, exibe <code>1</code> e soma 1 ao contador (que passa a valer 2).
+                    </li>
+                    <li>
+                        Esse processo se repete para os valores 2, 3, 4 e 5.
+                    </li>
+                    <li>
+                        Quando <code>contador</code> chega a <code>6</code>, a condição
+                        <code>6 &lt;= 5</code> torna-se falsa e o laço é encerrado.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="exemplo">
+                <h2>Quando não sabemos quantas vezes repetir</h2>
+
+                <p>
+                    A grande vantagem do <code>while</code> é funcionar muito bem quando
+                    a repetição depende de um valor digitado pelo usuário — por exemplo,
+                    somar números até que o usuário digite <code>0</code> para encerrar.
+                </p>
+
+                <div class="exemplo-codigo">
+                    <h3>Código em C</h3>
+
+                    <pre><code class="codigo">#include &lt;stdio.h&gt;
+int main(void) {
+    int numero;
+    int soma = 0;
+
+    printf("Digite um numero (0 para sair): ");
+    scanf("%d", &amp;numero);
+
+    while (numero != 0) {
+        soma = soma + numero;
+
+        printf("Digite outro numero (0 para sair): ");
+        scanf("%d", &amp;numero);
+    }
+
+    printf("Soma total: %d\n", soma);
+
+    return 0;
+}</code></pre>
+            </div>
+
+                <div class="exemplo-resultado">
+                    <h3>Exemplo de execução</h3>
+
+                    <pre><samp>Digite um numero (0 para sair): 4
+Digite outro numero (0 para sair): 6
+Digite outro numero (0 para sair): 5
+Digite outro numero (0 para sair): 0
+Soma total: 15</samp></pre>
+                </div>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Erros comuns com o while</h2>
+
+                <ul>
+                    <li>
+                        <strong>Esquecer de atualizar a variável de controle:</strong>
+                        faz com que a condição nunca mude e gere um loop infinito.
+                    </li>
+                    <li>
+                        <strong>Colocar ponto e vírgula após o <code>while</code>:</strong>
+                        escrever <code>while (contador &lt;= 5);</code> cria um laço vazio
+                        que trava o programa antes de executar o bloco entre chaves.
+                    </li>
+                    <li>
+                        <strong>Não inicializar a variável antes do teste:</strong>
+                        testar uma variável sem valor inicial pode fazer o programa
+                        ler lixo de memória e se comportar de forma imprevisível.
+                    </li>
+                    <li>
+                        <strong>Usar uma condição que já começa falsa:</strong>
+                        por exemplo, iniciar <code>int x = 10;</code> e testar
+                        <code>while (x &lt; 5)</code> faz o bloco nunca ser executado.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="secao-conteudo">
+                <h2>Resumo</h2>
+
+                <p>
+                    A estrutura <code>while</code> repete um bloco de instruções enquanto
+                    uma condição for verdadeira, testando essa condição antes de cada volta.
+                </p>
+
+                <p>
+                    Ela é ideal tanto para contagens simples quanto para situações em que
+                    não sabemos previamente quantas repetições serão necessárias, como na
+                    leitura de dados até que o usuário digite um valor de parada.
+                </p>
+            </section>
+
+            <section class="exercicios" id="exercicios">
+                <h2>Exercícios de Fixação</h2>
+
+                <p>
+                    Teste o que você aprendeu sobre a estrutura repetitiva <code>while</code>.
+                </p>
+
+                <article class="questao">
+                    <h3>Exercício 1</h3>
+
+                    <p>
+                        Quando a condição de uma estrutura <code>while</code> é avaliada?
+                    </p>
+
+                    <fieldset>
+                        <legend>Respostas</legend>
+
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio1" value="a" data-certa="sim">
+                                <span>A) Antes de executar o bloco de comandos a cada repetição.</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio1" value="b">
+                                <span>B) Apenas uma vez, depois que todo o programa termina.</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio1" value="c">
+                                <span>C) Somente na segunda repetição do laço.</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio1" value="d">
+                                <span>D) Nunca é avaliada, pois o while sempre repete 10 vezes.</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa A.</strong>
+                            O <code>while</code> verifica a condição no início de cada volta. Se ela já começar falsa, o bloco interno nem chega a ser executado.
+                        </p>
+                    </details>
+                </article>
+
+                <article class="questao">
+                    <h3>Exercício 2</h3>
+
+                    <p>
+                        Observe o código abaixo:
+                    </p>
+
+                    <pre><code class="codigo">int x = 1;
+
+while (x &lt;= 4) {
+    printf("%d ", x);
+    x++;
+}</code></pre>
+
+                    <p>
+                        Qual será a saída apresentada na tela?
+                    </p>
+
+                    <fieldset>
+                        <legend>Respostas</legend>
+
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio2" value="a">
+                                <span>A) 1 2 3</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio2" value="b" data-certa="sim">
+                                <span>B) 1 2 3 4</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio2" value="c">
+                                <span>C) 0 1 2 3 4</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio2" value="d">
+                                <span>D) 1 2 3 4 5</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa B.</strong>
+                            A variável <code>x</code> começa em 1 e o laço continua enquanto <code>x &lt;= 4</code>. Assim, são exibidos os números 1, 2, 3 e 4. Quando <code>x</code> vira 5, o laço encerra.
+                        </p>
+                    </details>
+                </article>
+
+                <article class="questao">
+                    <h3>Exercício 3</h3>
+
+                    <p>
+                        O que acontece ao executar o trecho de código abaixo?
+                    </p>
+
+                    <pre><code class="codigo">int i = 1;
+
+while (i &lt;= 5) {
+    printf("%d\n", i);
+}</code></pre>
+
+                    <fieldset>
+                        <legend>Respostas</legend>
+
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio3" value="a">
+                                <span>A) Exibe os números de 1 a 5 normalmente.</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio3" value="b">
+                                <span>B) Não exibe nada na tela.</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio3" value="c" data-certa="sim">
+                                <span>C) Entra em loop infinito exibindo o número 1 sem parar.</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio3" value="d">
+                                <span>D) Exibe apenas o número 5.</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa C.</strong>
+                            Faltou incrementar a variável <code>i</code> (com <code>i++</code>) dentro do bloco. Como <code>i</code> continua sempre valendo 1, a condição <code>i &lt;= 5</code> nunca fica falsa.
+                        </p>
+                    </details>
+                </article>
+
+                <article class="questao">
+                    <h3>Exercício 4</h3>
+
+                    <p>
+                        Analise o código abaixo:
+                    </p>
+
+                    <pre><code class="codigo">int n = 10;
+
+while (n &lt; 5) {
+    printf("Executou");
+    n++;
+}</code></pre>
+
+                    <p>
+                        Quantas vezes a palavra <code>Executou</code> será exibida?
+                    </p>
+
+                    <fieldset>
+                        <legend>Respostas</legend>
+
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio4" value="a" data-certa="sim">
+                                <span>A) Nenhuma vez (0 vezes).</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio4" value="b">
+                                <span>B) 1 vez.</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio4" value="c">
+                                <span>C) 5 vezes.</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="exercicio4" value="d">
+                                <span>D) Infinitas vezes.</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <button type="button" class="botao-verificar">Verificar</button>
+                    <p class="texto-resultado"></p>
+
+                    <details hidden class="resposta-explicacao">
+                        <summary>Conferir resposta e explicação</summary>
+
+                        <p>
+                            <strong>Alternativa A.</strong>
+                            Como <code>n</code> vale 10, a condição <code>10 &lt; 5</code> já é falsa logo na primeira verificação, fazendo o programa pular o bloco inteiro.
+                        </p>
+                    </details>
+                </article>
+            </section>
+
+            <section class="secao-conteudo" aria-labelledby="titulo-proximo-passo">
+                <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
+
+                <p>
+                    Você aprendeu como repetir instruções com o <code>while</code>, controlar
+                    o fluxo com contadores e condições de parada e evitar loops infinitos.
+                    Na próxima aula, você conhecerá o <code>for</code>, uma forma ainda mais
+                    compacta de escrever repetições com contador.
+                </p>
+
+                <nav aria-label="Navegação entre aulas">
+                    <a href="./03-condicionais.html" class="botao-acao">
+                        Aula anterior: Estruturas Condicionais
+                    </a>
+
+                    <a href="./05-for.html" class="botao-acao">
+                        Próxima aula: Estrutura Repetitiva: For
+                    </a>
+                </nav>
+            </section>
+
+        </section>
+    </main>
+        
+
     <footer class="rodape">
         <p>Código em Jogo - Projeto Integrador - Fatec</p>
         <p>Feito para quem está começando.</p>
@@ -61,7 +564,8 @@
         </ul>
     </footer>
 
-    <script src="../js/main.js"></script>    
+    <script src="../js/main.js"></script> 
+    <script src="../js/botao.js"></script>   
 </body>
 
 </html>

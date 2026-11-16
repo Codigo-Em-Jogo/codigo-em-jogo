@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre o projeto | Código em Jogo</title>
+
+    <script>
+        if (localStorage.getItem('tema') === 'escuro') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/paginas.css">
 </head>
 
 <body>
@@ -31,6 +39,9 @@
             </li>
            </ul> 
         </nav>
+
+         <button id="botao-tema" aria-label="Alternar tema claro e escuro">🌙</button>
+
     </header>
 
     <main id="conteudo-principal">
@@ -305,7 +316,7 @@
                 </p>
         </section>
 
-        <section class="secao-conteudo">
+        <section class="secao-conteudo"
                 aria-labelledby="titulo-conteudos-pesquisa">
             
                 <h2 id="titulo-conteudo-pesquisa">
@@ -672,6 +683,8 @@
             <li>Lucas Gabriel de Souza</li>
         </ul>
     </footer>
+
+    <script src="../js/botao.js"></script>
     
 </body>
 </html>

@@ -5,19 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estrutura Sequencial</title>
+
+    <script>
+        if (localStorage.getItem('tema') === 'escuro') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/paginas.css">
 </head>
 
 <body id="pagina-aula" data-aula="aula2">
 
     <header id="cabecalho">
-        <a href="../index.html">Código em Jogo</a>
+        <a href="../index.html" class="logo">
+            <img src="../assets/imagens/logo-codigo-em-jogo.png" alt="" width="48" height="48">
+            <span>Código em Jogo</span>
+        </a>
 
         <nav id="menu-principal" aria-label="Menu principal">
             <a href="../index.html">Início</a>
             <a href="./01-algoritmos.html">Trilha C</a>
             <a href="../sobre.html">Sobre</a>
         </nav>
+
+        <button id="botao-tema" aria-label="Alternar tema claro e escuro">🌙</button>
+
     </header>
 
     <aside id="barra-lateral" data-aula="aula1">
@@ -49,8 +63,8 @@
         </footer>
     </aside>
 
-    <main>
-        <section id="conteudo-principal">
+    <main id="conteudo-principal">
+        <section aria-labelledby="titulo-aula">
 
             <header class="conteudo-principal-cabecalho">
                 <p>Módulo 02 — Estrutura Sequencial</p>
@@ -690,6 +704,7 @@ resultado = a * b;</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/botao.js"></script>
 </body>
 
 </html>

@@ -7,13 +7,23 @@
 
     <title>Algoritmos e primeiros passos em C</title>
 
+    <script>
+        if (localStorage.getItem('tema') === 'escuro') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/paginas.css">
+
 </head>
 
 <body id="pagina-aula" data-aula="aula1">
     <header id="cabecalho">
         <a href="../index.html" class="logo">
             <img src="../assets/imagens/logo-codigo-em-jogo.png" alt="" width="48" height="48">
+            <span>Código em Jogo</span>
         </a>
 
         <nav id="menu-principal" aria-label="Menu principal">
@@ -21,6 +31,9 @@
             <a href="../index.html#trilha">Trilha C</a>
             <a href="../sobre.html">Sobre</a>
         </nav>
+
+        <button id="botao-tema" aria-label="Alternar tema claro e escuro">🌙</button>
+        
     </header>
 
     <aside id="barra-lateral">
@@ -928,6 +941,7 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/botao.js"></script>
 </body>
 
 </html>

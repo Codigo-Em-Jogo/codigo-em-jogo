@@ -15,6 +15,7 @@
     --card-hover-shadow: rgba(91, 75, 196, 0.1);
 }
 
+html.dark-mode,
 body.dark-mode {
     --bg-color: #0f172a;
     --card-bg: #1e293b;

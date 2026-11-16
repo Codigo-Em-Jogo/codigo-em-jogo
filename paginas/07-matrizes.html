@@ -5,18 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrizes</title>
+
+    <script>
+        if (localStorage.getItem('tema') === 'escuro') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/paginas.css">
 </head>
 
 <body id="pagina-aula" data-aula="aula7">
     <header id="cabecalho">
-        <a href="../index.html">Código em Jogo</a>
+        <a href="../index.html" class="logo">
+            <img src="../assets/imagens/logo-codigo-em-jogo.png" alt="" width="48" height="48">
+            <span>Código em Jogo</span>
+        </a>
 
         <nav id="menu-principal">
             <a href="../index.html">Início</a>
             <a href="./01-algoritmos.html">Trilha C</a>
             <a href="../sobre.html">Sobre</a>
         </nav>
+
+         <button id="botao-tema" aria-label="Alternar tema claro e escuro">🌙</button>
+
     </header>
 
     <aside id="barra-lateral">
@@ -102,7 +116,7 @@
                 <div class="exemplo-codigo">
                     <h3>Exemplo e resultado</h3>
                     <pre><code>
-#include <stdio.h>
+#include #include &lt;stdio.h&gt;
 
 int main()
 {    
@@ -409,6 +423,7 @@ printf("%d", grade[2][0]);
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/botao.js"></script>
 </body>
 
 </html>

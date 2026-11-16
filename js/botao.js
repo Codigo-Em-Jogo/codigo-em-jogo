@@ -1,19 +1,19 @@
-        const botaoTema = document.getElementById('botao-tema');
-        const body = document.body;
+const botaoTema = document.getElementById('botao-tema');
+const html = document.documentElement;
 
-        if (localStorage.getItem('tema') === 'escuro') {
-            body.classList.add('dark-mode');
-            botaoTema.textContent = '☀️';
-        }
+if (localStorage.getItem('tema') === 'escuro') {
+    botaoTema.textContent = '☀️';
+}
 
-        botaoTema.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                botaoTema.textContent = '☀️';
-                localStorage.setItem('tema', 'escuro');
-            } else {
-                botaoTema.textContent = '🌙';
-                localStorage.setItem('tema', 'claro');
-            }
-        });
+botaoTema.addEventListener('click', () => {
+    html.classList.toggle('dark-mode');
+
+    if (html.classList.contains('dark-mode')) {
+        botaoTema.textContent = '☀️';
+        localStorage.setItem('tema', 'escuro');
+    } else {
+        botaoTema.textContent = '🌙';
+        localStorage.setItem('tema', 'claro');
+    }
+});
+        
