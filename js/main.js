@@ -95,10 +95,16 @@ function atualizarBarra(){
 let paginaAula = document.querySelector("#pagina-aula");
 let botaoRecolher = document.querySelector("#botao-recolher");
 let botaoAbrir = document.querySelector("#botao-abrir-barra");
+let linksBarra = document.querySelectorAll(".barra-lateral-lista a, .barra-lateral-rodape a");
 
 if (paginaAula && botaoRecolher && botaoAbrir) {
     let ehCelular = window.innerWidth <= 960;
     let estadoSalvo = localStorage.getItem("barraRecolhida");
+
+    if (ehCelular || estadoSalvo == "sim"){
+        paginaAula.classList.add("barra-recolhida");
+        botaoAbrir.hidden = false;
+    }
 
     if (estadoSalvo == "sim" || (ehCelular && estadoSalvo == null)) {
         paginaAula.classList.add("barra-recolhida");
@@ -116,4 +122,15 @@ if (paginaAula && botaoRecolher && botaoAbrir) {
         botaoAbrir.hidden = true;
         localStorage.setItem("barraRecolhida", "nao");
     });
+
+    for (let i = 0; i < linksBarra.length; i++){
+        linksBarra[i].addEventListener("click", function(){
+            if(window.innerWidth <= 960){
+                paginaAula.classList.add("barra-recolhida");
+                botaoAbrir.hidden = false;
+                localStorage.setItem("barraRecolhida", "sim");
+            }
+        }
+    );
+    }
 }
