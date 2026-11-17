@@ -107,10 +107,8 @@
                 <h2>Exemplo e Resultado</h2>
                 <div class="exemplo-codigo">
                     <h3>Preenchendo um vetor</h3>
-                    <pre><code>
-                    
-#include <stdio.h>
-#include <stdlib.h>
+                    <pre><code>#include &lt;stdio.h&gt;
+
 int main()
 {
     int vet [5];
@@ -118,13 +116,10 @@ int main()
     for (int i = 0; i &lt 5; i++){
     vet[i] = i * i;
     }
-    //For é usado para preencher o vetor
 
     for (int i = 0; i &lt 5; i++){
     printf("%d", vet[i]);
     }
-    
-    //Outro for é usado para acessar todo o contéudo do vetor e exibi-lo
     
     return 0;
 }
@@ -134,7 +129,7 @@ int main()
                 <div class="exemplo-resultado">
                     <h3>Resultado esperado:</h3>
                     <pre><samp>
-                    014916
+014916
                     </samp></pre>
                 </div>
             </section>
@@ -164,10 +159,8 @@ int main()
                 <h2>Exemplo sem o for</h2>
                 <div class="exemplo-codigo">
                     <h3>Preenchendo um vetor manualmente</h3>
-                    <pre><code>
-                    
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+                    <pre><code>#include &lt;stdio.h&gt;
+                        
 int main()
 {
     int vet [5] = {0, 1, 4, 9, 16};
@@ -337,14 +330,14 @@ for (int i = 1; i &lt= 5; i++) {
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="checkbox" name="exercicio4" value="a" data-certa="sim">A) O valor 3.0 é
-                                incompátivel com o tipo char do vetor<span></span></label>
-                            <label><input type="checkbox" name="exercicio4" value="b" data-certa="sim">B) O for começa
-                                em <code>i = 1</code>, pulando a primeira posição do vetor<span></span></label>
-                            <label><input type="checkbox" name="exercicio4" value="c">C) O for deveria usar
-                                <code>i &lt= 4</code>, pois o último índice válido é vet[4]<span></span></label>
-                            <label><input type="checkbox" name="exercicio4" value="d" data-certa="sim">D) A condição do
-                                for deveria ser i &lt 5, pois o último índice válido é vet[4]<span></span></label>
+                            <label><input type="checkbox" name="exercicio4" value="a" data-certa="sim"><span>A) O valor 3.0 é
+                                incompátivel com o tipo char do vetor</span></label>
+                            <label><input type="checkbox" name="exercicio4" value="b" data-certa="sim"><span>B) O for começa
+                                em <code>i = 1</code>, pulando a primeira posição do vetor</span></label>
+                            <label><input type="checkbox" name="exercicio4" value="c"><span>C) O for deveria usar
+                                <code>i &lt= 4</code>, pois o último índice válido é vet[4]</span></label>
+                            <label><input type="checkbox" name="exercicio4" value="d" data-certa="sim"><span>D) A condição do
+                                for deveria ser i &lt 5, pois o último índice válido é vet[4]</span></label>
                         </div>
                     </fieldset>
 

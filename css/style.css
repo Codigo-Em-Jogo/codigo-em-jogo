@@ -329,14 +329,36 @@ a {
    ================================================================ */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-    .navbar nav ul {
-        gap: 1rem;
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.85rem 1.25rem;
+    }
+
+    .navbar .logo {
+        order: 1;
+        font-size: 1.1rem;
+    }
+
+    .navbar #botao-tema {
+        order: 2;
+        width: 36px;
+        height: 36px;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        margin: 0;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .navbar nav ul {
         justify-content: center;
+        gap: 1.5rem;
     }
 }
 
@@ -350,6 +372,7 @@ a {
     height: auto;
     align-self: center;
     animation: flutuar 3s ease-in-out infinite;
+
 }
 
 @keyframes flutuar {
@@ -358,7 +381,7 @@ a {
     }
 
     50% {
-        transform: translateY(-12px);
+        transform: translateY(12px);
     }
 }
 

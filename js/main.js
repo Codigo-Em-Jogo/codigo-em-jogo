@@ -1,5 +1,7 @@
 
-atualizarBarra();
+if (document.querySelector("#progresso-trilha")){
+    atualizarBarra();
+}
 
 let questoes = document.querySelectorAll(".questao");
 let nomeDaAula = document.body.dataset.aula;
@@ -13,7 +15,7 @@ for (let i = 0; i < questoes.length; i++){
     let resultado = questaoAtual.querySelector(".texto-resultado");
 
     let detalhes = questaoAtual.querySelector("details");
-    let tituloDetalhes = detalhes.querySelector("summary");
+    let tituloDetalhes = detalhes ? detalhes.querySelector("summary"):null;
 
     if (localStorage.getItem(chavePostIt) == "feita"){
         let respostasCertas = questaoAtual.querySelectorAll('input[data-certa="sim"]');
@@ -38,6 +40,10 @@ botao.addEventListener("click", function () {
         return;
     }
 
+    let arquivoAtual = window.location.pathname.split("/").pop();
+    localStorage.setItem("ultimaAulaRespondida", "./paginas/" + arquivoAtual);
+    localStorage.setItem("nomeAulaRespondida", document.title);
+
     let acertos = 0;
     let erros = 0;
 
@@ -50,7 +56,7 @@ botao.addEventListener("click", function () {
     }
 
         if (acertos == totalCertas && erros == 0) {
-            resultado.textContent = "Acertou!";
+            if (resultado) resultado.textContent = "Acertou!";
             localStorage.setItem(chavePostIt, "feita");
             atualizarBarra();
 
@@ -132,5 +138,20 @@ if (paginaAula && botaoRecolher && botaoAbrir) {
             }
         }
     );
+    }
+}
+
+// --- Atualizar botão do index automaticamente ---
+let botaoTrilha = document.querySelector("#botao-trilha");
+let ultimaAulaRespondida = localStorage.getItem("ultimaAulaRespondida");
+let nomeAulaRespondida = localStorage.getItem("nomeAulaRespondida");
+
+if (botaoTrilha && ultimaAulaRespondida) {
+    botaoTrilha.href = ultimaAulaRespondida;
+
+    if (nomeAulaRespondida) {
+        botaoTrilha.textContent = "Continuar trilha - " + nomeAulaRespondida;
+    } else {
+        botaoTrilha.textContent = "Continuar trilha";
     }
 }
