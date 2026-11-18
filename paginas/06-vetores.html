@@ -64,7 +64,8 @@
 
     <main>
 
-        <button type="button" id="botao-abrir-barra" title="Exibir conteúdo do curso" aria-label="Exibir conteúdo do curso" hidden>☰</button>
+        <button type="button" id="botao-abrir-barra" title="Exibir conteúdo do curso"
+            aria-label="Exibir conteúdo do curso" hidden>☰</button>
 
         <section id="conteudo-principal">
             <header class="conteudo-principal-cabecalho">
@@ -127,7 +128,7 @@ int main()
                 </div>
 
                 <div class="exemplo-resultado">
-                    <h3>Resultado esperado:</h3>
+                    <h3>Resultado:</h3>
                     <pre><samp>
 014916
                     </samp></pre>
@@ -179,7 +180,7 @@ int main()
 
             <section class="exemplo-resultado">
                 <div>
-                    <h3>Resultado esperado:</h3>
+                    <h3>Resultado:</h3>
                     <pre><samp>
 014916
                     </samp></pre>
@@ -251,7 +252,8 @@ int vet[5] = {4, 7, 2, 9, 5};
 
                         <p>
                             <strong>Alternativa B.</strong>
-                            As posições de um vetor começam em 0: <code>vet[0]</code> é 4, <code>vet[1]</code> é 7 e <code>vet[2]</code> guarda o valor 2.
+                            As posições de um vetor começam em 0: <code>vet[0]</code> é 4, <code>vet[1]</code> é 7 e
+                            <code>vet[2]</code> guarda o valor 2.
                         </p>
                     </details>
 
@@ -299,7 +301,7 @@ int vet[4] = {8, 3, 11, 5};
                             <label><input type="radio" name="exercicio3" value="b">B) vet[3]<span></span></label>
                             <label><input type="radio" name="exercicio3" value="c">C) vet[1]<span></span></label>
                             <label><input type="radio" name="exercicio3" value="d" data-certa="sim">D)
-                                vet[2]<span></span></label>__
+                                vet[2]<span></span></label>
                         </div>
                     </fieldset>
 
@@ -311,7 +313,8 @@ int vet[4] = {8, 3, 11, 5};
 
                         <p>
                             <strong>Alternativa D.</strong>
-                            O maior valor é 11, e ele está na terceira posição do vetor, que corresponde ao índice <code>vet[2]</code>.
+                            O maior valor é 11, e ele está na terceira posição do vetor, que corresponde ao índice
+                            <code>vet[2]</code>.
                         </p>
                     </details>
 
@@ -330,14 +333,17 @@ for (int i = 1; i &lt= 5; i++) {
                     <fieldset>
                         <legend>Respostas</legend>
                         <div class="resposta">
-                            <label><input type="checkbox" name="exercicio4" value="a" data-certa="sim"><span>A) O valor 3.0 é
-                                incompátivel com o tipo char do vetor</span></label>
-                            <label><input type="checkbox" name="exercicio4" value="b" data-certa="sim"><span>B) O for começa
-                                em <code>i = 1</code>, pulando a primeira posição do vetor</span></label>
+                            <label><input type="checkbox" name="exercicio4" value="a" data-certa="sim"><span>A) O valor
+                                    3.0 é
+                                    incompátivel com o tipo char do vetor</span></label>
+                            <label><input type="checkbox" name="exercicio4" value="b" data-certa="sim"><span>B) O for
+                                    começa
+                                    em <code>i = 1</code>, pulando a primeira posição do vetor</span></label>
                             <label><input type="checkbox" name="exercicio4" value="c"><span>C) O for deveria usar
-                                <code>i &lt= 4</code>, pois o último índice válido é vet[4]</span></label>
-                            <label><input type="checkbox" name="exercicio4" value="d" data-certa="sim"><span>D) A condição do
-                                for deveria ser i &lt 5, pois o último índice válido é vet[4]</span></label>
+                                    <code>i &lt= 4</code>, pois o último índice válido é vet[4]</span></label>
+                            <label><input type="checkbox" name="exercicio4" value="d" data-certa="sim"><span>D) A
+                                    condição do
+                                    for deveria ser i &lt 5, pois o último índice válido é vet[4]</span></label>
                         </div>
                     </fieldset>
 
@@ -349,31 +355,34 @@ for (int i = 1; i &lt= 5; i++) {
 
                         <p>
                             <strong>Alternativas A, B e D.</strong>
-                            O vetor é <code>int</code> e não aceita valor decimal (3.0); o <code>for</code> começa em <code>i = 1</code> pulando a posição 0; e <code>i &lt;= 5</code> tenta acessar <code>vet[5]</code>, que não existe (vai só até 4).
+                            O vetor é <code>int</code> e não aceita valor decimal (3.0); o <code>for</code> começa em
+                            <code>i = 1</code> pulando a posição 0; e <code>i &lt;= 5</code> tenta acessar
+                            <code>vet[5]</code>, que não existe (vai só até 4).
                         </p>
                     </details>
                 </article>
             </section>
 
             <section class="secao-conteudo" aria aria-labelledby="titulo-proximo-passo">
-            <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
+                <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
 
-            <p>
-                Você acompanhou uma solução desde o planejamento
-                até o código em C. Mais importante do que decorar
-                as instruções é conseguir explicar o que cada
-                parte faz e como o resultado é obtido.
-            </p>
+                <p>
+                    Você aprendeu como declarar e manipular vetores para armazenar
+                    coleções de valores do mesmo tipo, acessar elementos pelo índice
+                    e percorrê-los com laços de repetição.
+                    Na próxima aula, você conhecerá as <code>matrizes</code>, que
+                    expandem esse conceito para duas dimensões.
+                </p>
 
-            <nav aria-label="Navegação entre aulas">
-                <a href="./05-for.html" class="botao-acao">
-                    Aula anterior: Estruturas Repetitivas: For</a>
+                <nav aria-label="Navegação entre aulas">
+                    <a href="./05-for.html" class="botao-acao">
+                        Aula anterior: Estruturas Repetitivas: For</a>
 
-                <a href="./07-matrizes.html" class="botao-acao">
-                    Próxima aula: Matrizes
-                </a>
-            </nav>
-        </section>
+                    <a href="./07-matrizes.html" class="botao-acao">
+                        Próxima aula: Matrizes
+                    </a>
+                </nav>
+            </section>
     </main>
 
     <footer class="rodape">

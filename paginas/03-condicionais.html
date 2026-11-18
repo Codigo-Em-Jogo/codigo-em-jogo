@@ -30,7 +30,7 @@
             <a href="../sobre.html">Sobre</a>
         </nav>
 
-         <button id="botao-tema" aria-label="Alternar tema claro e escuro">🌙</button>
+        <button id="botao-tema" aria-label="Alternar tema claro e escuro">🌙</button>
 
     </header>
 
@@ -106,7 +106,8 @@
 
     <main>
 
-        <button type="button" id="botao-abrir-barra" title="Exibir conteúdo do curso" aria-label="Exibir conteúdo do curso" hidden>☰</button>
+        <button type="button" id="botao-abrir-barra" title="Exibir conteúdo do curso"
+            aria-label="Exibir conteúdo do curso" hidden>☰</button>
 
         <section id="conteudo-principal">
 
@@ -603,7 +604,7 @@ Aprovado</samp></pre>
 
             </section>
 
-            <section class="exercicios" id="exercicios">
+            <section class="secao-conteudo">
 
                 <h2>Exercícios de fixação</h2>
 
@@ -619,41 +620,40 @@ Aprovado</samp></pre>
                     correta.
                 </p>
 
-                <div class="questao">
+                <article class="questao">
 
-                    <h3>Questão 1</h3>
+                    <h3>Exercício 1</h3>
 
                     <p>
                         Qual é a principal finalidade
                         da estrutura if na linguagem C?
                     </p>
 
-                    <div class="alternativas">
+                    <fieldset>
+                        <legend>Respostas</legend>
 
-                        <label>
-                            <input type="radio" name="questao1" value="a">
-                            A) Repetir um conjunto de comandos
-                            várias vezes.
-                        </label>
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio1" value="a">
+                                <span>A) Repetir um conjunto de comandos várias vezes.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao1" value="b" data-certa="sim">
-                            B) Executar um bloco de comandos
-                            quando uma condição é verdadeira.
-                        </label>
+                            <label>
+                                <input type="radio" name="exercicio1" value="b" data-certa="sim">
+                                <span>B) Executar um bloco de comandos quando uma condição é verdadeira.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao1" value="c">
-                            C) Declarar uma variável
-                            dentro do programa.
-                        </label>
+                            <label>
+                                <input type="radio" name="exercicio1" value="c">
+                                <span>C) Declarar uma variável dentro do programa.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao1" value="d">
-                            D) Encerrar automaticamente
-                            a execução do programa.
-                        </label>
-                    </div>
+                            <label>
+                                <input type="radio" name="exercicio1" value="d">
+                                <span>D) Encerrar automaticamente a execução do programa.</span>
+                            </label>
+                        </div>
+                    </fieldset>
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
@@ -663,14 +663,15 @@ Aprovado</samp></pre>
 
                         <p>
                             <strong>Alternativa B.</strong>
-                            O <code>if</code> testa uma condição: se ela for verdadeira, o código dentro dele é executado. Se for falsa, ele pula esse bloco.
+                            O <code>if</code> testa uma condição: se ela for verdadeira, o código dentro dele é
+                            executado. Se for falsa, ele pula esse bloco.
                         </p>
                     </details>
-                </div>
+                </article>
 
-                <div class="questao">
+                <article class="questao">
 
-                    <h3>Questão 2</h3>
+                    <h3>Exercício 2</h3>
 
                     <p>Observe o código abaixo:</p>
 
@@ -687,29 +688,31 @@ if (idade &gt;= 18) {
                         quando esse código for executado?
                     </p>
 
-                    <div class="alternativas">
+                    <fieldset>
+                        <legend>Respostas</legend>
 
-                        <label>
-                            <input type="radio" name="questao2" value="a">
-                            A) Maior de idade.
-                        </label>
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio2" value="a">
+                                <span>A) Maior de idade.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao2" value="b" data-certa="sim">
-                            B) Menor de idade.
-                        </label>
+                            <label>
+                                <input type="radio" name="exercicio2" value="b" data-certa="sim">
+                                <span>B) Menor de idade.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao2" value="c">
-                            C) As duas mensagens serão exibidas.
-                        </label>
+                            <label>
+                                <input type="radio" name="exercicio2" value="c">
+                                <span>C) As duas mensagens serão exibidas.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao2" value="d">
-                            D) Nenhuma mensagem será exibida.
-                        </label>
-
-                    </div>
+                            <label>
+                                <input type="radio" name="exercicio2" value="d">
+                                <span>D) Nenhuma mensagem será exibida.</span>
+                            </label>
+                        </div>
+                    </fieldset>
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
@@ -719,21 +722,17 @@ if (idade &gt;= 18) {
 
                         <p>
                             <strong>Alternativa B.</strong>
-                            A variável <code>idade</code> vale 16. Como 16 não é maior nem igual a 18, o <code>if</code> é ignorado e o código executa o <code>else</code> ("Menor de idade").
+                            A variável <code>idade</code> vale 16. Como 16 não é maior nem igual a 18, o <code>if</code>
+                            é ignorado e o código executa o <code>else</code> ("Menor de idade").
                         </p>
                     </details>
+                </article>
 
+                <article class="questao">
 
-                </div>
+                    <h3>Exercício 3</h3>
 
-
-                <div class="questao">
-
-                    <h3>Questão 3</h3>
-
-                    <p>
-                        Observe o código abaixo:
-                    </p>
+                    <p>Observe o código abaixo:</p>
 
                     <pre><code class="codigo">int idade = 20;
 int possuiDocumento = 0;
@@ -749,29 +748,31 @@ if (idade &gt;= 18 &amp;&amp; possuiDocumento == 1) {
                         qual será a saída do programa?
                     </p>
 
-                    <div class="alternativas">
+                    <fieldset>
+                        <legend>Respostas</legend>
 
-                        <label>
-                            <input type="radio" name="questao3" value="a">
-                            A) Entrada permitida.
-                        </label>
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio3" value="a">
+                                <span>A) Entrada permitida.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao3" value="b" data-certa="sim">
-                            B) Entrada negada.
-                        </label>
+                            <label>
+                                <input type="radio" name="exercicio3" value="b" data-certa="sim">
+                                <span>B) Entrada negada.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao3" value="c">
-                            C) As duas mensagens serão exibidas.
-                        </label>
+                            <label>
+                                <input type="radio" name="exercicio3" value="c">
+                                <span>C) As duas mensagens serão exibidas.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao3" value="d">
-                            D) O programa não exibirá nenhuma mensagem.
-                        </label>
-
-                    </div>
+                            <label>
+                                <input type="radio" name="exercicio3" value="d">
+                                <span>D) O programa não exibirá nenhuma mensagem.</span>
+                            </label>
+                        </div>
+                    </fieldset>
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
@@ -781,19 +782,18 @@ if (idade &gt;= 18 &amp;&amp; possuiDocumento == 1) {
 
                         <p>
                             <strong>Alternativa B.</strong>
-                            O operador <code>&amp;&amp;</code> (E) exige que as duas condições sejam verdadeiras. Como <code>possuiDocumento</code> vale 0 (falso), o código vai para o <code>else</code> ("Entrada negada").
+                            O operador <code>&amp;&amp;</code> (E) exige que as duas condições sejam verdadeiras. Como
+                            <code>possuiDocumento</code> vale 0 (falso), o código vai para o <code>else</code> ("Entrada
+                            negada").
                         </p>
                     </details>
-                </div>
+                </article>
 
+                <article class="questao">
 
-                <div class="questao">
+                    <h3>Exercício 4</h3>
 
-                    <h3>Questão 4</h3>
-
-                    <p>
-                        Analise o código abaixo:
-                    </p>
+                    <p>Analise o código abaixo:</p>
 
                     <pre><code class="codigo">int nota = 6;
 
@@ -810,29 +810,31 @@ if (nota &gt;= 7) {
                         qual será a mensagem exibida pelo programa?
                     </p>
 
-                    <div class="alternativas">
+                    <fieldset>
+                        <legend>Respostas</legend>
 
-                        <label>
-                            <input type="radio" name="questao4" value="a">
-                            A) Aprovado.
-                        </label>
+                        <div class="resposta">
+                            <label>
+                                <input type="radio" name="exercicio4" value="a">
+                                <span>A) Aprovado.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao4" value="b">
-                            B) Reprovado.
-                        </label>
+                            <label>
+                                <input type="radio" name="exercicio4" value="b">
+                                <span>B) Reprovado.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao4" value="c" data-certa="sim">
-                            C) Recuperacao.
-                        </label>
+                            <label>
+                                <input type="radio" name="exercicio4" value="c" data-certa="sim">
+                                <span>C) Recuperacao.</span>
+                            </label>
 
-                        <label>
-                            <input type="radio" name="questao4" value="d">
-                            D) O programa exibirá todas as mensagens.
-                        </label>
-
-                    </div>
+                            <label>
+                                <input type="radio" name="exercicio4" value="d">
+                                <span>D) O programa exibirá todas as mensagens.</span>
+                            </label>
+                        </div>
+                    </fieldset>
 
                     <button type="button" class="botao-verificar">Verificar</button>
                     <p class="texto-resultado"></p>
@@ -842,31 +844,34 @@ if (nota &gt;= 7) {
 
                         <p>
                             <strong>Alternativa C.</strong>
-                            A nota vale 6. O primeiro <code>if (nota &gt;= 7)</code> é falso, mas a condição do <code>else if (nota &gt;= 5)</code> é verdadeira, exibindo "Recuperacao".
+                            A nota vale 6. O primeiro <code>if (nota &gt;= 7)</code> é falso, mas a condição do
+                            <code>else if (nota &gt;= 5)</code> é verdadeira, exibindo "Recuperacao".
                         </p>
                     </details>
-                </div>
+                </article>
+
             </section>
 
             <section class="secao-conteudo" aria aria-labelledby="titulo-proximo-passo">
-            <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
+                <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
 
-            <p>
-                Você acompanhou uma solução desde o planejamento
-                até o código em C. Mais importante do que decorar
-                as instruções é conseguir explicar o que cada
-                parte faz e como o resultado é obtido.
-            </p>
+                <p>
+                    Você aprendeu como usar <code>if</code> e <code>else</code> para
+                    tomar decisões no código, controlar o fluxo do programa e executar
+                    blocos diferentes dependendo de uma condição.
+                    Na próxima aula, você verá o <code>while</code>, que permite repetir
+                    instruções enquanto uma condição for verdadeira.
+                </p>
 
-            <nav aria-label="Navegação entre aulas">
-                <a href="./02-sequenciais.html" class="botao-acao">
-                    Aula anterior: Estruturas Sequenciais</a>
+                <nav aria-label="Navegação entre aulas">
+                    <a href="./02-sequenciais.html" class="botao-acao">
+                        Aula anterior: Estruturas Sequenciais</a>
 
-                <a href="./04-while.html" class="botao-acao">
-                    Próxima aula: Estruturas Repetitivas: While
-                </a>
-            </nav>
-        </section>
+                    <a href="./04-while.html" class="botao-acao">
+                        Próxima aula: Estruturas Repetitivas: While
+                    </a>
+                </nav>
+            </section>
     </main>
 
 

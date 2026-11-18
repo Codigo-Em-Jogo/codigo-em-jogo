@@ -21,7 +21,8 @@
 
 <body id="pagina-aula" data-aula="aula1">
 
-    <button type="button" id="botao-abrir-barra" title="Exibir conteúdo do curso" aria-label="Exibir conteúdo do curso" hidden>☰</button>
+    <button type="button" id="botao-abrir-barra" title="Exibir conteúdo do curso" aria-label="Exibir conteúdo do curso"
+        hidden>☰</button>
 
     <header id="cabecalho">
         <a href="../index.html" class="logo">
@@ -36,7 +37,7 @@
         </nav>
 
         <button id="botao-tema" aria-label="Alternar tema claro e escuro">🌙</button>
-        
+
     </header>
 
     <aside id="barra-lateral">
@@ -97,7 +98,7 @@
 
             <p>
                 Um algoritmo é uma sequência finita e organizada de
-                instruções para realizar uma tarefa iu resolver um problema.
+                instruções para realizar uma tarefa e resolver um problema.
                 Cada instrução precisa ser clara para quem vai executá-la.
             </p>
 
@@ -244,7 +245,7 @@
             <h3>Linguagem C: a forma de escrever o programa</h3>
 
             <p>
-                A linguagem C possui regras para escrver as instruções.
+                A linguagem C possui regras para escrever as instruções.
                 Ao usar essas regras para implementar nosso algoritmo,
                 produzimos o código-fonte do programa.
             </p>
@@ -318,19 +319,19 @@
 
                 <pre><code class="codigo">#include &lt;stdio.h&gt;
             
-            int main(void) {
-                double nota1 = 6.0;
-                double nota2 = 8.0;
-                double media = (nota1 + nota2) / 2.0;
+int main(void) {
+    double nota1 = 6.0;
+    double nota2 = 8.0;
+    double media = (nota1 + nota2) / 2.0;
 
-                printf("Media = %.1f\n", media);
+    printf("Media = %.1f\n", media);
 
-                return 0;
-            }</code></pre>
+return 0;
+}</code></pre>
             </div>
 
             <div class="exemplo-resultado">
-                <h3>Resultado esperado</h3>
+                <h3>Resultado:</h3>
 
                 <pre><samp>Media = 7.0</samp></pre>
             </div>
@@ -381,7 +382,7 @@
             <p>
                 A função <code>main</code> é o ponto de início
                 da execução deste programa.
-                As instruções docálculo ficarão dentro dela.
+                As instruções do cálculo ficarão dentro dela.
             </p>
 
             <ul>
@@ -425,7 +426,7 @@
 
             <ul>
                 <li>
-                    <code>duble</code>é um tipo usado para representar
+                    <code>double</code>é um tipo usado para representar
                     números que podem ter casas decimais.
                 </li>
                 <li>
@@ -555,12 +556,12 @@
 
             <h3>8. Fechando o bloco</h3>
 
-            <pre><code class="codigo"></code></pre>
+            <pre><code class="codigo">}</code></pre>
 
             <p>
                 A chave fecha o bloco da função
                 <code>main</code>, aberto no início do programa.
-                Ela não receve ponto e vírgula depois,
+                Ela não recebe ponto e vírgula depois,
                 pois está encerrando a definição da função.
             </p>
 
@@ -604,7 +605,7 @@
             <p>
                 A expressão <code>nota1 + nota2 / 2.0</code>
                 divide a segunda nota por dois antes de somar.
-                Para calcular a média, precisaos somar primeiro:
+                Para calcular a média, precisamos somar primeiro:
                 <code>(nota1 + nota2) / 2.0</code>.
             </p>
 
@@ -684,8 +685,7 @@
         </section>
 
         <section class="exercicios" id="exercicios">
-            aria-labelledby="titulo-exercicios">
-
+            
             <h2 id="titulo-exercicios">Exercícios de fixação</h2>
 
             <p>
@@ -729,7 +729,7 @@
                 </fieldset>
 
                 <button type="button" class="botao-verificar">Verificar</button>
-                    <p class="texto-resultado"></p>
+                <p class="texto-resultado"></p>
 
                 <details hidden class="resposta-explicacao">
                     <summary>Conferir resposta e explicação</summary>
@@ -777,7 +777,7 @@
                 </fieldset>
 
                 <button type="button" class="botao-verificar">Verificar</button>
-                    <p class="texto-resultado"></p>
+                <p class="texto-resultado"></p>
 
                 <details hidden class="resposta-explicacao">
                     <summary>Conferir resposta e explicação</summary>
@@ -797,10 +797,10 @@
                 <p>Leia o trecho e calcule o resultado antes de responder.</p>
 
                 <pre><code class="codigo">double nota1 = 4.0;
-        double nota2 = 8.0;
-        double media = (nota1 + nota2) / 2.0;
+double nota2 = 8.0;
+double media = (nota1 + nota2) / 2.0;
 
-        printf("Media = %.1f\n", media);</code></pre>
+printf("Media = %.1f\n", media);</code></pre>
 
                 <fieldset>
                     <legend>Qual saída esse trecho apresenta?</legend>
@@ -829,7 +829,7 @@
                 </fieldset>
 
                 <button type="button" class="botao-verificar">Verificar</button>
-                    <p class="texto-resultado"></p>
+                <p class="texto-resultado"></p>
 
                 <details hidden class="resposta-explicacao">
                     <summary>Conferir resposta e explicação</summary>
@@ -848,8 +848,8 @@
                 <h3>Exercício 4 — Encontrando um erro no cálculo</h3>
 
                 <pre><code class="codigo">double nota1 = 6.0;
-        double nota2 = 8.0;
-        double media = nota1 + nota2 / 2.0;</code></pre>
+double nota2 = 8.0;
+double media = nota1 + nota2 / 2.0;</code></pre>
 
                 <fieldset>
                     <legend>
@@ -890,7 +890,7 @@
                 </fieldset>
 
                 <button type="button" class="botao-verificar">Verificar</button>
-                    <p class="texto-resultado"></p>
+                <p class="texto-resultado"></p>
 
                 <details hidden class="resposta-explicacao">
                     <summary>Conferir resposta e explicação</summary>
@@ -912,10 +912,11 @@
             <h2 id="titulo-proximo-passo">Pronto para o próximo passo?</h2>
 
             <p>
-                Você acompanhou uma solução desde o planejamento
-                até o código em C. Mais importante do que decorar
-                as instruções é conseguir explicar o que cada
-                parte faz e como o resultado é obtido.
+                Você aprendeu o que são algoritmos, como pensar de forma lógica e
+                estruturada para resolver problemas e por que essa habilidade é a
+                base de toda a programação.
+                Na próxima aula, você verá como transformar essas ideias em
+                instruções sequenciais dentro de um programa.
             </p>
 
             <nav aria-label="Navegação entre aulas">
