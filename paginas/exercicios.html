@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de revisão | Código em Jogo</title>
+
+    <script>
+        if (localStorage.getItem("tema") === "escuro") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/paginas.css">
+
+    <style>
+        body#pagina-aula.pagina-revisao {
+            display: block;
+        }
+
+        .pagina-revisao #conteudo-revisao {
+            box-sizing: border-box;
+            width: calc(100% - 2rem);
+            max-width: 960px;
+            margin: 2rem auto;
+        }
+
+        .pagina-revisao .questao {
+            min-width: 0;
+        }
+
+        .pagina-revisao fieldset {
+            min-inline-size: 0;
+        }
+
+        .pagina-revisao pre {
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--card-bg);
+        }
+    </style>
+</head>
+
+<body id="pagina-aula" class="pagina-revisao">
+    <header id="cabecalho">
+        <a href="../index.html" class="logo">
+            <img src="../assets/imagens/logo-codigo-em-jogo.png"
+                alt="" width="48" height="48">
+            <span>Código em Jogo</span>
+        </a>
+
+        <nav id="menu-principal" aria-label="Navegação principal">
+            <a href="../index.html">Início</a>
+        </nav>
+    </header>
+
+    <main id="conteudo-revisao">
+        <section class="exercicios" id="exercicios" aria-labelledby="titulo-exercicios">
+            <h1 id="titulo-exercicios">Exercícios de revisão</h1>
+            <p>
+                Acompanhe cada trecho de código em C. Escolha uma alternativa
+                e clique em <strong>Verificar</strong> para conferir seu raciocínio.
+            </p>
+
+            <form class="questao" data-resposta="b">
+                <h2>Exercício 1 — Classificação do jogador</h2>
+
+                <p>
+                    Pelas regras do jogo, quem faz 100 pontos ou mais avança.
+                    De 60 a 99 pontos, recebe uma segunda chance.
+                    Abaixo de 60, precisa tentar novamente.
+                </p>
+
+                <pre><code>int pontos = 100;
+
+if (pontos &gt;= 60) {
+    printf("Segunda chance\n");
+} else if (pontos &gt;= 100) {
+    printf("Avançou\n");
+} else {
+    printf("Tente novamente\n");
+}</code></pre>
+
+                <fieldset>
+                    <legend>Com 100 pontos, o que esse código exibe?</legend>
+
+                    <div class="resposta">
+                        <label>
+                            <input type="radio" name="resposta" value="a" required>
+                            <span>A) Avançou</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="b">
+                            <span>B) Segunda chance</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="c">
+                            <span>C) Segunda chance e Avançou, em linhas separadas</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="d">
+                            <span>D) Tente novamente</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="botao-verificar">Verificar</button>
+                <p class="texto-resultado" role="status"></p>
+
+                <details class="resposta-explicacao" hidden>
+                    <summary>Explicação da resposta</summary>
+                    <p>
+                        Com 100 pontos, a primeira condição,
+                        <code>pontos &gt;= 60</code>, é verdadeira.
+                        O programa exibe <strong>Segunda chance</strong>
+                        e sai da estrutura condicional.
+                    </p>
+                    <p>
+                        Para aplicar a regra do jogo, teste primeiro
+                        <code>pontos &gt;= 100</code> e depois
+                        <code>pontos &gt;= 60</code>.
+                    </p>
+                </details>
+            </form>
+
+            <form class="questao" data-resposta="c">
+                <h2>Exercício 2 — Pontuação acumulada</h2>
+
+                <p>
+                    O jogador digita a pontuação de cada rodada.
+                    O valor <code>-1</code> encerra a entrada.
+                    Considere que ele digita <code>12</code>, <code>0</code>,
+                    <code>7</code> e <code>-1</code>, nessa ordem.
+                </p>
+
+                <pre><code>int pontos;
+int total = 0;
+
+scanf("%d", &amp;pontos);
+
+while (pontos != -1) {
+    total += pontos;
+    scanf("%d", &amp;pontos);
+}
+
+printf("Total: %d\n", total);</code></pre>
+
+                <fieldset>
+                    <legend>Qual total será exibido?</legend>
+
+                    <div class="resposta">
+                        <label>
+                            <input type="radio" name="resposta" value="a" required>
+                            <span>A) 12</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="b">
+                            <span>B) 18</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="c">
+                            <span>C) 19</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="d">
+                            <span>D) 20</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="botao-verificar">Verificar</button>
+                <p class="texto-resultado" role="status"></p>
+
+                <details class="resposta-explicacao" hidden>
+                    <summary>Explicação da resposta</summary>
+                    <p>
+                        O laço soma <code>12 + 0 + 7</code> e chega a
+                        <strong>19</strong>. O zero é uma pontuação válida
+                        e mantém o laço em execução. Ao ler <code>-1</code>,
+                        o programa encerra o laço antes da próxima soma.
+                    </p>
+                </details>
+            </form>
+
+            <form class="questao" data-resposta="d">
+                <h2>Exercício 3 — Pontuação do segundo jogador</h2>
+
+                <p>
+                    Cada linha da matriz representa um jogador. Cada coluna
+                    representa uma rodada. Complete o laço para somar
+                    as pontuações do segundo jogador.
+                </p>
+
+                <pre><code>int pontos[2][3] = {
+    {10, 20, 30},
+    {15, 25,  5}
+};
+
+int total = 0;
+
+for (int rodada = 0; rodada &lt; 3; rodada++) {
+    /* Complete esta linha. */
+}
+
+printf("Total do segundo jogador: %d\n", total);</code></pre>
+
+                <fieldset>
+                    <legend>Qual instrução completa o laço corretamente?</legend>
+
+                    <div class="resposta">
+                        <label>
+                            <input type="radio" name="resposta" value="a" required>
+                            <span>A) <code>total += pontos[0][rodada];</code></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="b">
+                            <span>B) <code>total = pontos[1][rodada];</code></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="c">
+                            <span>C) <code>total += pontos[rodada][1];</code></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="resposta" value="d">
+                            <span>D) <code>total += pontos[1][rodada];</code></span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="botao-verificar">Verificar</button>
+                <p class="texto-resultado" role="status"></p>
+
+                <details class="resposta-explicacao" hidden>
+                    <summary>Explicação da resposta</summary>
+                    <p>
+                        Em C, os índices começam em zero. A linha <code>1</code>
+                        corresponde ao segundo jogador. O laço mantém essa linha
+                        fixa e usa <code>rodada</code> para percorrer as três colunas.
+                        Com <code>+=</code>, o total acumula <code>15 + 25 + 5</code>
+                        e chega a <strong>45 pontos</strong>.
+                    </p>
+                </details>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        for (const questao of document.querySelectorAll("form.questao")) {
+            const resultado = questao.querySelector(".texto-resultado");
+            const explicacao = questao.querySelector("details");
+
+            questao.addEventListener("submit", function (evento) {
+                evento.preventDefault();
+
+                const resposta = new FormData(questao).get("resposta");
+                const acertou = resposta === questao.dataset.resposta;
+
+                resultado.textContent = acertou
+                    ? "Acertou!"
+                    : "Tente novamente ou confira a explicação.";
+
+                explicacao.hidden = false;
+                explicacao.open = acertou;
+            });
+        }
+    </script>
+</body>
+
+</html>
