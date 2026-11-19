@@ -15,43 +15,14 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/paginas.css">
+    <link rel="stylesheet" href="../css/exercicios.css">
 
-    <style>
-        body#pagina-aula.pagina-revisao {
-            display: block;
-        }
-
-        .pagina-revisao #conteudo-revisao {
-            box-sizing: border-box;
-            width: calc(100% - 2rem);
-            max-width: 960px;
-            margin: 2rem auto;
-        }
-
-        .pagina-revisao .questao {
-            min-width: 0;
-        }
-
-        .pagina-revisao fieldset {
-            min-inline-size: 0;
-        }
-
-        .pagina-revisao pre {
-            max-width: 100%;
-            overflow-x: auto;
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background-color: var(--card-bg);
-        }
-    </style>
 </head>
 
 <body id="pagina-aula" class="pagina-revisao">
-    <header id="cabecalho">
+    <header id="cabecalho" class="navbar">
         <a href="../index.html" class="logo">
-            <img src="../assets/imagens/logo-codigo-em-jogo.png"
-                alt="" width="48" height="48">
+            <img src="../assets/imagens/logo-codigo-em-jogo.png" alt="" width="48" height="48">
             <span>Código em Jogo</span>
         </a>
 
@@ -252,28 +223,8 @@ printf("Total do segundo jogador: %d\n", total);</code></pre>
         </section>
     </main>
 
-    <script>
-        for (const questao of document.querySelectorAll("form.questao")) {
-            const resultado = questao.querySelector(".texto-resultado");
-            const explicacao = questao.querySelector("details");
-
-            questao.addEventListener("submit", function (evento) {
-                evento.preventDefault();
-
-                const resposta = new FormData(questao).get("resposta");
-                const acertou = resposta === questao.dataset.resposta;
-
-                resultado.textContent = acertou
-                    ? "Acertou!"
-                    : "Tente novamente ou confira a explicação.";
-
-                explicacao.hidden = false;
-                explicacao.open = acertou;
-            });
-        }
-    </script>
-
-   <script src="../js/botao.js"></script>
+    <script src="../js/exercicios.js"></script>
+    <script src="../js/botao.js"></script>
 </body>
 
 </html>

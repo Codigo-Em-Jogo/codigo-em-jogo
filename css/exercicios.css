@@ -1,0 +1,33 @@
+body#pagina-aula.pagina-revisao {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-revisao #conteudo-revisao {
+    box-sizing: border-box;
+    width: calc(100% - 2rem);
+    max-width: 960px;
+    margin: 2rem auto;
+}
+
+.pagina-revisao .questao {
+    min-width: 0;
+}
+
+.pagina-revisao fieldset {
+    min-inline-size: 0;
+}
+
+.pagina-revisao pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+}
+
+body#pagina-aula.pagina-revisao {
+    display: flex;
+    flex-direction: column;
+}
